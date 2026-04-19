@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Van den Dam Schilderwerken — Vakmanschap in elke penseelstreek</title>
+<meta name="description" content="Van den Dam Schilderwerken — familiebedrijf met meer dan 25 jaar ervaring in binnen- en buitenschilderwerk, glasservice en speciale afwerkingen."/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Work+Sans:wght@300;400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        "primary": "#051125",
+        "primary-container": "#1b263b",
+        "on-primary": "#ffffff",
+        "on-primary-container": "#828da7",
+        "primary-fixed": "#d7e2ff",
+        "primary-fixed-dim": "#bbc6e2",
+        "secondary": "#a03f30",
+        "secondary-container": "#fe8672",
+        "on-secondary": "#ffffff",
+        "on-secondary-container": "#741f13",
+        "tertiary": "#001224",
+        "tertiary-container": "#0a2742",
+        "on-tertiary": "#ffffff",
+        "surface": "#fbf8ff",
+        "surface-dim": "#d7d8f4",
+        "surface-bright": "#fbf8ff",
+        "surface-container-lowest": "#ffffff",
+        "surface-container-low": "#f4f2ff",
+        "surface-container": "#edecff",
+        "surface-container-high": "#e6e6ff",
+        "surface-container-highest": "#e0e0fc",
+        "surface-variant": "#e0e0fc",
+        "on-surface": "#181a2e",
+        "on-surface-variant": "#45474d",
+        "outline": "#75777d",
+        "outline-variant": "#c5c6cd",
+        "inverse-surface": "#2d2f44",
+        "inverse-on-surface": "#f1efff",
+        "inverse-primary": "#bbc6e2",
+        "background": "#fbf8ff",
+        "on-background": "#181a2e",
+        "error": "#ba1a1a",
+        "error-container": "#ffdad6",
+        "on-error": "#ffffff",
+        "on-error-container": "#93000a"
+      },
+      fontFamily: {
+        "headline": ["Manrope", "sans-serif"],
+        "body": ["Work Sans", "sans-serif"],
+        "label": ["Inter", "sans-serif"]
+      },
+      borderRadius: {
+        "DEFAULT": "0.125rem",
+        "lg": "0.25rem",
+        "xl": "0.5rem",
+        "2xl": "0.75rem",
+        "full": "9999px"
+      }
+    }
+  }
+}
+</script>
+<style>
+  .ambient-shadow { box-shadow: 0 10px 40px rgba(24,26,46,0.06); }
+  .ghost-border { border: 1px solid rgba(197,198,205,0.15); }
+  .gradient-primary { background: linear-gradient(135deg, #051125 0%, #1b263b 100%); }
+  #mobile-menu { display: none; }
+  #mobile-menu.open { display: block; }
+</style>
+</head>
+<body class="bg-surface text-on-surface font-body antialiased">
+
+<!-- Navigation -->
+<nav id="navbar" class="fixed top-0 w-full z-50 transition-all duration-300" style="background:rgba(251,248,255,0.85);backdrop-filter:blur(12px);box-shadow:0 10px 40px rgba(24,26,46,0.06);">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+    <a href="index.html" class="font-headline text-lg font-extrabold text-primary tracking-tight">Van den Dam Schilderwerken</a>
+    <div class="hidden md:flex items-center gap-8 font-headline font-semibold text-sm tracking-tight">
+      <a href="index.html" class="text-primary border-b-2 border-primary pb-0.5">Home</a>
+      <a href="diensten.html" class="text-on-surface-variant hover:text-primary transition-colors">Diensten</a>
+      <a href="portfolio.html" class="text-on-surface-variant hover:text-primary transition-colors">Portfolio</a>
+      <a href="over-ons.html" class="text-on-surface-variant hover:text-primary transition-colors">Over Ons</a>
+      <a href="contact.html" class="text-on-surface-variant hover:text-primary transition-colors">Contact</a>
+    </div>
+    <a href="contact.html" class="hidden md:inline-block gradient-primary text-on-primary font-label font-semibold text-sm px-5 py-2.5 rounded-md hover:opacity-90 transition-opacity">Offerte Aanvragen</a>
+    <button id="menu-toggle" class="md:hidden text-primary" aria-label="Menu">
+      <span class="material-symbols-outlined">menu</span>
+    </button>
+  </div>
+  <div id="mobile-menu" class="md:hidden border-t border-outline-variant/20">
+    <div class="px-6 py-4 flex flex-col gap-4 font-headline font-semibold text-sm bg-surface/95">
+      <a href="index.html" class="text-primary">Home</a>
+      <a href="diensten.html" class="text-on-surface-variant">Diensten</a>
+      <a href="portfolio.html" class="text-on-surface-variant">Portfolio</a>
+      <a href="over-ons.html" class="text-on-surface-variant">Over Ons</a>
+      <a href="contact.html" class="text-on-surface-variant">Contact</a>
+      <a href="contact.html" class="gradient-primary text-on-primary font-label px-5 py-2.5 rounded-md text-center mt-2">Offerte Aanvragen</a>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="relative min-h-screen flex items-center justify-center overflow-hidden">
+  <div class="absolute inset-0 z-0">
+    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCH5atSwHtAdGOQhX0rvcjinBkzqK2Xx8hzmGKGuTXvX7JPHDq5q3NaHh4SlkiD_wdSMbkiZe765qCPtOdCWIU3gAuXBZWMp1jOLlbOvp7AsLV1khuCtW_zc5rctxrIIg2Rz77baly25qrRwRdQgRcG6mSbqT1kzi6SL4zWr0-rKp3apCn74bjUwTnlC3-2HUWjZNoS-rHlnUOtaouJ80maW71Pa2c41GKaJDMZGW1f15H_N6OlX_YDkQoAbBDUKshP_M8MUniDlLA" alt="" class="w-full h-full object-cover"/>
+    <div class="absolute inset-0 bg-gradient-to-r from-primary/85 via-primary/50 to-transparent"></div>
+  </div>
+  <div class="relative z-10 max-w-7xl mx-auto px-6 pt-32 pb-20 w-full">
+    <div class="max-w-2xl">
+      <span class="font-label text-xs font-semibold tracking-widest text-secondary uppercase mb-6 block">Familiebedrijf · Sinds 1997</span>
+      <h1 class="font-headline text-5xl md:text-7xl font-extrabold text-white leading-tight tracking-tight mb-8" style="letter-spacing:-0.02em;">
+        Meesterlijk Schilderwerk &amp; Afwerking
+      </h1>
+      <p class="font-body text-xl text-white/80 leading-relaxed mb-10 max-w-xl">
+        Met meer dan 25 jaar expertise brengen wij precisie en passie in elke penseelstreek. Voor uw woning, kantoor of monument.
+      </p>
+      <div class="flex flex-wrap gap-4">
+        <a href="contact.html" class="bg-secondary text-on-secondary font-label font-semibold px-8 py-4 rounded-md hover:opacity-90 transition-opacity ambient-shadow">
+          Offerte Aanvragen
+        </a>
+        <a href="portfolio.html" class="bg-white/10 backdrop-blur-md border border-white/20 text-white font-label font-semibold px-8 py-4 rounded-md hover:bg-white/20 transition-colors">
+          Bekijk Portfolio
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Trust Bar -->
+<section class="bg-surface-container-lowest relative z-20 -mt-6 mx-4 md:mx-auto max-w-4xl rounded-2xl ambient-shadow ghost-border px-8 py-8">
+  <div class="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16 text-center md:text-left">
+    <div class="flex items-center gap-4">
+      <span class="material-symbols-outlined text-4xl text-secondary" style="font-variation-settings:'FILL' 1;">verified</span>
+      <div>
+        <p class="font-headline font-bold text-primary">Familiebedrijf</p>
+        <p class="font-body text-sm text-on-surface-variant">Opgericht in 1997</p>
+      </div>
+    </div>
+    <div class="hidden md:block w-px h-10 bg-outline-variant/40"></div>
+    <div class="flex items-center gap-4">
+      <span class="material-symbols-outlined text-4xl text-secondary" style="font-variation-settings:'FILL' 1;">award_star</span>
+      <div>
+        <p class="font-headline font-bold text-primary">Kwaliteit Gegarandeerd</p>
+        <p class="font-body text-sm text-on-surface-variant">25+ jaar vakmanschap</p>
+      </div>
+    </div>
+    <div class="hidden md:block w-px h-10 bg-outline-variant/40"></div>
+    <div class="flex items-center gap-4">
+      <span class="material-symbols-outlined text-4xl text-secondary" style="font-variation-settings:'FILL' 1;">handshake</span>
+      <div>
+        <p class="font-headline font-bold text-primary">Persoonlijk Contact</p>
+        <p class="font-body text-sm text-on-surface-variant">Direct met de vakman</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Services Preview -->
+<section class="py-28 bg-surface">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="max-w-2xl mb-16">
+      <span class="font-label text-xs font-semibold tracking-widest text-secondary uppercase mb-4 block">Wat wij doen</span>
+      <h2 class="font-headline text-4xl md:text-5xl font-extrabold text-primary tracking-tight mb-4">Onze Expertise</h2>
+      <p class="font-body text-lg text-on-surface-variant leading-relaxed">Het verfijnen van ruimtes met nauwgezette zorg en hoogwaardige materialen.</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="group bg-surface-container-lowest rounded-xl overflow-hidden ambient-shadow ghost-border flex flex-col hover:-translate-y-1 transition-transform duration-300">
+        <div class="h-56 overflow-hidden">
+          <img src="https://lh3.googleusercontent.com/aida/ADBb0uicH3kwXMwQ6k9dQcFSJ1qGrgi78aBpPT1lBolToqpzdmALgUWyiUzPckFjVxsBlFNXcOvdA2dC5DFr9S6HaBCJE2LLHxjuFOuNqcOWgWaJ3qx8SFdncgfsnDFL_2qUnA9hSFFYV1LaOT0P_ttr0kbkzv99q8f4vFmvOwjmqJ2_YKDE9RDMG7cgsmPc1x7MwsOcpccaqS-jj8kIMV8id_rWHdq3bCKVYdu7CvqGUmuRD1mKG2-_ekqrum7KJiakxQVVEMZ5zTZXgA" alt="Schilderwerk" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"/>
+        </div>
+        <div class="p-8 flex-1 flex flex-col">
+          <h3 class="font-headline text-xl font-bold text-primary mb-3">Schilderwerk</h3>
+          <p class="font-body text-on-surface-variant mb-6 flex-1 text-sm leading-relaxed">Binnen en buiten — vlekkeloze afwerkingen met uitsluitend hoogwaardige, duurzame materialen.</p>
+          <a href="diensten.html" class="font-label text-sm text-secondary font-semibold inline-flex items-center gap-1 hover:text-primary transition-colors">
+            Meer lezen <span class="material-symbols-outlined text-base">arrow_forward</span>
+          </a>
+        </div>
+      </div>
+      <div class="group bg-surface-container-lowest rounded-xl overflow-hidden ambient-shadow ghost-border flex flex-col hover:-translate-y-1 transition-transform duration-300 md:-translate-y-6">
+        <div class="h-56 overflow-hidden">
+          <img src="https://lh3.googleusercontent.com/aida/ADBb0ujAv2Mkwv9KXuH_k7DZCh4LS_bKd0ZHFu2cyazL_jcQK1Jp7oxSSlOWfEZ48OpKjJwfETnhB2EF8muskGKF9ykeG3ZyXqp1pUFlUi53JLtVybOo0bYwP7C7pZDsATZs3LndSDz05JdY8jyUBXE68pwW8PuymLOhUMY_SlaoiJzXb0RPjp1SkofWCbacF4hq3dqlAI6UJ7Vt-FYb3vcvJ40hiLYtpYIibSMuMFK6ledIY6b2QoZZbABU26gVeWpkUwIBW0Cy7cOl7Q" alt="Glasservice" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"/>
+        </div>
+        <div class="p-8 flex-1 flex flex-col">
+          <h3 class="font-headline text-xl font-bold text-primary mb-3">Glasservice</h3>
+          <p class="font-body text-on-surface-variant mb-6 flex-1 text-sm leading-relaxed">Deskundige installatie en reparatie van glas — snel, veilig en nauwkeurig uitgevoerd.</p>
+          <a href="diensten.html" class="font-label text-sm text-secondary font-semibold inline-flex items-center gap-1 hover:text-primary transition-colors">
+            Meer lezen <span class="material-symbols-outlined text-base">arrow_forward</span>
+          </a>
+        </div>
+      </div>
+      <div class="group bg-surface-container-lowest rounded-xl overflow-hidden ambient-shadow ghost-border flex flex-col hover:-translate-y-1 transition-transform duration-300">
+        <div class="h-56 overflow-hidden">
+          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAAE0lIczm8ttDOtypYznnn5PKRU3Taao_pT3MYevStC_liZWk6JqMkRevILWR3bvhUYssb_nnRRcXXtNBGaR8d4Dlyrf8PGQF1Yiz9TUFW-XbnvIQT01SHtqEBxx39gqrkPYc2Wt9YiTYOdPxpRmsmkof_PNr0dkUExX1D7URmP0hcTuIIXb6eXqI0TEECwGN2bPccMUl3XuCg91TJPhcpECDap8gs3LAYQADLw-JrhB7uNG13xq2tVXXUafPLBdHCaankzw3e-rE" alt="Wandafwerking" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"/>
+        </div>
+        <div class="p-8 flex-1 flex flex-col">
+          <h3 class="font-headline text-xl font-bold text-primary mb-3">Wandafwerking &amp; Decoratie</h3>
+          <p class="font-body text-on-surface-variant mb-6 flex-1 text-sm leading-relaxed">Op maat gemaakte decoratieve technieken en hoogwaardige behanginstallatie voor elk interieur.</p>
+          <a href="diensten.html" class="font-label text-sm text-secondary font-semibold inline-flex items-center gap-1 hover:text-primary transition-colors">
+            Meer lezen <span class="material-symbols-outlined text-base">arrow_forward</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- About Teaser -->
+<section class="bg-surface-container-low py-28">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+      <div class="relative">
+        <div class="rounded-xl overflow-hidden ambient-shadow aspect-[4/3]">
+          <img src="https://lh3.googleusercontent.com/aida/ADBb0uicH3kwXMwQ6k9dQcFSJ1qGrgi78aBpPT1lBolToqpzdmALgUWyiUzPckFjVxsBlFNXcOvdA2dC5DFr9S6HaBCJE2LLHxjuFOuNqcOWgWaJ3qx8SFdncgfsnDFL_2qUnA9hSFFYV1LaOT0P_ttr0kbkzv99q8f4vFmvOwjmqJ2_YKDE9RDMG7cgsmPc1x7MwsOcpccaqS-jj8kIMV8id_rWHdq3bCKVYdu7CvqGUmuRD1mKG2-_ekqrum7KJiakxQVVEMZ5zTZXgA" alt="Ons team" class="w-full h-full object-cover"/>
+        </div>
+        <div class="absolute -bottom-6 -right-6 bg-surface-container-lowest rounded-xl p-6 ambient-shadow ghost-border hidden md:block">
+          <p class="font-headline text-4xl font-extrabold text-primary">25+</p>
+          <p class="font-body text-sm text-on-surface-variant">jaar ervaring</p>
+        </div>
+      </div>
+      <div>
+        <span class="font-label text-xs font-semibold tracking-widest text-secondary uppercase mb-4 block">Over ons</span>
+        <h2 class="font-headline text-4xl md:text-5xl font-extrabold text-primary tracking-tight mb-6">Vakmanschap in het DNA.</h2>
+        <p class="font-body text-lg text-on-surface-variant leading-relaxed mb-6">
+          Wat begon als een gedeelde passie is uitgegroeid tot een referentie in hoogwaardig schilder- en renovatiewerk. Wij geloven dat kleur en textuur de architectuur van een ruimte definiëren.
+        </p>
+        <p class="font-body text-lg text-on-surface-variant leading-relaxed mb-10">
+          Als familiebedrijf staan we voor direct contact, absolute betrouwbaarheid en een persoonlijke benadering bij elk project, groot of klein.
+        </p>
+        <a href="over-ons.html" class="inline-flex items-center gap-2 text-primary font-label font-bold border-b-2 border-primary pb-1 hover:text-secondary hover:border-secondary transition-colors">
+          Leer ons kennen <span class="material-symbols-outlined text-sm">arrow_forward</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Portfolio Teaser -->
+<section class="py-28 bg-surface">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="flex items-end justify-between mb-12">
+      <div>
+        <span class="font-label text-xs font-semibold tracking-widest text-secondary uppercase mb-4 block">Onze realisaties</span>
+        <h2 class="font-headline text-4xl font-extrabold text-primary tracking-tight">Recent Werk</h2>
+      </div>
+      <a href="portfolio.html" class="hidden md:inline-flex items-center gap-2 font-label text-sm text-secondary font-semibold hover:text-primary transition-colors">
+        Volledig portfolio <span class="material-symbols-outlined text-base">arrow_forward</span>
+      </a>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-6 h-auto md:h-[480px]">
+      <article class="md:col-span-8 relative group overflow-hidden rounded-xl ambient-shadow ghost-border cursor-pointer">
+        <img src="https://lh3.googleusercontent.com/aida/ADBb0uicH3kwXMwQ6k9dQcFSJ1qGrgi78aBpPT1lBolToqpzdmALgUWyiUzPckFjVxsBlFNXcOvdA2dC5DFr9S6HaBCJE2LLHxjuFOuNqcOWgWaJ3qx8SFdncgfsnDFL_2qUnA9hSFFYV1LaOT0P_ttr0kbkzv99q8f4vFmvOwjmqJ2_YKDE9RDMG7cgsmPc1x7MwsOcpccaqS-jj8kIMV8id_rWHdq3bCKVYdu7CvqGUmuRD1mKG2-_ekqrum7KJiakxQVVEMZ5zTZXgA" alt="Herenhuis Amsterdam" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"/>
+        <div class="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/20 to-transparent"></div>
+        <div class="absolute bottom-0 p-8">
+          <span class="text-white/70 font-label text-xs uppercase tracking-wider mb-2 block">Interieur</span>
+          <h3 class="font-headline text-2xl font-bold text-white">Herenhuis Amsterdam-Zuid</h3>
+        </div>
+      </article>
+      <div class="md:col-span-4 flex flex-col gap-6">
+        <article class="flex-1 relative group overflow-hidden rounded-xl ambient-shadow ghost-border cursor-pointer">
+          <img src="https://lh3.googleusercontent.com/aida/ADBb0ujAv2Mkwv9KXuH_k7DZCh4LS_bKd0ZHFu2cyazL_jcQK1Jp7oxSSlOWfEZ48OpKjJwfETnhB2EF8muskGKF9ykeG3ZyXqp1pUFlUi53JLtVybOo0bYwP7C7pZDsATZs3LndSDz05JdY8jyUBXE68pwW8PuymLOhUMY_SlaoiJzXb0RPjp1SkofWCbacF4hq3dqlAI6UJ7Vt-FYb3vcvJ40hiLYtpYIibSMuMFK6ledIY6b2QoZZbABU26gVeWpkUwIBW0Cy7cOl7Q" alt="Villa Bloemendaal" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"/>
+          <div class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent"></div>
+          <div class="absolute bottom-0 p-6">
+            <span class="text-white/70 font-label text-xs uppercase tracking-wider mb-1 block">Exterieur</span>
+            <h3 class="font-headline text-lg font-bold text-white">Villa Bloemendaal</h3>
+          </div>
+        </article>
+        <article class="flex-1 relative group overflow-hidden rounded-xl ambient-shadow ghost-border cursor-pointer">
+          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6pZxGYHOgH1eKDpuVKPiovr7L4_7YGiIqmg_GrwoeNoBGYhwHPqlNa4oo9qh6_ynox-NHO6FxEwOStd8wlQMzUgKQBpe4dGOlf5VfOUn6H877mzGh29KLA3vnDSRncBaamjOSeemZT57KvPkPvDaT2f4kewk4AIDr_qpBYpetaD9w2Aio88mEU7BHgJ95OgoD3aSjQVe1YbVFYf4Wsbwy6n5xceKWVi3HAoaIe3pnIzEILVWS6_1COR-BdffKJ9rcf-jLX0kVl2s" alt="Klassiek houtwerk" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"/>
+          <div class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent"></div>
+          <div class="absolute bottom-0 p-6">
+            <span class="text-white/70 font-label text-xs uppercase tracking-wider mb-1 block">Speciaal lakwerk</span>
+            <h3 class="font-headline text-lg font-bold text-white">Klassiek Houtwerk</h3>
+          </div>
+        </article>
+      </div>
+    </div>
+    <div class="mt-8 md:hidden">
+      <a href="portfolio.html" class="inline-flex items-center gap-2 font-label text-sm text-secondary font-semibold hover:text-primary transition-colors">
+        Volledig portfolio <span class="material-symbols-outlined text-base">arrow_forward</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="bg-surface-container-low py-28">
+  <div class="max-w-3xl mx-auto px-6 text-center">
+    <h2 class="font-headline text-4xl md:text-5xl font-extrabold text-primary tracking-tight mb-6">Klaar om uw ruimte te transformeren?</h2>
+    <p class="font-body text-xl text-on-surface-variant mb-10">Neem contact met ons op voor een vrijblijvend adviesgesprek.</p>
+    <a href="contact.html" class="inline-block gradient-primary text-on-primary font-label font-semibold text-lg px-10 py-4 rounded-md hover:opacity-90 transition-opacity ambient-shadow">
+      Neem Contact Op
+    </a>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer style="background:#051125;" class="text-slate-100 py-16 px-6">
+  <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10">
+    <div class="md:col-span-2">
+      <p class="font-headline text-lg font-extrabold text-white mb-4">Van den Dam Schilderwerken</p>
+      <p class="font-body text-sm text-slate-400 leading-relaxed mb-6 max-w-xs">Het creëren van prachtige ruimtes met precisie en passie. Familiebedrijf sinds 1997.</p>
+      <p class="font-body text-xs text-slate-600">© 2025 Van den Dam Schilderwerken. Alle rechten voorbehouden.</p>
+    </div>
+    <div>
+      <p class="font-label text-xs font-semibold tracking-widest text-slate-400 uppercase mb-4">Navigatie</p>
+      <ul class="space-y-2 font-body text-sm">
+        <li><a href="diensten.html" class="text-slate-400 hover:text-white transition-colors">Diensten</a></li>
+        <li><a href="portfolio.html" class="text-slate-400 hover:text-white transition-colors">Portfolio</a></li>
+        <li><a href="over-ons.html" class="text-slate-400 hover:text-white transition-colors">Over Ons</a></li>
+        <li><a href="contact.html" class="text-slate-400 hover:text-white transition-colors">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="font-label text-xs font-semibold tracking-widest text-slate-400 uppercase mb-4">Juridisch</p>
+      <ul class="space-y-2 font-body text-sm">
+        <li><a href="privacyverklaring.html" class="text-slate-400 hover:text-white transition-colors">Privacyverklaring</a></li>
+        <li><a href="contact.html" class="text-slate-400 hover:text-white transition-colors">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('menu-toggle').addEventListener('click', () => {
+    document.getElementById('mobile-menu').classList.toggle('open');
+  });
+</script>
+</body>
+</html>
