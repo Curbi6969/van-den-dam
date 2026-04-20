@@ -159,27 +159,60 @@ tailwind.config = {
  <h3 class="font-headline text-2xl font-bold text-primary mb-2">Offerte Aanvragen</h3>
  <p class="font-body text-on-surface-variant text-sm mb-8">Vul uw gegevens in en wij nemen zo spoedig mogelijk contact met u op.</p>
  <form class="space-y-6" id="contact-form">
- <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+ <!-- Naam -->
  <div class="relative group">
  <input class="w-full bg-surface-container border-0 border-b-2 border-outline focus:border-secondary focus:ring-0 text-on-surface font-body pt-6 pb-2 px-4 rounded-t-md transition-colors peer placeholder-transparent" id="name" name="name" placeholder=" " type="text" required/>
- <label class="absolute left-4 top-2 text-on-surface-variant font-label text-xs transition-all peer-placeholder-shown:text-sm peer-placeholder-shown:top-4 peer-focus:text-xs peer-focus:top-2 peer-focus:text-secondary" for="name">Naam</label>
+ <label class="absolute left-4 top-2 text-on-surface-variant font-label text-xs transition-all peer-placeholder-shown:text-sm peer-placeholder-shown:top-4 peer-focus:text-xs peer-focus:top-2 peer-focus:text-secondary" for="name">Naam *</label>
  </div>
+ <!-- Telefoon + Mobiel -->
+ <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+ <div class="relative group">
+ <input class="w-full bg-surface-container border-0 border-b-2 border-outline focus:border-secondary focus:ring-0 text-on-surface font-body pt-6 pb-2 px-4 rounded-t-md transition-colors peer placeholder-transparent" id="phone" name="phone" placeholder=" " type="tel" required/>
+ <label class="absolute left-4 top-2 text-on-surface-variant font-label text-xs transition-all peer-placeholder-shown:text-sm peer-placeholder-shown:top-4 peer-focus:text-xs peer-focus:top-2 peer-focus:text-secondary" for="phone">Telefoonnummer *</label>
+ </div>
+ <div class="relative group">
+ <input class="w-full bg-surface-container border-0 border-b-2 border-outline focus:border-secondary focus:ring-0 text-on-surface font-body pt-6 pb-2 px-4 rounded-t-md transition-colors peer placeholder-transparent" id="mobile" name="mobile" placeholder=" " type="tel"/>
+ <label class="absolute left-4 top-2 text-on-surface-variant font-label text-xs transition-all peer-placeholder-shown:text-sm peer-placeholder-shown:top-4 peer-focus:text-xs peer-focus:top-2 peer-focus:text-secondary" for="mobile">Mobiel nummer</label>
+ </div>
+ </div>
+ <!-- E-mail -->
  <div class="relative group">
  <input class="w-full bg-surface-container border-0 border-b-2 border-outline focus:border-secondary focus:ring-0 text-on-surface font-body pt-6 pb-2 px-4 rounded-t-md transition-colors peer placeholder-transparent" id="email" name="email" placeholder=" " type="email" required/>
- <label class="absolute left-4 top-2 text-on-surface-variant font-label text-xs transition-all peer-placeholder-shown:text-sm peer-placeholder-shown:top-4 peer-focus:text-xs peer-focus:top-2 peer-focus:text-secondary" for="email">E-mailadres</label>
+ <label class="absolute left-4 top-2 text-on-surface-variant font-label text-xs transition-all peer-placeholder-shown:text-sm peer-placeholder-shown:top-4 peer-focus:text-xs peer-focus:top-2 peer-focus:text-secondary" for="email">E-mailadres *</label>
  </div>
+ <!-- Kopie checkbox -->
+ <div class="flex items-center gap-3">
+ <input type="checkbox" id="copy" name="copy" class="rounded border-outline text-secondary focus:ring-secondary"/>
+ <label for="copy" class="font-body text-sm text-on-surface-variant">Stuur me een kopie van de aanvraag</label>
  </div>
+ <!-- Woonplaats -->
  <div class="relative group">
- <input class="w-full bg-surface-container border-0 border-b-2 border-outline focus:border-secondary focus:ring-0 text-on-surface font-body pt-6 pb-2 px-4 rounded-t-md transition-colors peer placeholder-transparent" id="phone" name="phone" placeholder=" " type="tel"/>
- <label class="absolute left-4 top-2 text-on-surface-variant font-label text-xs transition-all peer-placeholder-shown:text-sm peer-placeholder-shown:top-4 peer-focus:text-xs peer-focus:top-2 peer-focus:text-secondary" for="phone">Telefoonnummer</label>
+ <input class="w-full bg-surface-container border-0 border-b-2 border-outline focus:border-secondary focus:ring-0 text-on-surface font-body pt-6 pb-2 px-4 rounded-t-md transition-colors peer placeholder-transparent" id="city" name="city" placeholder=" " type="text"/>
+ <label class="absolute left-4 top-2 text-on-surface-variant font-label text-xs transition-all peer-placeholder-shown:text-sm peer-placeholder-shown:top-4 peer-focus:text-xs peer-focus:top-2 peer-focus:text-secondary" for="city">Woonplaats</label>
  </div>
- <div class="relative group">
- <input class="w-full bg-surface-container border-0 border-b-2 border-outline focus:border-secondary focus:ring-0 text-on-surface font-body pt-6 pb-2 px-4 rounded-t-md transition-colors peer placeholder-transparent" id="subject" name="subject" placeholder=" " type="text"/>
- <label class="absolute left-4 top-2 text-on-surface-variant font-label text-xs transition-all peer-placeholder-shown:text-sm peer-placeholder-shown:top-4 peer-focus:text-xs peer-focus:top-2 peer-focus:text-secondary" for="subject">Project Type (bijv. Binnenschilderwerk)</label>
+ <!-- Gewenste uitvoermaand + Werkzaamheden -->
+ <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+ <div>
+ <label class="font-label text-xs font-semibold text-on-surface-variant uppercase tracking-wider block mb-2" for="uitvoer">Gewenste maand van uitvoer</label>
+ <input type="month" id="uitvoer" name="uitvoer" class="w-full bg-surface-container border-0 border-b-2 border-outline focus:border-secondary focus:ring-0 text-on-surface font-body py-3 px-4 rounded-t-md transition-colors"/>
  </div>
+ <div>
+ <label class="font-label text-xs font-semibold text-on-surface-variant uppercase tracking-wider block mb-2" for="werkzaamheden">Werkzaamheden</label>
+ <select id="werkzaamheden" name="werkzaamheden" class="w-full bg-surface-container border-0 border-b-2 border-outline focus:border-secondary focus:ring-0 text-on-surface font-body py-3 px-4 rounded-t-md transition-colors appearance-none">
+ <option value="">Maak een keuze</option>
+ <option value="schilderen">Schilderen</option>
+ <option value="behangen">Behangen</option>
+ <option value="onderhoud">Onderhoud</option>
+ <option value="afgeschermd-onderhoud">Afgeschermd onderhoud</option>
+ <option value="beglazing">Beglazing</option>
+ <option value="ramen-zetten">Ramen zetten</option>
+ </select>
+ </div>
+ </div>
+ <!-- Aanvullende informatie -->
  <div class="relative group">
- <textarea class="w-full bg-surface-container border-0 border-b-2 border-outline focus:border-secondary focus:ring-0 text-on-surface font-body pt-6 pb-2 px-4 rounded-t-md transition-colors peer resize-none placeholder-transparent" id="message" name="message" placeholder=" " rows="4" required></textarea>
- <label class="absolute left-4 top-2 text-on-surface-variant font-label text-xs transition-all peer-placeholder-shown:text-sm peer-placeholder-shown:top-4 peer-focus:text-xs peer-focus:top-2 peer-focus:text-secondary" for="message">Project Details &amp; Wensen</label>
+ <textarea class="w-full bg-surface-container border-0 border-b-2 border-outline focus:border-secondary focus:ring-0 text-on-surface font-body pt-6 pb-2 px-4 rounded-t-md transition-colors peer resize-none placeholder-transparent" id="message" name="message" placeholder=" " rows="4"></textarea>
+ <label class="absolute left-4 top-2 text-on-surface-variant font-label text-xs transition-all peer-placeholder-shown:text-sm peer-placeholder-shown:top-4 peer-focus:text-xs peer-focus:top-2 peer-focus:text-secondary" for="message">Aanvullende informatie</label>
  </div>
  <div class="flex items-start gap-3">
  <input type="checkbox" id="privacy" name="privacy" required class="mt-1 rounded border-outline text-secondary focus:ring-secondary"/>
