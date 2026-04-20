@@ -13,10 +13,10 @@ tailwind.config = {
  theme: {
  extend: {
  colors: {
- "primary": "#051125","primary-container": "#1b263b","on-primary": "#ffffff","primary-fixed-dim": "#bbc6e2",
- "secondary": "#a03f30","secondary-container": "#fe8672","on-secondary": "#ffffff",
+ "primary": "#232227","primary-container": "#3a393e","on-primary": "#ffffff","primary-fixed-dim": "#c5c5c7",
+ "secondary": "#ff0000","secondary-container": "#ff8080","on-secondary": "#ffffff",
  "surface": "#fbf8ff","surface-container-lowest": "#ffffff","surface-container-low": "#f4f2ff","surface-container": "#edecff","surface-container-high": "#e6e6ff","surface-container-highest": "#e0e0fc","surface-variant": "#e0e0fc",
- "on-surface": "#181a2e","on-surface-variant": "#45474d","outline": "#75777d","outline-variant": "#c5c6cd"
+ "on-surface": "#1a1a1a","on-surface-variant": "#45474d","outline": "#75777d","outline-variant": "#c5c6cd"
  },
  fontFamily: { "headline": ["Manrope","sans-serif"], "body": ["Work Sans","sans-serif"], "label": ["Inter","sans-serif"] },
  borderRadius: { "DEFAULT": "0.125rem","lg": "0.25rem","xl": "0.5rem","full": "9999px" }
@@ -25,9 +25,9 @@ tailwind.config = {
 }
 </script>
 <style>
- .ambient-shadow { box-shadow: 0 10px 40px rgba(24,26,46,0.06); }
+ .ambient-shadow { box-shadow: 0 10px 40px rgba(35,34,39,0.06); }
  .ghost-border { border: 1px solid rgba(197,198,205,0.15); }
- .gradient-primary { background: linear-gradient(135deg, #051125 0%, #1b263b 100%); }
+ .gradient-primary { background: linear-gradient(135deg, #232227 0%, #3a393e 100%); }
  #mobile-menu { display: none; }
  #mobile-menu.open { display: block; }
 </style>
@@ -35,7 +35,7 @@ tailwind.config = {
 <body class="bg-surface text-on-surface font-body antialiased min-h-screen flex flex-col">
 
 <!-- Navigation -->
-<nav class="fixed top-0 w-full z-50" style="background:rgba(251,248,255,0.85);backdrop-filter:blur(12px);box-shadow:0 10px 40px rgba(24,26,46,0.06);">
+<nav class="fixed top-0 w-full z-50" style="background:rgba(251,248,255,0.85);backdrop-filter:blur(12px);box-shadow:0 10px 40px rgba(35,34,39,0.06);">
  <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
  <a href="index.html"><img src="resources/vandenDam-logo.jpg" alt="Van den Dam Schilderwerken" class="h-14 w-auto"/></a>
  <div class="hidden md:flex items-center gap-8 font-headline font-semibold text-sm tracking-tight">
@@ -43,7 +43,7 @@ tailwind.config = {
  <div class="relative group">
  <a href="diensten.html" class="text-on-surface-variant hover:text-primary transition-colors flex items-center gap-0.5">Diensten <span class="material-symbols-outlined" style="font-size:16px;line-height:1;vertical-align:middle;">expand_more</span></a>
  <div class="absolute top-full left-0 pt-3 w-52 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-150 z-50">
- <div class="bg-white rounded-xl py-1" style="box-shadow:0 8px 30px rgba(24,26,46,0.12);">
+ <div class="bg-white rounded-xl py-1" style="box-shadow:0 8px 30px rgba(35,34,39,0.12);">
  <a href="dienst-binnenschilderwerk.html" class="block px-4 py-2.5 font-body text-sm text-on-surface-variant hover:text-primary hover:bg-surface-container-low transition-colors">Schilderen</a>
  <a href="dienst-behangen.html" class="block px-4 py-2.5 font-body text-sm text-on-surface-variant hover:text-primary hover:bg-surface-container-low transition-colors">Behangen</a>
  <a href="dienst-buitenschilderwerk.html" class="block px-4 py-2.5 font-body text-sm text-on-surface-variant hover:text-primary hover:bg-surface-container-low transition-colors">Onderhoud</a>
@@ -94,7 +94,7 @@ tailwind.config = {
  </p>
  </div>
  </div>
- <div class="absolute right-0 top-0 w-1/3 h-full opacity-40" style="background:linear-gradient(to left,rgba(27,38,59,0.15),transparent);transform:skewX(12deg) translateX(25%);"></div>
+ <div class="absolute right-0 top-0 w-1/3 h-full opacity-40" style="background:linear-gradient(to left,rgba(35,34,39,0.15),transparent);transform:skewX(12deg) translateX(25%);"></div>
  </section>
 
  <!-- Contact Split -->
@@ -155,7 +155,7 @@ tailwind.config = {
  <!-- Form -->
  <div class="lg:col-span-7">
  <div class="bg-surface-container-lowest rounded-xl ambient-shadow p-10 md:p-14 relative overflow-hidden">
- <div class="absolute -top-24 -right-24 w-64 h-64 rounded-full blur-3xl opacity-20 pointer-events-none" style="background:#bbc6e2;"></div>
+ <div class="absolute -top-24 -right-24 w-64 h-64 rounded-full blur-3xl opacity-20 pointer-events-none" style="background:#c5c5c7;"></div>
  <h3 class="font-headline text-2xl font-bold text-primary mb-2">Offerte Aanvragen</h3>
  <p class="font-body text-on-surface-variant text-sm mb-8">Vul uw gegevens in en wij nemen zo spoedig mogelijk contact met u op.</p>
  <form class="space-y-6" id="contact-form">
@@ -232,7 +232,7 @@ tailwind.config = {
 </main>
 
 <!-- Footer -->
-<footer style="background:#051125;" class="text-slate-100 py-16 px-6">
+<footer style="background:#232227;" class="text-slate-100 py-16 px-6">
  <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-5 gap-10">
  <div class="md:col-span-1">
  <p class="font-headline text-lg font-extrabold text-white mb-4">Van den Dam Schilderwerken</p>
