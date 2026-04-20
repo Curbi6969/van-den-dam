@@ -4,7 +4,7 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Diensten — Van den Dam Schilderwerken</title>
-<meta name="description" content="Ontdek onze diensten: schilderwerk binnen en buiten, glasservice, wandafwerking en onderhoudsplanning."/>
+<meta name="description" content="Ontdek onze diensten: schilderwerk binnen en buiten, behangen, glasservice en afgeschermd onderhoud."/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Work+Sans:wght@300;400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
@@ -13,11 +13,10 @@ tailwind.config = {
   theme: {
     extend: {
       colors: {
-        "primary": "#051125","primary-container": "#1b263b","on-primary": "#ffffff","on-primary-container": "#828da7","primary-fixed-dim": "#bbc6e2",
-        "secondary": "#a03f30","secondary-container": "#fe8672","on-secondary": "#ffffff","on-secondary-container": "#741f13",
-        "tertiary": "#001224","tertiary-container": "#0a2742","on-tertiary": "#ffffff",
-        "surface": "#fbf8ff","surface-container-lowest": "#ffffff","surface-container-low": "#f4f2ff","surface-container": "#edecff","surface-container-high": "#e6e6ff","surface-container-highest": "#e0e0fc","surface-variant": "#e0e0fc","surface-dim": "#d7d8f4",
-        "on-surface": "#181a2e","on-surface-variant": "#45474d","outline": "#75777d","outline-variant": "#c5c6cd","background": "#fbf8ff","on-background": "#181a2e"
+        "primary": "#051125","primary-container": "#1b263b","on-primary": "#ffffff","primary-fixed-dim": "#bbc6e2",
+        "secondary": "#a03f30","on-secondary": "#ffffff",
+        "surface": "#fbf8ff","surface-container-lowest": "#ffffff","surface-container-low": "#f4f2ff","surface-container": "#edecff","surface-container-highest": "#e0e0fc",
+        "on-surface": "#181a2e","on-surface-variant": "#45474d","outline": "#75777d","outline-variant": "#c5c6cd"
       },
       fontFamily: { "headline": ["Manrope","sans-serif"], "body": ["Work Sans","sans-serif"], "label": ["Inter","sans-serif"] },
       borderRadius: { "DEFAULT": "0.125rem","lg": "0.25rem","xl": "0.5rem","full": "9999px" }
@@ -27,7 +26,6 @@ tailwind.config = {
 </script>
 <style>
   .ambient-shadow { box-shadow: 0 10px 40px rgba(24,26,46,0.06); }
-  .ghost-border { border: 1px solid rgba(197,198,205,0.15); }
   .gradient-primary { background: linear-gradient(135deg, #051125 0%, #1b263b 100%); }
   #mobile-menu { display: none; }
   #mobile-menu.open { display: block; }
@@ -41,7 +39,18 @@ tailwind.config = {
     <a href="index.html"><img src="resources/vandenDam-logo.jpg" alt="Van den Dam Schilderwerken" class="h-10 w-auto"/></a>
     <div class="hidden md:flex items-center gap-8 font-headline font-semibold text-sm tracking-tight">
       <a href="index.html" class="text-on-surface-variant hover:text-primary transition-colors">Home</a>
-      <a href="diensten.html" class="text-primary border-b-2 border-primary pb-0.5">Diensten</a>
+      <div class="relative group">
+              <a href="diensten.html" class="text-primary border-b-2 border-primary pb-0.5 flex items-center gap-0.5">Diensten <span class="material-symbols-outlined" style="font-size:16px;line-height:1;vertical-align:middle;">expand_more</span></a>
+              <div class="absolute top-full left-0 pt-3 w-52 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-150 z-50">
+                <div class="bg-white rounded-xl py-1" style="box-shadow:0 8px 30px rgba(24,26,46,0.12);">
+                  <a href="dienst-binnenschilderwerk.html" class="block px-4 py-2.5 font-body text-sm text-on-surface-variant hover:text-primary hover:bg-surface-container-low transition-colors">Schilderen</a>
+                  <a href="dienst-behangen.html" class="block px-4 py-2.5 font-body text-sm text-on-surface-variant hover:text-primary hover:bg-surface-container-low transition-colors">Behangen</a>
+                  <a href="dienst-buitenschilderwerk.html" class="block px-4 py-2.5 font-body text-sm text-on-surface-variant hover:text-primary hover:bg-surface-container-low transition-colors">Onderhoud</a>
+                  <a href="dienst-afgeschermd-onderhoud.html" class="block px-4 py-2.5 font-body text-sm text-on-surface-variant hover:text-primary hover:bg-surface-container-low transition-colors">Afgeschermd Onderhoud</a>
+                  <a href="dienst-beglazing.html" class="block px-4 py-2.5 font-body text-sm text-on-surface-variant hover:text-primary hover:bg-surface-container-low transition-colors">Beglazing</a>
+                </div>
+              </div>
+            </div>
       <a href="portfolio.html" class="text-on-surface-variant hover:text-primary transition-colors">Portfolio</a>
       <a href="over-ons.html" class="text-on-surface-variant hover:text-primary transition-colors">Over Ons</a>
       <a href="contact.html" class="text-on-surface-variant hover:text-primary transition-colors">Contact</a>
@@ -55,6 +64,13 @@ tailwind.config = {
     <div class="px-6 py-4 flex flex-col gap-4 font-headline font-semibold text-sm bg-surface/95">
       <a href="index.html" class="text-on-surface-variant">Home</a>
       <a href="diensten.html" class="text-primary">Diensten</a>
+      <div class="pl-4 flex flex-col gap-1 mt-0.5">
+        <a href="dienst-binnenschilderwerk.html" class="text-on-surface-variant/80 font-normal font-body" style="font-size:0.75rem;">&#8627; Schilderen</a>
+        <a href="dienst-behangen.html" class="text-on-surface-variant/80 font-normal font-body" style="font-size:0.75rem;">&#8627; Behangen</a>
+        <a href="dienst-buitenschilderwerk.html" class="text-on-surface-variant/80 font-normal font-body" style="font-size:0.75rem;">&#8627; Onderhoud</a>
+        <a href="dienst-afgeschermd-onderhoud.html" class="text-on-surface-variant/80 font-normal font-body" style="font-size:0.75rem;">&#8627; Afgeschermd Onderhoud</a>
+        <a href="dienst-beglazing.html" class="text-on-surface-variant/80 font-normal font-body" style="font-size:0.75rem;">&#8627; Beglazing</a>
+      </div>
       <a href="portfolio.html" class="text-on-surface-variant">Portfolio</a>
       <a href="over-ons.html" class="text-on-surface-variant">Over Ons</a>
       <a href="contact.html" class="text-on-surface-variant">Contact</a>
@@ -69,152 +85,130 @@ tailwind.config = {
     <span class="font-label text-xs font-semibold tracking-widest text-secondary uppercase mb-6 block">Wat wij bieden</span>
     <h1 class="font-headline text-5xl md:text-7xl font-extrabold text-white tracking-tight mb-6 max-w-4xl" style="letter-spacing:-0.02em;">Ons Vakmanschap</h1>
     <p class="font-body text-xl text-primary-fixed-dim max-w-2xl leading-relaxed">
-      Ruimtes naar een hoger niveau tillen door minutieuze aandacht voor detail, hoogwaardige materialen en tientallen jaren expertise.
+      Van decoratief binnenschilderwerk tot weersbestendig buitenonderhoud — wij leveren vakwerk voor elk project.
     </p>
   </div>
   <div class="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-white/5 to-transparent pointer-events-none"></div>
 </section>
 
-<!-- Services Grid -->
-<section class="py-24 bg-surface-container-low">
-  <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-8">
+<!-- Binnenwerk -->
+<section class="py-20 bg-surface-container-low">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="mb-10">
+      <span class="font-label text-xs font-semibold tracking-widest text-secondary uppercase">Binnenwerk</span>
+      <h2 class="font-headline text-3xl font-extrabold text-primary mt-2" style="letter-spacing:-0.01em;">Binnen</h2>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
 
-    <!-- Binnenschilderwerk -->
-    <article class="bg-surface-container-lowest rounded-xl overflow-hidden ambient-shadow flex flex-col group">
-      <div class="h-64 overflow-hidden bg-surface-variant relative">
-        <img src="resources/binnenschilderen-muurschildering.jpg" alt="Binnenschilderwerk" class="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105"/>
-        <div class="absolute inset-0 bg-gradient-to-t from-primary/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-      </div>
-      <div class="p-8 flex flex-col flex-grow ghost-border mx-4 -mt-4 rounded-t-xl bg-surface-container-lowest relative z-10 shadow-sm">
-        <div class="flex items-center gap-3 mb-4 text-secondary">
-          <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1;">format_paint</span>
-          <span class="font-label text-xs uppercase tracking-wider font-semibold">Binnenwerk</span>
+      <!-- Binnenschilderwerk -->
+      <div class="bg-surface-container-lowest rounded-xl overflow-hidden ambient-shadow flex flex-col">
+        <div class="overflow-hidden h-56">
+          <img src="resources/binnenschilderen-muurschildering.jpg" alt="Wandschilderingen binnenschilderwerk" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"/>
         </div>
-        <h2 class="font-headline text-2xl font-bold text-on-surface mb-4">Binnenschilderwerk</h2>
-        <p class="font-body text-on-surface-variant leading-relaxed flex-grow mb-6 text-sm">
-          Van woonkamers en slaapkamers tot kantoorruimtes en monumentale panden — wij verzorgen een vlekkeloze afwerking van muren, plafonds en houtwerk. Met gedegen voorbehandeling, kwaliteitsverven en oog voor detail leveren wij een resultaat dat jarenlang mooi blijft.
-        </p>
-        <a href="contact.html" class="inline-flex items-center gap-2 text-primary font-label text-sm font-semibold hover:text-secondary transition-colors">
-          Offerte aanvragen <span class="material-symbols-outlined text-sm">arrow_forward</span>
-        </a>
-      </div>
-    </article>
-
-    <!-- Buitenschilderwerk -->
-    <article class="bg-surface-container-lowest rounded-xl overflow-hidden ambient-shadow flex flex-col group">
-      <div class="h-64 overflow-hidden bg-surface-variant relative">
-        <img src="resources/buitenschilderen-degrindhorst.jpg" alt="Buitenschilderwerk" class="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105"/>
-        <div class="absolute inset-0 bg-gradient-to-t from-primary/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-      </div>
-      <div class="p-8 flex flex-col flex-grow ghost-border mx-4 -mt-4 rounded-t-xl bg-surface-container-lowest relative z-10 shadow-sm">
-        <div class="flex items-center gap-3 mb-4 text-secondary">
-          <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1;">home</span>
-          <span class="font-label text-xs uppercase tracking-wider font-semibold">Buitenwerk</span>
+        <div class="p-8 flex flex-col flex-grow">
+          <span class="font-label text-xs font-semibold tracking-widest text-secondary uppercase mb-3">Binnenwerk</span>
+          <h3 class="font-headline text-2xl font-bold text-primary mb-3">Schilderen</h3>
+          <p class="font-body text-on-surface-variant leading-relaxed flex-grow">
+            Binnen beperken we onze schilderwerkzaamheden niet tot kozijnen en deuren alleen. Ook maken we diverse decoratieve schilderwerken op muren, plafonds en vloeren.
+          </p>
+          <a href="dienst-binnenschilderwerk.html" class="mt-6 inline-flex items-center gap-2 font-label text-sm font-semibold text-secondary hover:text-primary transition-colors">
+            Lees meer <span class="material-symbols-outlined text-base">arrow_forward</span>
+          </a>
         </div>
-        <h2 class="font-headline text-2xl font-bold text-on-surface mb-4">Buitenschilderwerk</h2>
-        <p class="font-body text-on-surface-variant leading-relaxed flex-grow mb-6 text-sm">
-          Uw gevel is het visitekaartje van uw woning. Wij behandelen kozijnen, gevelhout, dakgoten en metselwerk met weerbestendige verven en coatings die lang meegaan. Goede voorbereiding — schuren, plamuren, gronden — is de basis van een duurzaam resultaat.
-        </p>
-        <a href="contact.html" class="inline-flex items-center gap-2 text-primary font-label text-sm font-semibold hover:text-secondary transition-colors">
-          Offerte aanvragen <span class="material-symbols-outlined text-sm">arrow_forward</span>
-        </a>
       </div>
-    </article>
 
-    <!-- Glasservice -->
-    <article class="bg-surface-container-lowest rounded-xl overflow-hidden ambient-shadow flex flex-col group">
-      <div class="h-64 overflow-hidden bg-surface-variant relative">
-        <img src="resources/glaszetter.jpg" alt="Glasservice" class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"/>
-        <div class="absolute inset-0 bg-gradient-to-t from-primary/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-      </div>
-      <div class="p-8 flex flex-col flex-grow ghost-border mx-4 -mt-4 rounded-t-xl bg-surface-container-lowest relative z-10 shadow-sm">
-        <div class="flex items-center gap-3 mb-4 text-secondary">
-          <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1;">window</span>
-          <span class="font-label text-xs uppercase tracking-wider font-semibold">Installatie &amp; Reparatie</span>
+      <!-- Behangen -->
+      <div class="bg-surface-container-lowest rounded-xl overflow-hidden ambient-shadow flex flex-col">
+        <div class="overflow-hidden h-56">
+          <img src="resources/behangen.jpg" alt="Behangen en wandafwerking" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"/>
         </div>
-        <h2 class="font-headline text-2xl font-bold text-on-surface mb-4">Glasservice</h2>
-        <p class="font-body text-on-surface-variant leading-relaxed flex-grow mb-6 text-sm">
-          Gebroken ruit? Verouderde beglazing? Wij plaatsen en vervangen glas in kozijnen snel en vakkundig. Of het nu gaat om enkel, dubbel of HR++-glas — wij zorgen voor een nette afwerking en een goed geïsoleerd resultaat.
-        </p>
-        <a href="contact.html" class="inline-flex items-center gap-2 text-primary font-label text-sm font-semibold hover:text-secondary transition-colors">
-          Offerte aanvragen <span class="material-symbols-outlined text-sm">arrow_forward</span>
-        </a>
-      </div>
-    </article>
-
-    <!-- Behangen -->
-    <article class="bg-surface-container-lowest rounded-xl overflow-hidden ambient-shadow flex flex-col group">
-      <div class="h-64 overflow-hidden bg-surface-variant relative">
-        <img src="resources/behangen.jpg" alt="Behangen" class="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105"/>
-        <div class="absolute inset-0 bg-gradient-to-t from-primary/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-      </div>
-      <div class="p-8 flex flex-col flex-grow ghost-border mx-4 -mt-4 rounded-t-xl bg-surface-container-lowest relative z-10 shadow-sm">
-        <div class="flex items-center gap-3 mb-4 text-secondary">
-          <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1;">wallpaper</span>
-          <span class="font-label text-xs uppercase tracking-wider font-semibold">Wandafwerking</span>
+        <div class="p-8 flex flex-col flex-grow">
+          <span class="font-label text-xs font-semibold tracking-widest text-secondary uppercase mb-3">Binnenwerk</span>
+          <h3 class="font-headline text-2xl font-bold text-primary mb-3">Behangen</h3>
+          <p class="font-body text-on-surface-variant leading-relaxed flex-grow">
+            Naast schilderwerk verzorgen we ook uw behangwerk. Van Engelse stijl tot Laura Ashley — wij houden rekening met doorlopende patronen en perfecte afwerking.
+          </p>
+          <a href="dienst-behangen.html" class="mt-6 inline-flex items-center gap-2 font-label text-sm font-semibold text-secondary hover:text-primary transition-colors">
+            Lees meer <span class="material-symbols-outlined text-base">arrow_forward</span>
+          </a>
         </div>
-        <h2 class="font-headline text-2xl font-bold text-on-surface mb-4">Behangen</h2>
-        <p class="font-body text-on-surface-variant leading-relaxed flex-grow mb-6 text-sm">
-          Wij brengen alle soorten behang aan — van vliesbehang en glasvlies tot jute en vinylbehang. Met de juiste wandvoorbereiding en nauwkeurige verwerking zorgen wij voor strakke naden en een perfect eindresultaat dat uw ruimte direct transformeert.
-        </p>
-        <a href="contact.html" class="inline-flex items-center gap-2 text-primary font-label text-sm font-semibold hover:text-secondary transition-colors">
-          Offerte aanvragen <span class="material-symbols-outlined text-sm">arrow_forward</span>
-        </a>
       </div>
-    </article>
 
-    <!-- Speciale afwerkingen -->
-    <article class="bg-surface-container-lowest rounded-xl overflow-hidden ambient-shadow flex flex-col group">
-      <div class="h-64 overflow-hidden bg-surface-variant relative">
-        <img src="resources/compas.jpg" alt="Speciale afwerkingen" class="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105"/>
-        <div class="absolute inset-0 bg-gradient-to-t from-primary/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-      </div>
-      <div class="p-8 flex flex-col flex-grow ghost-border mx-4 -mt-4 rounded-t-xl bg-surface-container-lowest relative z-10 shadow-sm">
-        <div class="flex items-center gap-3 mb-4 text-secondary">
-          <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1;">palette</span>
-          <span class="font-label text-xs uppercase tracking-wider font-semibold">Decoratief werk</span>
+    </div>
+  </div>
+</section>
+
+<!-- Buitenwerk -->
+<section class="py-20 bg-surface">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="mb-10">
+      <span class="font-label text-xs font-semibold tracking-widest text-secondary uppercase">Buitenwerk</span>
+      <h2 class="font-headline text-3xl font-extrabold text-primary mt-2" style="letter-spacing:-0.01em;">Buiten</h2>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+      <!-- Onderhoud -->
+      <div class="bg-surface-container-lowest rounded-xl overflow-hidden ambient-shadow flex flex-col">
+        <div class="overflow-hidden h-48">
+          <img src="resources/buitenschilderen-degrindhorst.jpg" alt="Opschilderen villa de Grindhorst" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"/>
         </div>
-        <h2 class="font-headline text-2xl font-bold text-on-surface mb-4">Speciale Afwerkingen</h2>
-        <p class="font-body text-on-surface-variant leading-relaxed flex-grow mb-6 text-sm">
-          Muurschilderingen, trompe-l'œil, decoratieve vloercoatings en bijzondere lakwerken — voor opdrachtgevers die iets unieks zoeken. Wij realiseren handgeschilderde kunstwerken en decoratieve technieken op maat, voor horeca, bedrijven en particulieren.
-        </p>
-        <a href="contact.html" class="inline-flex items-center gap-2 text-primary font-label text-sm font-semibold hover:text-secondary transition-colors">
-          Offerte aanvragen <span class="material-symbols-outlined text-sm">arrow_forward</span>
-        </a>
-      </div>
-    </article>
-
-    <!-- Onderhoudsplanning -->
-    <article class="bg-surface-container-lowest rounded-xl overflow-hidden ambient-shadow flex flex-col group">
-      <div class="h-64 overflow-hidden bg-surface-variant relative">
-        <img src="resources/zeil_small.jpg" alt="Onderhoudsplanning" class="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105"/>
-        <div class="absolute inset-0 bg-gradient-to-t from-primary/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-      </div>
-      <div class="p-8 flex flex-col flex-grow ghost-border mx-4 -mt-4 rounded-t-xl bg-surface-container-lowest relative z-10 shadow-sm">
-        <div class="flex items-center gap-3 mb-4 text-secondary">
-          <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1;">calendar_month</span>
-          <span class="font-label text-xs uppercase tracking-wider font-semibold">Langdurige Zorg</span>
+        <div class="p-7 flex flex-col flex-grow">
+          <span class="font-label text-xs font-semibold tracking-widest text-secondary uppercase mb-3">Buitenwerk</span>
+          <h3 class="font-headline text-xl font-bold text-primary mb-3">Onderhoud</h3>
+          <p class="font-body text-sm text-on-surface-variant leading-relaxed flex-grow">
+            Het onderhoud van buitenschilderwerk is van groot belang voor uw woning, kantoor of appartement — zowel esthetisch als technisch.
+          </p>
+          <a href="dienst-buitenschilderwerk.html" class="mt-5 inline-flex items-center gap-2 font-label text-sm font-semibold text-secondary hover:text-primary transition-colors">
+            Lees meer <span class="material-symbols-outlined text-base">arrow_forward</span>
+          </a>
         </div>
-        <h2 class="font-headline text-2xl font-bold text-on-surface mb-4">Onderhoudsplanning</h2>
-        <p class="font-body text-on-surface-variant leading-relaxed flex-grow mb-6 text-sm">
-          Regelmatig onderhoud voorkomt achterstallig werk en houdt de kosten beheersbaar. Wij stellen een meerjarenplan op voor uw pand — met periodieke inspecties, tijdige bijwerking en een vaste contactpersoon. Zo blijft uw eigendom altijd in optimale staat.
-        </p>
-        <a href="contact.html" class="inline-flex items-center gap-2 text-primary font-label text-sm font-semibold hover:text-secondary transition-colors">
-          Meer informatie <span class="material-symbols-outlined text-sm">arrow_forward</span>
-        </a>
       </div>
-    </article>
 
+      <!-- Afgeschermd onderhoud -->
+      <div class="bg-surface-container-lowest rounded-xl overflow-hidden ambient-shadow flex flex-col">
+        <div class="overflow-hidden h-48">
+          <img src="resources/zeil_small.jpg" alt="Afgeschermde werkplek met zeil" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"/>
+        </div>
+        <div class="p-7 flex flex-col flex-grow">
+          <span class="font-label text-xs font-semibold tracking-widest text-secondary uppercase mb-3">Buitenwerk</span>
+          <h3 class="font-headline text-xl font-bold text-primary mb-3">Afgeschermd Onderhoud</h3>
+          <p class="font-body text-sm text-on-surface-variant leading-relaxed flex-grow">
+            Ook in herfst en winter kunt u uw woning laten schilderen. Dankzij seizoenverlengende verfsystemen werken wij vrijwel het gehele koude seizoen door.
+          </p>
+          <a href="dienst-afgeschermd-onderhoud.html" class="mt-5 inline-flex items-center gap-2 font-label text-sm font-semibold text-secondary hover:text-primary transition-colors">
+            Lees meer <span class="material-symbols-outlined text-base">arrow_forward</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Beglazing -->
+      <div class="bg-surface-container-lowest rounded-xl overflow-hidden ambient-shadow flex flex-col">
+        <div class="overflow-hidden h-48">
+          <img src="resources/glaszetter.jpg" alt="Glaswerk beglazing" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"/>
+        </div>
+        <div class="p-7 flex flex-col flex-grow">
+          <span class="font-label text-xs font-semibold tracking-widest text-secondary uppercase mb-3">Buitenwerk</span>
+          <h3 class="font-headline text-xl font-bold text-primary mb-3">Beglazing</h3>
+          <p class="font-body text-sm text-on-surface-variant leading-relaxed flex-grow">
+            Isolerende beglazing van uw woonhuis, bedrijfspand of keuken. Wij zijn een OnderhoudNL-erkende glaszetter.
+          </p>
+          <a href="dienst-beglazing.html" class="mt-5 inline-flex items-center gap-2 font-label text-sm font-semibold text-secondary hover:text-primary transition-colors">
+            Lees meer <span class="material-symbols-outlined text-base">arrow_forward</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
   </div>
 </section>
 
 <!-- CTA -->
-<section class="py-28 bg-surface">
-  <div class="max-w-3xl mx-auto px-6 text-center">
-    <h2 class="font-headline text-4xl font-extrabold text-primary tracking-tight mb-6">Klaar om uw transformatie te beginnen?</h2>
-    <p class="font-body text-xl text-on-surface-variant mb-10">Neem contact met ons op voor een offerte op maat en deskundig advies.</p>
-    <a href="contact.html" class="inline-block gradient-primary text-on-primary font-label font-semibold text-lg px-10 py-4 rounded-md hover:opacity-90 transition-opacity ambient-shadow">
-      Contacteer ons voor een offerte
+<section class="py-20 px-6" style="background:linear-gradient(135deg,#051125 0%,#1b263b 100%);">
+  <div class="max-w-3xl mx-auto text-center">
+    <h2 class="font-headline text-3xl md:text-4xl font-extrabold text-white mb-4" style="letter-spacing:-0.02em;">Klaar om te starten?</h2>
+    <p class="font-body text-primary-fixed-dim mb-8">Neem contact op voor een vrijblijvende offerte.</p>
+    <a href="contact.html" class="inline-flex items-center gap-2 bg-secondary text-on-secondary font-label font-semibold px-8 py-4 rounded-md hover:opacity-90 transition-opacity">
+      Offerte Aanvragen <span class="material-symbols-outlined text-sm">arrow_forward</span>
     </a>
   </div>
 </section>
@@ -230,7 +224,7 @@ tailwind.config = {
     <div>
       <p class="font-label text-xs font-semibold tracking-widest text-slate-400 uppercase mb-4">Navigatie</p>
       <ul class="space-y-2 font-body text-sm">
-        <li><a href="diensten.html" class="text-slate-400 hover:text-white transition-colors">Diensten</a></li>
+        <li><a href="diensten.html" class="text-white">Diensten</a></li>
         <li><a href="portfolio.html" class="text-slate-400 hover:text-white transition-colors">Portfolio</a></li>
         <li><a href="over-ons.html" class="text-slate-400 hover:text-white transition-colors">Over Ons</a></li>
         <li><a href="contact.html" class="text-slate-400 hover:text-white transition-colors">Contact</a></li>
