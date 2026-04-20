@@ -3,211 +3,211 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Portfolio — Van den Dam Schilderwerken</title>
-<meta name="description" content="Bekijk ons portfolio van schilderwerken — van herrenhuizen in Amsterdam tot villa's en speciale afwerkingen."/>
+<title>Portfolio Van den Dam Schilderwerken</title>
+<meta name="description" content="Bekijk ons portfolio van schilderwerken van herrenhuizen in Amsterdam tot villa's en speciale afwerkingen."/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Work+Sans:wght@300;400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
 <script>
 tailwind.config = {
-  theme: {
-    extend: {
-      colors: {
-        "primary": "#051125","primary-container": "#1b263b","on-primary": "#ffffff","primary-fixed-dim": "#bbc6e2",
-        "secondary": "#a03f30","secondary-container": "#fe8672","on-secondary": "#ffffff",
-        "surface": "#fbf8ff","surface-container-lowest": "#ffffff","surface-container-low": "#f4f2ff","surface-container": "#edecff","surface-container-high": "#e6e6ff","surface-container-highest": "#e0e0fc","surface-variant": "#e0e0fc",
-        "on-surface": "#181a2e","on-surface-variant": "#45474d","outline": "#75777d","outline-variant": "#c5c6cd"
-      },
-      fontFamily: { "headline": ["Manrope","sans-serif"], "body": ["Work Sans","sans-serif"], "label": ["Inter","sans-serif"] },
-      borderRadius: { "DEFAULT": "0.125rem","lg": "0.25rem","xl": "0.5rem","full": "9999px" }
-    }
-  }
+ theme: {
+ extend: {
+ colors: {
+ "primary": "#051125","primary-container": "#1b263b","on-primary": "#ffffff","primary-fixed-dim": "#bbc6e2",
+ "secondary": "#a03f30","secondary-container": "#fe8672","on-secondary": "#ffffff",
+ "surface": "#fbf8ff","surface-container-lowest": "#ffffff","surface-container-low": "#f4f2ff","surface-container": "#edecff","surface-container-high": "#e6e6ff","surface-container-highest": "#e0e0fc","surface-variant": "#e0e0fc",
+ "on-surface": "#181a2e","on-surface-variant": "#45474d","outline": "#75777d","outline-variant": "#c5c6cd"
+ },
+ fontFamily: { "headline": ["Manrope","sans-serif"], "body": ["Work Sans","sans-serif"], "label": ["Inter","sans-serif"] },
+ borderRadius: { "DEFAULT": "0.125rem","lg": "0.25rem","xl": "0.5rem","full": "9999px" }
+ }
+ }
 }
 </script>
 <style>
-  .ambient-shadow { box-shadow: 0 10px 40px rgba(24,26,46,0.06); }
-  .ghost-border { border: 1px solid rgba(197,198,205,0.15); }
-  .gradient-primary { background: linear-gradient(135deg, #051125 0%, #1b263b 100%); }
-  #mobile-menu { display: none; }
-  #mobile-menu.open { display: block; }
+ .ambient-shadow { box-shadow: 0 10px 40px rgba(24,26,46,0.06); }
+ .ghost-border { border: 1px solid rgba(197,198,205,0.15); }
+ .gradient-primary { background: linear-gradient(135deg, #051125 0%, #1b263b 100%); }
+ #mobile-menu { display: none; }
+ #mobile-menu.open { display: block; }
 </style>
 </head>
 <body class="bg-surface text-on-surface font-body antialiased">
 
 <!-- Navigation -->
 <nav class="fixed top-0 w-full z-50" style="background:rgba(251,248,255,0.85);backdrop-filter:blur(12px);box-shadow:0 10px 40px rgba(24,26,46,0.06);">
-  <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-    <a href="index.html"><img src="resources/vandenDam-logo.jpg" alt="Van den Dam Schilderwerken" class="h-10 w-auto"/></a>
-    <div class="hidden md:flex items-center gap-8 font-headline font-semibold text-sm tracking-tight">
-      <a href="index.html" class="text-on-surface-variant hover:text-primary transition-colors">Home</a>
-      <a href="diensten.html" class="text-on-surface-variant hover:text-primary transition-colors">Diensten</a>
-      <a href="portfolio.html" class="text-primary border-b-2 border-primary pb-0.5">Portfolio</a>
-      <a href="over-ons.html" class="text-on-surface-variant hover:text-primary transition-colors">Over Ons</a>
-      <a href="contact.html" class="text-on-surface-variant hover:text-primary transition-colors">Contact</a>
-    </div>
-    <a href="contact.html" class="hidden md:inline-block bg-secondary text-on-secondary font-label font-semibold text-sm px-5 py-2.5 rounded-md hover:opacity-90 transition-opacity">Offerte Aanvragen</a>
-    <button id="menu-toggle" class="md:hidden text-primary" aria-label="Menu">
-      <span class="material-symbols-outlined">menu</span>
-    </button>
-  </div>
-  <div id="mobile-menu" class="md:hidden border-t border-outline-variant/20">
-    <div class="px-6 py-4 flex flex-col gap-4 font-headline font-semibold text-sm bg-surface/95">
-      <a href="index.html" class="text-on-surface-variant">Home</a>
-      <a href="diensten.html" class="text-on-surface-variant">Diensten</a>
-      <a href="portfolio.html" class="text-primary">Portfolio</a>
-      <a href="over-ons.html" class="text-on-surface-variant">Over Ons</a>
-      <a href="contact.html" class="text-on-surface-variant">Contact</a>
-      <a href="contact.html" class="gradient-primary text-on-primary font-label px-5 py-2.5 rounded-md text-center mt-2">Offerte Aanvragen</a>
-    </div>
-  </div>
+ <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+ <a href="index.html"><img src="resources/vandenDam-logo.jpg" alt="Van den Dam Schilderwerken" class="h-10 w-auto"/></a>
+ <div class="hidden md:flex items-center gap-8 font-headline font-semibold text-sm tracking-tight">
+ <a href="index.html" class="text-on-surface-variant hover:text-primary transition-colors">Home</a>
+ <a href="diensten.html" class="text-on-surface-variant hover:text-primary transition-colors">Diensten</a>
+ <a href="portfolio.html" class="text-primary border-b-2 border-primary pb-0.5">Portfolio</a>
+ <a href="over-ons.html" class="text-on-surface-variant hover:text-primary transition-colors">Over Ons</a>
+ <a href="contact.html" class="text-on-surface-variant hover:text-primary transition-colors">Contact</a>
+ </div>
+ <a href="contact.html" class="hidden md:inline-block bg-secondary text-on-secondary font-label font-semibold text-sm px-5 py-2.5 rounded-md hover:opacity-90 transition-opacity">Offerte Aanvragen</a>
+ <button id="menu-toggle" class="md:hidden text-primary" aria-label="Menu">
+ <span class="material-symbols-outlined">menu</span>
+ </button>
+ </div>
+ <div id="mobile-menu" class="md:hidden border-t border-outline-variant/20">
+ <div class="px-6 py-4 flex flex-col gap-4 font-headline font-semibold text-sm bg-surface/95">
+ <a href="index.html" class="text-on-surface-variant">Home</a>
+ <a href="diensten.html" class="text-on-surface-variant">Diensten</a>
+ <a href="portfolio.html" class="text-primary">Portfolio</a>
+ <a href="over-ons.html" class="text-on-surface-variant">Over Ons</a>
+ <a href="contact.html" class="text-on-surface-variant">Contact</a>
+ <a href="contact.html" class="gradient-primary text-on-primary font-label px-5 py-2.5 rounded-md text-center mt-2">Offerte Aanvragen</a>
+ </div>
+ </div>
 </nav>
 
 <!-- Hero -->
 <section class="max-w-7xl mx-auto px-6 pt-40 pb-16">
-  <div class="max-w-3xl">
-    <span class="font-label text-xs font-semibold tracking-widest text-secondary uppercase mb-4 block">Onze realisaties</span>
-    <h1 class="font-headline text-5xl md:text-6xl font-extrabold text-primary tracking-tight mb-6" style="letter-spacing:-0.02em;">Ons Portfolio</h1>
-    <p class="font-body text-xl text-on-surface-variant leading-relaxed">
-      Een selectie van onze meest verfijnde projecten. Van naadloze interieurs tot weerbestendige exterieurs — vakmanschap dat de tand des tijds doorstaat.
-    </p>
-  </div>
+ <div class="max-w-3xl">
+ <span class="font-label text-xs font-semibold tracking-widest text-secondary uppercase mb-4 block">Onze realisaties</span>
+ <h1 class="font-headline text-5xl md:text-6xl font-extrabold text-primary tracking-tight mb-6" style="letter-spacing:-0.02em;">Ons Portfolio</h1>
+ <p class="font-body text-xl text-on-surface-variant leading-relaxed">
+ Een selectie van onze meest verfijnde projecten. Van naadloze interieurs tot weerbestendige exterieurs vakmanschap dat de tand des tijds doorstaat.
+ </p>
+ </div>
 </section>
 
 <!-- Filter Chips -->
 <section class="max-w-7xl mx-auto px-6 mb-12">
-  <div class="flex flex-wrap gap-3">
-    <button onclick="filterPortfolio('all', this)" class="filter-btn active bg-secondary text-on-secondary px-6 py-2 rounded-full font-label text-sm font-semibold tracking-wide transition-all">Alles</button>
-    <button onclick="filterPortfolio('interieur', this)" class="filter-btn bg-surface-container text-on-surface px-6 py-2 rounded-full font-label text-sm font-semibold tracking-wide ghost-border hover:bg-surface-container-high transition-all">Interieur</button>
-    <button onclick="filterPortfolio('exterieur', this)" class="filter-btn bg-surface-container text-on-surface px-6 py-2 rounded-full font-label text-sm font-semibold tracking-wide ghost-border hover:bg-surface-container-high transition-all">Exterieur</button>
-    <button onclick="filterPortfolio('speciaal', this)" class="filter-btn bg-surface-container text-on-surface px-6 py-2 rounded-full font-label text-sm font-semibold tracking-wide ghost-border hover:bg-surface-container-high transition-all">Speciaal Lakwerk</button>
-  </div>
+ <div class="flex flex-wrap gap-3">
+ <button onclick="filterPortfolio('all', this)" class="filter-btn active bg-secondary text-on-secondary px-6 py-2 rounded-full font-label text-sm font-semibold tracking-wide transition-all">Alles</button>
+ <button onclick="filterPortfolio('interieur', this)" class="filter-btn bg-surface-container text-on-surface px-6 py-2 rounded-full font-label text-sm font-semibold tracking-wide ghost-border hover:bg-surface-container-high transition-all">Interieur</button>
+ <button onclick="filterPortfolio('exterieur', this)" class="filter-btn bg-surface-container text-on-surface px-6 py-2 rounded-full font-label text-sm font-semibold tracking-wide ghost-border hover:bg-surface-container-high transition-all">Exterieur</button>
+ <button onclick="filterPortfolio('speciaal', this)" class="filter-btn bg-surface-container text-on-surface px-6 py-2 rounded-full font-label text-sm font-semibold tracking-wide ghost-border hover:bg-surface-container-high transition-all">Speciaal Lakwerk</button>
+ </div>
 </section>
 
 <!-- Portfolio Grid -->
 <section class="max-w-7xl mx-auto px-6 pb-24">
-  <div class="grid grid-cols-1 md:grid-cols-12 gap-6" style="grid-auto-rows:320px;">
+ <div class="grid grid-cols-1 md:grid-cols-12 gap-6" style="grid-auto-rows:320px;">
 
-    <article data-cat="interieur" class="portfolio-item md:col-span-8 md:row-span-2 relative group overflow-hidden rounded-xl ambient-shadow ghost-border cursor-pointer">
-      <img src="resources/vakman.jpg" alt="Herenhuis Amsterdam" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"/>
-      <div class="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/30 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-300"></div>
-      <div class="absolute bottom-0 p-8">
-        <span class="inline-block bg-white/20 backdrop-blur-md text-white font-label text-xs uppercase tracking-wider px-3 py-1 rounded-sm mb-4">Interieur</span>
-        <h2 class="font-headline text-2xl md:text-3xl font-bold text-white mb-2">Herenhuis Amsterdam-Zuid</h2>
-        <p class="font-body text-slate-200 max-w-xl text-sm line-clamp-2">Complete renovatie van het interieur schilderwerk, met een focus op historische details en een ultramatte afwerking.</p>
-      </div>
-    </article>
+ <article data-cat="interieur" class="portfolio-item md:col-span-8 md:row-span-2 relative group overflow-hidden rounded-xl ambient-shadow ghost-border cursor-pointer">
+ <img src="resources/vakman.jpg" alt="Herenhuis Amsterdam" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"/>
+ <div class="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/30 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-300"></div>
+ <div class="absolute bottom-0 p-8">
+ <span class="inline-block bg-white/20 backdrop-blur-md text-white font-label text-xs uppercase tracking-wider px-3 py-1 rounded-sm mb-4">Interieur</span>
+ <h2 class="font-headline text-2xl md:text-3xl font-bold text-white mb-2">Herenhuis Amsterdam-Zuid</h2>
+ <p class="font-body text-slate-200 max-w-xl text-sm line-clamp-2">Complete renovatie van het interieur schilderwerk, met een focus op historische details en een ultramatte afwerking.</p>
+ </div>
+ </article>
 
-    <article data-cat="exterieur" class="portfolio-item md:col-span-4 md:row-span-2 relative group overflow-hidden rounded-xl ambient-shadow ghost-border cursor-pointer">
-      <img src="resources/vakman.jpg" alt="Villa Bloemendaal" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"/>
-      <div class="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/20 to-transparent opacity-80"></div>
-      <div class="absolute bottom-0 p-8">
-        <span class="inline-block bg-white/20 backdrop-blur-md text-white font-label text-xs uppercase tracking-wider px-3 py-1 rounded-sm mb-4">Exterieur</span>
-        <h2 class="font-headline text-xl font-bold text-white mb-2">Villa Bloemendaal</h2>
-        <p class="font-body text-slate-200 text-sm line-clamp-2">Duurzaam exterieur schilderwerk dat de architectuur beschermt en accentueert.</p>
-      </div>
-    </article>
+ <article data-cat="exterieur" class="portfolio-item md:col-span-4 md:row-span-2 relative group overflow-hidden rounded-xl ambient-shadow ghost-border cursor-pointer">
+ <img src="resources/vakman.jpg" alt="Villa Bloemendaal" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"/>
+ <div class="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/20 to-transparent opacity-80"></div>
+ <div class="absolute bottom-0 p-8">
+ <span class="inline-block bg-white/20 backdrop-blur-md text-white font-label text-xs uppercase tracking-wider px-3 py-1 rounded-sm mb-4">Exterieur</span>
+ <h2 class="font-headline text-xl font-bold text-white mb-2">Villa Bloemendaal</h2>
+ <p class="font-body text-slate-200 text-sm line-clamp-2">Duurzaam exterieur schilderwerk dat de architectuur beschermt en accentueert.</p>
+ </div>
+ </article>
 
-    <article data-cat="speciaal" class="portfolio-item md:col-span-4 relative group overflow-hidden rounded-xl ambient-shadow ghost-border cursor-pointer">
-      <img src="resources/vakman.jpg" alt="Klassiek houtwerk" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"/>
-      <div class="absolute inset-0 bg-gradient-to-t from-primary/90 via-transparent to-transparent opacity-80"></div>
-      <div class="absolute bottom-0 p-6">
-        <span class="inline-block bg-white/20 backdrop-blur-md text-white font-label text-xs uppercase tracking-wider px-3 py-1 rounded-sm mb-3">Speciaal Lakwerk</span>
-        <h2 class="font-headline text-lg font-bold text-white mb-1">Klassiek Houtwerk</h2>
-        <p class="font-body text-sm text-slate-200 line-clamp-1">Hoogglans restauratie van monumentaal houtwerk.</p>
-      </div>
-    </article>
+ <article data-cat="speciaal" class="portfolio-item md:col-span-4 relative group overflow-hidden rounded-xl ambient-shadow ghost-border cursor-pointer">
+ <img src="resources/vakman.jpg" alt="Klassiek houtwerk" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"/>
+ <div class="absolute inset-0 bg-gradient-to-t from-primary/90 via-transparent to-transparent opacity-80"></div>
+ <div class="absolute bottom-0 p-6">
+ <span class="inline-block bg-white/20 backdrop-blur-md text-white font-label text-xs uppercase tracking-wider px-3 py-1 rounded-sm mb-3">Speciaal Lakwerk</span>
+ <h2 class="font-headline text-lg font-bold text-white mb-1">Klassiek Houtwerk</h2>
+ <p class="font-body text-sm text-slate-200 line-clamp-1">Hoogglans restauratie van monumentaal houtwerk.</p>
+ </div>
+ </article>
 
-    <article data-cat="interieur" class="portfolio-item md:col-span-4 relative group overflow-hidden rounded-xl ambient-shadow ghost-border cursor-pointer">
-      <img src="resources/vakman.jpg" alt="Design keuken" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"/>
-      <div class="absolute inset-0 bg-gradient-to-t from-primary/90 via-transparent to-transparent opacity-80"></div>
-      <div class="absolute bottom-0 p-6">
-        <span class="inline-block bg-white/20 backdrop-blur-md text-white font-label text-xs uppercase tracking-wider px-3 py-1 rounded-sm mb-3">Interieur</span>
-        <h2 class="font-headline text-lg font-bold text-white mb-1">Design Keuken Laren</h2>
-        <p class="font-body text-sm text-slate-200 line-clamp-1">Strak spuitwerk voor een naadloos, modern keukenontwerp.</p>
-      </div>
-    </article>
+ <article data-cat="interieur" class="portfolio-item md:col-span-4 relative group overflow-hidden rounded-xl ambient-shadow ghost-border cursor-pointer">
+ <img src="resources/vakman.jpg" alt="Design keuken" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"/>
+ <div class="absolute inset-0 bg-gradient-to-t from-primary/90 via-transparent to-transparent opacity-80"></div>
+ <div class="absolute bottom-0 p-6">
+ <span class="inline-block bg-white/20 backdrop-blur-md text-white font-label text-xs uppercase tracking-wider px-3 py-1 rounded-sm mb-3">Interieur</span>
+ <h2 class="font-headline text-lg font-bold text-white mb-1">Design Keuken Laren</h2>
+ <p class="font-body text-sm text-slate-200 line-clamp-1">Strak spuitwerk voor een naadloos, modern keukenontwerp.</p>
+ </div>
+ </article>
 
-    <article data-cat="exterieur" class="portfolio-item md:col-span-4 relative group overflow-hidden rounded-xl ambient-shadow ghost-border cursor-pointer">
-      <img src="resources/vakman.jpg" alt="Kantoorpand Zuidas" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"/>
-      <div class="absolute inset-0 bg-gradient-to-t from-primary/90 via-transparent to-transparent opacity-80"></div>
-      <div class="absolute bottom-0 p-6">
-        <span class="inline-block bg-white/20 backdrop-blur-md text-white font-label text-xs uppercase tracking-wider px-3 py-1 rounded-sm mb-3">Exterieur</span>
-        <h2 class="font-headline text-lg font-bold text-white mb-1">Kantoorpand Zuidas</h2>
-        <p class="font-body text-sm text-slate-200 line-clamp-1">Grootschalig onderhoud en representatieve gevelafwerking.</p>
-      </div>
-    </article>
+ <article data-cat="exterieur" class="portfolio-item md:col-span-4 relative group overflow-hidden rounded-xl ambient-shadow ghost-border cursor-pointer">
+ <img src="resources/vakman.jpg" alt="Kantoorpand Zuidas" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"/>
+ <div class="absolute inset-0 bg-gradient-to-t from-primary/90 via-transparent to-transparent opacity-80"></div>
+ <div class="absolute bottom-0 p-6">
+ <span class="inline-block bg-white/20 backdrop-blur-md text-white font-label text-xs uppercase tracking-wider px-3 py-1 rounded-sm mb-3">Exterieur</span>
+ <h2 class="font-headline text-lg font-bold text-white mb-1">Kantoorpand Zuidas</h2>
+ <p class="font-body text-sm text-slate-200 line-clamp-1">Grootschalig onderhoud en representatieve gevelafwerking.</p>
+ </div>
+ </article>
 
-  </div>
+ </div>
 </section>
 
 <!-- CTA -->
 <section class="max-w-4xl mx-auto px-6 pb-28 text-center">
-  <div class="bg-surface-container-low p-12 md:p-16 rounded-2xl ghost-border ambient-shadow relative overflow-hidden">
-    <div class="absolute -top-24 -right-24 w-64 h-64 bg-primary-container rounded-full opacity-10 blur-3xl pointer-events-none"></div>
-    <div class="absolute -bottom-24 -left-24 w-64 h-64 bg-secondary-container rounded-full opacity-10 blur-3xl pointer-events-none"></div>
-    <h2 class="font-headline text-3xl md:text-4xl font-extrabold text-primary mb-6 relative z-10">Klaar om uw ruimte te transformeren?</h2>
-    <p class="font-body text-lg text-on-surface-variant mb-10 max-w-2xl mx-auto relative z-10">Neem contact met ons op voor een vrijblijvend adviesgesprek over uw specifieke project.</p>
-    <a href="contact.html" class="relative z-10 inline-block gradient-primary text-on-primary font-label font-semibold px-10 py-4 rounded-md hover:opacity-90 transition-opacity text-lg">
-      Offerte Aanvragen
-    </a>
-  </div>
+ <div class="bg-surface-container-low p-12 md:p-16 rounded-2xl ghost-border ambient-shadow relative overflow-hidden">
+ <div class="absolute -top-24 -right-24 w-64 h-64 bg-primary-container rounded-full opacity-10 blur-3xl pointer-events-none"></div>
+ <div class="absolute -bottom-24 -left-24 w-64 h-64 bg-secondary-container rounded-full opacity-10 blur-3xl pointer-events-none"></div>
+ <h2 class="font-headline text-3xl md:text-4xl font-extrabold text-primary mb-6 relative z-10">Klaar om uw ruimte te transformeren?</h2>
+ <p class="font-body text-lg text-on-surface-variant mb-10 max-w-2xl mx-auto relative z-10">Neem contact met ons op voor een vrijblijvend adviesgesprek over uw specifieke project.</p>
+ <a href="contact.html" class="relative z-10 inline-block gradient-primary text-on-primary font-label font-semibold px-10 py-4 rounded-md hover:opacity-90 transition-opacity text-lg">
+ Offerte Aanvragen
+ </a>
+ </div>
 </section>
 
 <!-- Footer -->
 <footer style="background:#051125;" class="text-slate-100 py-16 px-6">
-  <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10">
-    <div class="md:col-span-1">
-      <p class="font-headline text-lg font-extrabold text-white mb-4">Van den Dam Schilderwerken</p>
-      <p class="font-body text-sm text-slate-400 leading-relaxed mb-6">Het creëren van prachtige ruimtes met precisie en passie. Familiebedrijf sinds 1997.</p>
-      <p class="font-body text-xs text-slate-600">© 2025 Van den Dam Schilderwerken.<br/>Alle rechten voorbehouden.</p>
-    </div>
-    <div>
-      <p class="font-label text-xs font-semibold tracking-widest text-slate-400 uppercase mb-4">Navigatie</p>
-      <ul class="space-y-2 font-body text-sm">
-        <li><a href="diensten.html" class="text-slate-400 hover:text-white transition-colors">Diensten</a></li>
-        <li><a href="portfolio.html" class="text-slate-400 hover:text-white transition-colors">Portfolio</a></li>
-        <li><a href="over-ons.html" class="text-slate-400 hover:text-white transition-colors">Over Ons</a></li>
-        <li><a href="contact.html" class="text-slate-400 hover:text-white transition-colors">Contact</a></li>
-      </ul>
-    </div>
-    <div>
-      <p class="font-label text-xs font-semibold tracking-widest text-slate-400 uppercase mb-4">Juridisch</p>
-      <ul class="space-y-2 font-body text-sm">
-        <li><a href="privacyverklaring.html" class="text-slate-400 hover:text-white transition-colors">Privacyverklaring</a></li>
-        <li><a href="contact.html" class="text-slate-400 hover:text-white transition-colors">Contact</a></li>
-      </ul>
-    </div>
-    <div>
-      <p class="font-label text-xs font-semibold tracking-widest text-slate-400 uppercase mb-4">Erkend Vakbedrijf</p>
-      <img src="resources/onderhoudnl-logo.png" alt="OnderhoudNL keurmerk" class="h-16 w-auto mb-4 rounded"/>
-      <p class="font-body text-xs text-slate-400 leading-relaxed">
-        Van den Dam is aangesloten bij <a href="https://www.onderhoudnl.nl/over-onderhoudnl" target="_blank" rel="noopener noreferrer" class="text-slate-300 underline hover:text-white transition-colors">OnderhoudNL (FOSAG)</a> — de branchevereniging voor erkende schilders- en afwerkingsbedrijven. Deelnemers beschikken over alle vak- en bedrijfsdiploma's en worden periodiek geïnspecteerd.
-      </p>
-    </div>
-  </div>
+ <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10">
+ <div class="md:col-span-1">
+ <p class="font-headline text-lg font-extrabold text-white mb-4">Van den Dam Schilderwerken</p>
+ <p class="font-body text-sm text-slate-400 leading-relaxed mb-6">Het creëren van prachtige ruimtes met precisie en passie. Familiebedrijf sinds 1997.</p>
+ <p class="font-body text-xs text-slate-600">© 2025 Van den Dam Schilderwerken.<br/>Alle rechten voorbehouden.</p>
+ </div>
+ <div>
+ <p class="font-label text-xs font-semibold tracking-widest text-slate-400 uppercase mb-4">Navigatie</p>
+ <ul class="space-y-2 font-body text-sm">
+ <li><a href="diensten.html" class="text-slate-400 hover:text-white transition-colors">Diensten</a></li>
+ <li><a href="portfolio.html" class="text-slate-400 hover:text-white transition-colors">Portfolio</a></li>
+ <li><a href="over-ons.html" class="text-slate-400 hover:text-white transition-colors">Over Ons</a></li>
+ <li><a href="contact.html" class="text-slate-400 hover:text-white transition-colors">Contact</a></li>
+ </ul>
+ </div>
+ <div>
+ <p class="font-label text-xs font-semibold tracking-widest text-slate-400 uppercase mb-4">Juridisch</p>
+ <ul class="space-y-2 font-body text-sm">
+ <li><a href="privacyverklaring.html" class="text-slate-400 hover:text-white transition-colors">Privacyverklaring</a></li>
+ <li><a href="contact.html" class="text-slate-400 hover:text-white transition-colors">Contact</a></li>
+ </ul>
+ </div>
+ <div>
+ <p class="font-label text-xs font-semibold tracking-widest text-slate-400 uppercase mb-4">Erkend Vakbedrijf</p>
+ <img src="resources/onderhoudnl-logo.png" alt="OnderhoudNL keurmerk" class="h-16 w-auto mb-4 rounded"/>
+ <p class="font-body text-xs text-slate-400 leading-relaxed">
+ Van den Dam is aangesloten bij <a href="https://www.onderhoudnl.nl/over-onderhoudnl" target="_blank" rel="noopener noreferrer" class="text-slate-300 underline hover:text-white transition-colors">OnderhoudNL (FOSAG)</a> de branchevereniging voor erkende schilders- en afwerkingsbedrijven. Deelnemers beschikken over alle vak- en bedrijfsdiploma's en worden periodiek geïnspecteerd.
+ </p>
+ </div>
+ </div>
 </footer>
 
 <script>
-  document.getElementById('menu-toggle').addEventListener('click', () => {
-    document.getElementById('mobile-menu').classList.toggle('open');
-  });
+ document.getElementById('menu-toggle').addEventListener('click', () => {
+ document.getElementById('mobile-menu').classList.toggle('open');
+ });
 
-  function filterPortfolio(cat, btn) {
-    document.querySelectorAll('.filter-btn').forEach(b => {
-      b.classList.remove('bg-secondary','text-on-secondary');
-      b.classList.add('bg-surface-container','text-on-surface');
-    });
-    btn.classList.add('bg-secondary','text-on-secondary');
-    btn.classList.remove('bg-surface-container','text-on-surface');
+ function filterPortfolio(cat, btn) {
+ document.querySelectorAll('.filter-btn').forEach(b => {
+ b.classList.remove('bg-secondary','text-on-secondary');
+ b.classList.add('bg-surface-container','text-on-surface');
+ });
+ btn.classList.add('bg-secondary','text-on-secondary');
+ btn.classList.remove('bg-surface-container','text-on-surface');
 
-    document.querySelectorAll('.portfolio-item').forEach(item => {
-      if (cat === 'all' || item.dataset.cat === cat) {
-        item.style.display = '';
-      } else {
-        item.style.display = 'none';
-      }
-    });
-  }
+ document.querySelectorAll('.portfolio-item').forEach(item => {
+ if (cat === 'all' || item.dataset.cat === cat) {
+ item.style.display = '';
+ } else {
+ item.style.display = 'none';
+ }
+ });
+ }
 </script>
 </body>
 </html>

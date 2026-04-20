@@ -3,203 +3,203 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Contact — Van den Dam Schilderwerken</title>
+<title>Contact Van den Dam Schilderwerken</title>
 <meta name="description" content="Neem contact op met Van den Dam Schilderwerken voor een vrijblijvende offerte."/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Work+Sans:wght@300;400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
 <script>
 tailwind.config = {
-  theme: {
-    extend: {
-      colors: {
-        "primary": "#051125","primary-container": "#1b263b","on-primary": "#ffffff","primary-fixed-dim": "#bbc6e2",
-        "secondary": "#a03f30","secondary-container": "#fe8672","on-secondary": "#ffffff",
-        "surface": "#fbf8ff","surface-container-lowest": "#ffffff","surface-container-low": "#f4f2ff","surface-container": "#edecff","surface-container-high": "#e6e6ff","surface-container-highest": "#e0e0fc","surface-variant": "#e0e0fc",
-        "on-surface": "#181a2e","on-surface-variant": "#45474d","outline": "#75777d","outline-variant": "#c5c6cd"
-      },
-      fontFamily: { "headline": ["Manrope","sans-serif"], "body": ["Work Sans","sans-serif"], "label": ["Inter","sans-serif"] },
-      borderRadius: { "DEFAULT": "0.125rem","lg": "0.25rem","xl": "0.5rem","full": "9999px" }
-    }
-  }
+ theme: {
+ extend: {
+ colors: {
+ "primary": "#051125","primary-container": "#1b263b","on-primary": "#ffffff","primary-fixed-dim": "#bbc6e2",
+ "secondary": "#a03f30","secondary-container": "#fe8672","on-secondary": "#ffffff",
+ "surface": "#fbf8ff","surface-container-lowest": "#ffffff","surface-container-low": "#f4f2ff","surface-container": "#edecff","surface-container-high": "#e6e6ff","surface-container-highest": "#e0e0fc","surface-variant": "#e0e0fc",
+ "on-surface": "#181a2e","on-surface-variant": "#45474d","outline": "#75777d","outline-variant": "#c5c6cd"
+ },
+ fontFamily: { "headline": ["Manrope","sans-serif"], "body": ["Work Sans","sans-serif"], "label": ["Inter","sans-serif"] },
+ borderRadius: { "DEFAULT": "0.125rem","lg": "0.25rem","xl": "0.5rem","full": "9999px" }
+ }
+ }
 }
 </script>
 <style>
-  .ambient-shadow { box-shadow: 0 10px 40px rgba(24,26,46,0.06); }
-  .ghost-border { border: 1px solid rgba(197,198,205,0.15); }
-  .gradient-primary { background: linear-gradient(135deg, #051125 0%, #1b263b 100%); }
-  #mobile-menu { display: none; }
-  #mobile-menu.open { display: block; }
+ .ambient-shadow { box-shadow: 0 10px 40px rgba(24,26,46,0.06); }
+ .ghost-border { border: 1px solid rgba(197,198,205,0.15); }
+ .gradient-primary { background: linear-gradient(135deg, #051125 0%, #1b263b 100%); }
+ #mobile-menu { display: none; }
+ #mobile-menu.open { display: block; }
 </style>
 </head>
 <body class="bg-surface text-on-surface font-body antialiased min-h-screen flex flex-col">
 
 <!-- Navigation -->
 <nav class="fixed top-0 w-full z-50" style="background:rgba(251,248,255,0.85);backdrop-filter:blur(12px);box-shadow:0 10px 40px rgba(24,26,46,0.06);">
-  <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-    <a href="index.html"><img src="resources/vandenDam-logo.jpg" alt="Van den Dam Schilderwerken" class="h-10 w-auto"/></a>
-    <div class="hidden md:flex items-center gap-8 font-headline font-semibold text-sm tracking-tight">
-      <a href="index.html" class="text-on-surface-variant hover:text-primary transition-colors">Home</a>
-      <a href="diensten.html" class="text-on-surface-variant hover:text-primary transition-colors">Diensten</a>
-      <a href="portfolio.html" class="text-on-surface-variant hover:text-primary transition-colors">Portfolio</a>
-      <a href="over-ons.html" class="text-on-surface-variant hover:text-primary transition-colors">Over Ons</a>
-      <a href="contact.html" class="text-primary border-b-2 border-primary pb-0.5">Contact</a>
-    </div>
-    <a href="contact.html" class="hidden md:inline-block bg-secondary text-on-secondary font-label font-semibold text-sm px-5 py-2.5 rounded-md hover:opacity-90 transition-opacity">Offerte Aanvragen</a>
-    <button id="menu-toggle" class="md:hidden text-primary" aria-label="Menu">
-      <span class="material-symbols-outlined">menu</span>
-    </button>
-  </div>
-  <div id="mobile-menu" class="md:hidden border-t border-outline-variant/20">
-    <div class="px-6 py-4 flex flex-col gap-4 font-headline font-semibold text-sm bg-surface/95">
-      <a href="index.html" class="text-on-surface-variant">Home</a>
-      <a href="diensten.html" class="text-on-surface-variant">Diensten</a>
-      <a href="portfolio.html" class="text-on-surface-variant">Portfolio</a>
-      <a href="over-ons.html" class="text-on-surface-variant">Over Ons</a>
-      <a href="contact.html" class="text-primary">Contact</a>
-      <a href="contact.html" class="gradient-primary text-on-primary font-label px-5 py-2.5 rounded-md text-center mt-2">Offerte Aanvragen</a>
-    </div>
-  </div>
+ <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+ <a href="index.html"><img src="resources/vandenDam-logo.jpg" alt="Van den Dam Schilderwerken" class="h-10 w-auto"/></a>
+ <div class="hidden md:flex items-center gap-8 font-headline font-semibold text-sm tracking-tight">
+ <a href="index.html" class="text-on-surface-variant hover:text-primary transition-colors">Home</a>
+ <a href="diensten.html" class="text-on-surface-variant hover:text-primary transition-colors">Diensten</a>
+ <a href="portfolio.html" class="text-on-surface-variant hover:text-primary transition-colors">Portfolio</a>
+ <a href="over-ons.html" class="text-on-surface-variant hover:text-primary transition-colors">Over Ons</a>
+ <a href="contact.html" class="text-primary border-b-2 border-primary pb-0.5">Contact</a>
+ </div>
+ <a href="contact.html" class="hidden md:inline-block bg-secondary text-on-secondary font-label font-semibold text-sm px-5 py-2.5 rounded-md hover:opacity-90 transition-opacity">Offerte Aanvragen</a>
+ <button id="menu-toggle" class="md:hidden text-primary" aria-label="Menu">
+ <span class="material-symbols-outlined">menu</span>
+ </button>
+ </div>
+ <div id="mobile-menu" class="md:hidden border-t border-outline-variant/20">
+ <div class="px-6 py-4 flex flex-col gap-4 font-headline font-semibold text-sm bg-surface/95">
+ <a href="index.html" class="text-on-surface-variant">Home</a>
+ <a href="diensten.html" class="text-on-surface-variant">Diensten</a>
+ <a href="portfolio.html" class="text-on-surface-variant">Portfolio</a>
+ <a href="over-ons.html" class="text-on-surface-variant">Over Ons</a>
+ <a href="contact.html" class="text-primary">Contact</a>
+ <a href="contact.html" class="gradient-primary text-on-primary font-label px-5 py-2.5 rounded-md text-center mt-2">Offerte Aanvragen</a>
+ </div>
+ </div>
 </nav>
 
 <main class="flex-grow">
-  <!-- Hero -->
-  <section class="bg-surface-container-low pt-36 pb-32 px-6 relative overflow-hidden">
-    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 relative z-10">
-      <div class="flex flex-col justify-center">
-        <span class="font-label text-xs font-semibold tracking-widest text-secondary uppercase mb-4 block">Laten we praten</span>
-        <h1 class="font-headline text-5xl md:text-6xl lg:text-7xl font-extrabold text-primary tracking-tight mb-6 leading-tight" style="letter-spacing:-0.02em;">
-          Neem Contact Op
-        </h1>
-        <p class="font-body text-xl text-on-surface-variant max-w-xl leading-relaxed">
-          Klaar om uw ruimte te transformeren? Bespreek uw visie met onze experts en ontvang een advies op maat.
-        </p>
-      </div>
-    </div>
-    <div class="absolute right-0 top-0 w-1/3 h-full opacity-40" style="background:linear-gradient(to left,rgba(27,38,59,0.15),transparent);transform:skewX(12deg) translateX(25%);"></div>
-  </section>
+ <!-- Hero -->
+ <section class="bg-surface-container-low pt-36 pb-32 px-6 relative overflow-hidden">
+ <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 relative z-10">
+ <div class="flex flex-col justify-center">
+ <span class="font-label text-xs font-semibold tracking-widest text-secondary uppercase mb-4 block">Laten we praten</span>
+ <h1 class="font-headline text-5xl md:text-6xl lg:text-7xl font-extrabold text-primary tracking-tight mb-6 leading-tight" style="letter-spacing:-0.02em;">
+ Neem Contact Op
+ </h1>
+ <p class="font-body text-xl text-on-surface-variant max-w-xl leading-relaxed">
+ Klaar om uw ruimte te transformeren? Bespreek uw visie met onze experts en ontvang een advies op maat.
+ </p>
+ </div>
+ </div>
+ <div class="absolute right-0 top-0 w-1/3 h-full opacity-40" style="background:linear-gradient(to left,rgba(27,38,59,0.15),transparent);transform:skewX(12deg) translateX(25%);"></div>
+ </section>
 
-  <!-- Contact Split -->
-  <section class="px-6 -mt-20 relative z-20 pb-24">
-    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10">
+ <!-- Contact Split -->
+ <section class="px-6 -mt-20 relative z-20 pb-24">
+ <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10">
 
-      <!-- Info -->
-      <div class="lg:col-span-5 flex flex-col gap-8">
-        <div class="rounded-xl overflow-hidden ambient-shadow">
-          <img src="resources/team.jpg" alt="Ons team" class="w-full h-48 object-cover"/>
-        </div>
-        <div class="bg-surface-container-lowest rounded-xl ambient-shadow ghost-border p-10">
-          <h2 class="font-headline text-2xl font-bold text-primary mb-8">Atelier &amp; Kantoor</h2>
-          <div class="space-y-6">
-            <div class="flex items-start gap-4">
-              <span class="material-symbols-outlined text-secondary text-2xl mt-0.5">location_on</span>
-              <div>
-                <p class="font-label text-xs font-semibold text-primary uppercase tracking-wider mb-1">Bezoekadres</p>
-                <p class="font-body text-on-surface-variant">Adresstraat 12<br/>1234 AB Stad</p>
-              </div>
-            </div>
-            <div class="flex items-start gap-4">
-              <span class="material-symbols-outlined text-secondary text-2xl mt-0.5">call</span>
-              <div>
-                <p class="font-label text-xs font-semibold text-primary uppercase tracking-wider mb-1">Telefoon</p>
-                <p class="font-body text-on-surface-variant">+31 (0)00 000 0000</p>
-              </div>
-            </div>
-            <div class="flex items-start gap-4">
-              <span class="material-symbols-outlined text-secondary text-2xl mt-0.5">mail</span>
-              <div>
-                <p class="font-label text-xs font-semibold text-primary uppercase tracking-wider mb-1">Email</p>
-                <p class="font-body text-on-surface-variant">info@vandendam.nl</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+ <!-- Info -->
+ <div class="lg:col-span-5 flex flex-col gap-8">
+ <div class="rounded-xl overflow-hidden ambient-shadow">
+ <img src="resources/team.jpg" alt="Ons team" class="w-full h-48 object-cover"/>
+ </div>
+ <div class="bg-surface-container-lowest rounded-xl ambient-shadow ghost-border p-10">
+ <h2 class="font-headline text-2xl font-bold text-primary mb-8">Atelier &amp; Kantoor</h2>
+ <div class="space-y-6">
+ <div class="flex items-start gap-4">
+ <span class="material-symbols-outlined text-secondary text-2xl mt-0.5">location_on</span>
+ <div>
+ <p class="font-label text-xs font-semibold text-primary uppercase tracking-wider mb-1">Bezoekadres</p>
+ <p class="font-body text-on-surface-variant">Adresstraat 12<br/>1234 AB Stad</p>
+ </div>
+ </div>
+ <div class="flex items-start gap-4">
+ <span class="material-symbols-outlined text-secondary text-2xl mt-0.5">call</span>
+ <div>
+ <p class="font-label text-xs font-semibold text-primary uppercase tracking-wider mb-1">Telefoon</p>
+ <p class="font-body text-on-surface-variant">+31 (0)00 000 0000</p>
+ </div>
+ </div>
+ <div class="flex items-start gap-4">
+ <span class="material-symbols-outlined text-secondary text-2xl mt-0.5">mail</span>
+ <div>
+ <p class="font-label text-xs font-semibold text-primary uppercase tracking-wider mb-1">Email</p>
+ <p class="font-body text-on-surface-variant">info@vandendam.nl</p>
+ </div>
+ </div>
+ </div>
+ </div>
+ </div>
 
-      <!-- Form -->
-      <div class="lg:col-span-7">
-        <div class="bg-surface-container-lowest rounded-xl ambient-shadow p-10 md:p-14 relative overflow-hidden">
-          <div class="absolute -top-24 -right-24 w-64 h-64 rounded-full blur-3xl opacity-20 pointer-events-none" style="background:#bbc6e2;"></div>
-          <h3 class="font-headline text-2xl font-bold text-primary mb-2">Offerte Aanvragen</h3>
-          <p class="font-body text-on-surface-variant text-sm mb-8">Vul uw gegevens in en wij nemen zo spoedig mogelijk contact met u op.</p>
-          <form class="space-y-6" id="contact-form">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div class="relative group">
-                <input class="w-full bg-surface-container border-0 border-b-2 border-outline focus:border-secondary focus:ring-0 text-on-surface font-body pt-6 pb-2 px-4 rounded-t-md transition-colors peer placeholder-transparent" id="name" name="name" placeholder=" " type="text" required/>
-                <label class="absolute left-4 top-2 text-on-surface-variant font-label text-xs transition-all peer-placeholder-shown:text-sm peer-placeholder-shown:top-4 peer-focus:text-xs peer-focus:top-2 peer-focus:text-secondary" for="name">Naam</label>
-              </div>
-              <div class="relative group">
-                <input class="w-full bg-surface-container border-0 border-b-2 border-outline focus:border-secondary focus:ring-0 text-on-surface font-body pt-6 pb-2 px-4 rounded-t-md transition-colors peer placeholder-transparent" id="email" name="email" placeholder=" " type="email" required/>
-                <label class="absolute left-4 top-2 text-on-surface-variant font-label text-xs transition-all peer-placeholder-shown:text-sm peer-placeholder-shown:top-4 peer-focus:text-xs peer-focus:top-2 peer-focus:text-secondary" for="email">E-mailadres</label>
-              </div>
-            </div>
-            <div class="relative group">
-              <input class="w-full bg-surface-container border-0 border-b-2 border-outline focus:border-secondary focus:ring-0 text-on-surface font-body pt-6 pb-2 px-4 rounded-t-md transition-colors peer placeholder-transparent" id="phone" name="phone" placeholder=" " type="tel"/>
-              <label class="absolute left-4 top-2 text-on-surface-variant font-label text-xs transition-all peer-placeholder-shown:text-sm peer-placeholder-shown:top-4 peer-focus:text-xs peer-focus:top-2 peer-focus:text-secondary" for="phone">Telefoonnummer</label>
-            </div>
-            <div class="relative group">
-              <input class="w-full bg-surface-container border-0 border-b-2 border-outline focus:border-secondary focus:ring-0 text-on-surface font-body pt-6 pb-2 px-4 rounded-t-md transition-colors peer placeholder-transparent" id="subject" name="subject" placeholder=" " type="text"/>
-              <label class="absolute left-4 top-2 text-on-surface-variant font-label text-xs transition-all peer-placeholder-shown:text-sm peer-placeholder-shown:top-4 peer-focus:text-xs peer-focus:top-2 peer-focus:text-secondary" for="subject">Project Type (bijv. Binnenschilderwerk)</label>
-            </div>
-            <div class="relative group">
-              <textarea class="w-full bg-surface-container border-0 border-b-2 border-outline focus:border-secondary focus:ring-0 text-on-surface font-body pt-6 pb-2 px-4 rounded-t-md transition-colors peer resize-none placeholder-transparent" id="message" name="message" placeholder=" " rows="4" required></textarea>
-              <label class="absolute left-4 top-2 text-on-surface-variant font-label text-xs transition-all peer-placeholder-shown:text-sm peer-placeholder-shown:top-4 peer-focus:text-xs peer-focus:top-2 peer-focus:text-secondary" for="message">Project Details &amp; Wensen</label>
-            </div>
-            <div class="flex items-start gap-3">
-              <input type="checkbox" id="privacy" name="privacy" required class="mt-1 rounded border-outline text-secondary focus:ring-secondary"/>
-              <label for="privacy" class="font-body text-sm text-on-surface-variant">
-                Ik ga akkoord met de <a href="privacyverklaring.html" class="text-secondary hover:text-primary transition-colors underline">privacyverklaring</a>.
-              </label>
-            </div>
-            <button type="submit" class="bg-secondary text-on-secondary font-label font-semibold px-8 py-4 rounded-md w-full md:w-auto hover:opacity-90 transition-opacity flex items-center justify-center gap-2">
-              Verstuur Aanvraag
-              <span class="material-symbols-outlined text-sm">arrow_forward</span>
-            </button>
-          </form>
-        </div>
-      </div>
-    </div>
-  </section>
+ <!-- Form -->
+ <div class="lg:col-span-7">
+ <div class="bg-surface-container-lowest rounded-xl ambient-shadow p-10 md:p-14 relative overflow-hidden">
+ <div class="absolute -top-24 -right-24 w-64 h-64 rounded-full blur-3xl opacity-20 pointer-events-none" style="background:#bbc6e2;"></div>
+ <h3 class="font-headline text-2xl font-bold text-primary mb-2">Offerte Aanvragen</h3>
+ <p class="font-body text-on-surface-variant text-sm mb-8">Vul uw gegevens in en wij nemen zo spoedig mogelijk contact met u op.</p>
+ <form class="space-y-6" id="contact-form">
+ <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+ <div class="relative group">
+ <input class="w-full bg-surface-container border-0 border-b-2 border-outline focus:border-secondary focus:ring-0 text-on-surface font-body pt-6 pb-2 px-4 rounded-t-md transition-colors peer placeholder-transparent" id="name" name="name" placeholder=" " type="text" required/>
+ <label class="absolute left-4 top-2 text-on-surface-variant font-label text-xs transition-all peer-placeholder-shown:text-sm peer-placeholder-shown:top-4 peer-focus:text-xs peer-focus:top-2 peer-focus:text-secondary" for="name">Naam</label>
+ </div>
+ <div class="relative group">
+ <input class="w-full bg-surface-container border-0 border-b-2 border-outline focus:border-secondary focus:ring-0 text-on-surface font-body pt-6 pb-2 px-4 rounded-t-md transition-colors peer placeholder-transparent" id="email" name="email" placeholder=" " type="email" required/>
+ <label class="absolute left-4 top-2 text-on-surface-variant font-label text-xs transition-all peer-placeholder-shown:text-sm peer-placeholder-shown:top-4 peer-focus:text-xs peer-focus:top-2 peer-focus:text-secondary" for="email">E-mailadres</label>
+ </div>
+ </div>
+ <div class="relative group">
+ <input class="w-full bg-surface-container border-0 border-b-2 border-outline focus:border-secondary focus:ring-0 text-on-surface font-body pt-6 pb-2 px-4 rounded-t-md transition-colors peer placeholder-transparent" id="phone" name="phone" placeholder=" " type="tel"/>
+ <label class="absolute left-4 top-2 text-on-surface-variant font-label text-xs transition-all peer-placeholder-shown:text-sm peer-placeholder-shown:top-4 peer-focus:text-xs peer-focus:top-2 peer-focus:text-secondary" for="phone">Telefoonnummer</label>
+ </div>
+ <div class="relative group">
+ <input class="w-full bg-surface-container border-0 border-b-2 border-outline focus:border-secondary focus:ring-0 text-on-surface font-body pt-6 pb-2 px-4 rounded-t-md transition-colors peer placeholder-transparent" id="subject" name="subject" placeholder=" " type="text"/>
+ <label class="absolute left-4 top-2 text-on-surface-variant font-label text-xs transition-all peer-placeholder-shown:text-sm peer-placeholder-shown:top-4 peer-focus:text-xs peer-focus:top-2 peer-focus:text-secondary" for="subject">Project Type (bijv. Binnenschilderwerk)</label>
+ </div>
+ <div class="relative group">
+ <textarea class="w-full bg-surface-container border-0 border-b-2 border-outline focus:border-secondary focus:ring-0 text-on-surface font-body pt-6 pb-2 px-4 rounded-t-md transition-colors peer resize-none placeholder-transparent" id="message" name="message" placeholder=" " rows="4" required></textarea>
+ <label class="absolute left-4 top-2 text-on-surface-variant font-label text-xs transition-all peer-placeholder-shown:text-sm peer-placeholder-shown:top-4 peer-focus:text-xs peer-focus:top-2 peer-focus:text-secondary" for="message">Project Details &amp; Wensen</label>
+ </div>
+ <div class="flex items-start gap-3">
+ <input type="checkbox" id="privacy" name="privacy" required class="mt-1 rounded border-outline text-secondary focus:ring-secondary"/>
+ <label for="privacy" class="font-body text-sm text-on-surface-variant">
+ Ik ga akkoord met de <a href="privacyverklaring.html" class="text-secondary hover:text-primary transition-colors underline">privacyverklaring</a>.
+ </label>
+ </div>
+ <button type="submit" class="bg-secondary text-on-secondary font-label font-semibold px-8 py-4 rounded-md w-full md:w-auto hover:opacity-90 transition-opacity flex items-center justify-center gap-2">
+ Verstuur Aanvraag
+ <span class="material-symbols-outlined text-sm">arrow_forward</span>
+ </button>
+ </form>
+ </div>
+ </div>
+ </div>
+ </section>
 </main>
 
 <!-- Footer -->
 <footer style="background:#051125;" class="text-slate-100 py-16 px-6">
-  <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10">
-    <div class="md:col-span-1">
-      <p class="font-headline text-lg font-extrabold text-white mb-4">Van den Dam Schilderwerken</p>
-      <p class="font-body text-sm text-slate-400 leading-relaxed mb-6">Het creëren van prachtige ruimtes met precisie en passie. Familiebedrijf sinds 1997.</p>
-      <p class="font-body text-xs text-slate-600">© 2025 Van den Dam Schilderwerken.<br/>Alle rechten voorbehouden.</p>
-    </div>
-    <div>
-      <p class="font-label text-xs font-semibold tracking-widest text-slate-400 uppercase mb-4">Navigatie</p>
-      <ul class="space-y-2 font-body text-sm">
-        <li><a href="diensten.html" class="text-slate-400 hover:text-white transition-colors">Diensten</a></li>
-        <li><a href="portfolio.html" class="text-slate-400 hover:text-white transition-colors">Portfolio</a></li>
-        <li><a href="over-ons.html" class="text-slate-400 hover:text-white transition-colors">Over Ons</a></li>
-        <li><a href="contact.html" class="text-slate-400 hover:text-white transition-colors">Contact</a></li>
-      </ul>
-    </div>
-    <div>
-      <p class="font-label text-xs font-semibold tracking-widest text-slate-400 uppercase mb-4">Juridisch</p>
-      <ul class="space-y-2 font-body text-sm">
-        <li><a href="privacyverklaring.html" class="text-slate-400 hover:text-white transition-colors">Privacyverklaring</a></li>
-        <li><a href="contact.html" class="text-slate-400 hover:text-white transition-colors">Contact</a></li>
-      </ul>
-    </div>
-    <div>
-      <p class="font-label text-xs font-semibold tracking-widest text-slate-400 uppercase mb-4">Erkend Vakbedrijf</p>
-      <img src="resources/onderhoudnl-logo.png" alt="OnderhoudNL keurmerk" class="h-16 w-auto mb-4 rounded"/>
-      <p class="font-body text-xs text-slate-400 leading-relaxed">
-        Van den Dam is aangesloten bij <a href="https://www.onderhoudnl.nl/over-onderhoudnl" target="_blank" rel="noopener noreferrer" class="text-slate-300 underline hover:text-white transition-colors">OnderhoudNL (FOSAG)</a> — de branchevereniging voor erkende schilders- en afwerkingsbedrijven. Deelnemers beschikken over alle vak- en bedrijfsdiploma's en worden periodiek geïnspecteerd.
-      </p>
-    </div>
-  </div>
+ <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10">
+ <div class="md:col-span-1">
+ <p class="font-headline text-lg font-extrabold text-white mb-4">Van den Dam Schilderwerken</p>
+ <p class="font-body text-sm text-slate-400 leading-relaxed mb-6">Het creëren van prachtige ruimtes met precisie en passie. Familiebedrijf sinds 1997.</p>
+ <p class="font-body text-xs text-slate-600">© 2025 Van den Dam Schilderwerken.<br/>Alle rechten voorbehouden.</p>
+ </div>
+ <div>
+ <p class="font-label text-xs font-semibold tracking-widest text-slate-400 uppercase mb-4">Navigatie</p>
+ <ul class="space-y-2 font-body text-sm">
+ <li><a href="diensten.html" class="text-slate-400 hover:text-white transition-colors">Diensten</a></li>
+ <li><a href="portfolio.html" class="text-slate-400 hover:text-white transition-colors">Portfolio</a></li>
+ <li><a href="over-ons.html" class="text-slate-400 hover:text-white transition-colors">Over Ons</a></li>
+ <li><a href="contact.html" class="text-slate-400 hover:text-white transition-colors">Contact</a></li>
+ </ul>
+ </div>
+ <div>
+ <p class="font-label text-xs font-semibold tracking-widest text-slate-400 uppercase mb-4">Juridisch</p>
+ <ul class="space-y-2 font-body text-sm">
+ <li><a href="privacyverklaring.html" class="text-slate-400 hover:text-white transition-colors">Privacyverklaring</a></li>
+ <li><a href="contact.html" class="text-slate-400 hover:text-white transition-colors">Contact</a></li>
+ </ul>
+ </div>
+ <div>
+ <p class="font-label text-xs font-semibold tracking-widest text-slate-400 uppercase mb-4">Erkend Vakbedrijf</p>
+ <img src="resources/onderhoudnl-logo.png" alt="OnderhoudNL keurmerk" class="h-16 w-auto mb-4 rounded"/>
+ <p class="font-body text-xs text-slate-400 leading-relaxed">
+ Van den Dam is aangesloten bij <a href="https://www.onderhoudnl.nl/over-onderhoudnl" target="_blank" rel="noopener noreferrer" class="text-slate-300 underline hover:text-white transition-colors">OnderhoudNL (FOSAG)</a> de branchevereniging voor erkende schilders- en afwerkingsbedrijven. Deelnemers beschikken over alle vak- en bedrijfsdiploma's en worden periodiek geïnspecteerd.
+ </p>
+ </div>
+ </div>
 </footer>
 
 <script>
-  document.getElementById('menu-toggle').addEventListener('click', () => {
-    document.getElementById('mobile-menu').classList.toggle('open');
-  });
+ document.getElementById('menu-toggle').addEventListener('click', () => {
+ document.getElementById('mobile-menu').classList.toggle('open');
+ });
 </script>
 </body>
 </html>
