@@ -50,10 +50,10 @@ tailwind.config = {
     clip-path: polygon(0 60%, 100% 55%, 100% 100%, 0 100%);
     opacity: 0.12;
   }
-  main, footer { position: relative; z-index: 1; }
+
 </style>
 </head>
-<body class="bg-surface text-on-surface font-body antialiased">
+<body class="bg-transparent text-on-surface font-body antialiased">
 
 <!-- Navigation -->
 <nav class="fixed top-0 w-full z-50" style="background:rgba(251,248,255,0.85);backdrop-filter:blur(12px);box-shadow:0 10px 40px rgba(35,34,39,0.06);">
@@ -132,7 +132,7 @@ tailwind.config = {
     canvas.elt.style.position = 'fixed';
     canvas.elt.style.top = '0';
     canvas.elt.style.left = '0';
-    canvas.elt.style.zIndex = '0';
+    canvas.elt.style.zIndex = '-1';
     canvas.elt.style.pointerEvents = 'none';
     noFill();
     strokeWeight(2);
