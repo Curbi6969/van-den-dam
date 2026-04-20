@@ -71,12 +71,6 @@ tailwind.config = {
  .gradient-primary { background: linear-gradient(135deg, #051125 0%, #1b263b 100%); }
  #mobile-menu { display: none; }
  #mobile-menu.open { display: block; }
- #hero-title { clip-path: polygon(-2% 0%, 0% 0%, -2% 100%, -4% 100%); }
- #hero-title.revealed { clip-path: polygon(0% 0%, 105% 0%, 103% 100%, 0% 100%); transition: clip-path 1.6s cubic-bezier(0.4,0,0.2,1); }
- .paint-roller-wrap { position:relative; display:inline-block; }
- #paint-roller { position:absolute; left:-4px; top:-12px; width:32px; height:32px; opacity:0; transform:rotate(-10deg) scaleX(-1); transition: left 1.6s cubic-bezier(0.4,0,0.2,1), top 1.6s cubic-bezier(0.4,0,0.2,1), opacity 0.15s; pointer-events:none; filter:invert(1); }
- #paint-roller.active { opacity:0.85; }
- #paint-roller.done { left:calc(100% + 4px); top:calc(100% - 12px); opacity:0; transition: left 1.6s cubic-bezier(0.4,0,0.2,1), top 1.6s cubic-bezier(0.4,0,0.2,1), opacity 0.15s 1.45s; }
 </style>
 </head>
 <body class="bg-surface text-on-surface font-body antialiased">
@@ -136,12 +130,9 @@ tailwind.config = {
  <div class="relative z-10 max-w-7xl mx-auto px-6 pt-32 pb-20 w-full">
  <div class="max-w-2xl">
  <span class="font-label text-xs font-semibold tracking-widest text-secondary uppercase mb-6 block">Familiebedrijf · Sinds 1997</span>
- <div class="paint-roller-wrap">
- <img id="paint-roller" src="resources/paint-roller-1-svgrepo-com.svg" alt=""/>
- <h1 id="hero-title" class="font-headline text-5xl md:text-7xl font-extrabold text-white leading-tight tracking-tight mb-8" style="letter-spacing:-0.02em;">
+ <h1 class="font-headline text-5xl md:text-7xl font-extrabold text-white leading-tight tracking-tight mb-8" style="letter-spacing:-0.02em;">
  Meesterlijk Schilderwerk &amp; Afwerking
  </h1>
- </div>
  <p class="font-body text-xl text-white/80 leading-relaxed mb-10 max-w-xl">
  Met meer dan 25 jaar expertise brengen wij precisie en passie in elke penseelstreek. Voor uw woning, kantoor of monument.
  </p>
@@ -367,16 +358,6 @@ tailwind.config = {
  document.getElementById('menu-toggle').addEventListener('click', () => {
  document.getElementById('mobile-menu').classList.toggle('open');
  });
- // Paint roller reveal animation
- const heroTitle = document.getElementById('hero-title');
- const roller = document.getElementById('paint-roller');
- if (heroTitle && roller) {
- setTimeout(() => {
- roller.classList.add('active');
- heroTitle.classList.add('revealed');
- setTimeout(() => { roller.classList.add('done'); }, 200);
- }, 350);
- }
 </script>
 </body>
 </html>
