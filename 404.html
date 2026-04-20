@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Pagina niet gevonden — Van den Dam Schilderwerken</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Work+Sans:wght@300;400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        "primary": "#051125","primary-container": "#1b263b","on-primary": "#ffffff","primary-fixed-dim": "#bbc6e2",
+        "secondary": "#a03f30","on-secondary": "#ffffff",
+        "surface": "#fbf8ff","surface-container-lowest": "#ffffff","surface-container-low": "#f4f2ff","surface-container": "#edecff",
+        "on-surface": "#181a2e","on-surface-variant": "#45474d","outline-variant": "#c5c6cd"
+      },
+      fontFamily: { "headline": ["Manrope","sans-serif"], "body": ["Work Sans","sans-serif"], "label": ["Inter","sans-serif"] },
+      borderRadius: { "DEFAULT": "0.125rem","lg": "0.25rem","xl": "0.5rem","full": "9999px" }
+    }
+  }
+}
+</script>
+<style>
+  body { min-height: 100vh; display: flex; flex-direction: column; }
+  .gradient-primary { background: linear-gradient(135deg, #051125 0%, #1b263b 100%); }
+  #mobile-menu { display: none; }
+  #mobile-menu.open { display: block; }
+
+  /* Big 404 paint drip effect */
+  .drip-404 {
+    font-family: 'Manrope', sans-serif;
+    font-size: clamp(8rem, 22vw, 18rem);
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: -0.04em;
+    color: transparent;
+    -webkit-text-stroke: 3px #a03f30;
+    position: relative;
+    user-select: none;
+  }
+  .drip-404::before {
+    content: '404';
+    position: absolute;
+    inset: 0;
+    color: #a03f30;
+    clip-path: polygon(0 60%, 100% 55%, 100% 100%, 0 100%);
+    opacity: 0.12;
+  }
+  .paint-drip {
+    position: absolute;
+    bottom: -32px;
+    width: 18px;
+    border-radius: 0 0 50% 50%;
+    background: #a03f30;
+    animation: drip 2.4s ease-in-out infinite;
+  }
+  .paint-drip:nth-child(1) { left: 18%; height: 28px; animation-delay: 0s; }
+  .paint-drip:nth-child(2) { left: 38%; height: 42px; animation-delay: 0.6s; }
+  .paint-drip:nth-child(3) { left: 62%; height: 22px; animation-delay: 1.1s; }
+  .paint-drip:nth-child(4) { left: 80%; height: 36px; animation-delay: 0.3s; }
+  @keyframes drip {
+    0%, 100% { transform: scaleY(1); opacity: 0.7; }
+    50% { transform: scaleY(1.3); opacity: 1; }
+  }
+  .roller-spin {
+    animation: rollerBounce 3s ease-in-out infinite;
+  }
+  @keyframes rollerBounce {
+    0%, 100% { transform: translateY(0) rotate(-5deg); }
+    50% { transform: translateY(-12px) rotate(5deg); }
+  }
+</style>
+</head>
+<body class="bg-surface text-on-surface font-body antialiased">
+
+<!-- Navigation -->
+<nav class="fixed top-0 w-full z-50" style="background:rgba(251,248,255,0.85);backdrop-filter:blur(12px);box-shadow:0 10px 40px rgba(24,26,46,0.06);">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+    <a href="index.html"><img src="resources/vandenDam-logo.jpg" alt="Van den Dam Schilderwerken" class="h-14 w-auto"/></a>
+    <div class="hidden md:flex items-center gap-8 font-headline font-semibold text-sm tracking-tight">
+      <a href="index.html" class="text-on-surface-variant hover:text-primary transition-colors">Home</a>
+      <div class="relative group">
+        <a href="diensten.html" class="text-on-surface-variant hover:text-primary transition-colors flex items-center gap-0.5">Diensten <span class="material-symbols-outlined" style="font-size:16px;line-height:1;vertical-align:middle;">expand_more</span></a>
+        <div class="absolute top-full left-0 pt-3 w-52 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-150 z-50">
+          <div class="bg-white rounded-xl py-1" style="box-shadow:0 8px 30px rgba(24,26,46,0.12);">
+            <a href="dienst-binnenschilderwerk.html" class="block px-4 py-2.5 font-body text-sm text-on-surface-variant hover:text-primary hover:bg-surface-container-low transition-colors">Schilderen</a>
+            <a href="dienst-behangen.html" class="block px-4 py-2.5 font-body text-sm text-on-surface-variant hover:text-primary hover:bg-surface-container-low transition-colors">Behangen</a>
+            <a href="dienst-buitenschilderwerk.html" class="block px-4 py-2.5 font-body text-sm text-on-surface-variant hover:text-primary hover:bg-surface-container-low transition-colors">Onderhoud</a>
+            <a href="dienst-afgeschermd-onderhoud.html" class="block px-4 py-2.5 font-body text-sm text-on-surface-variant hover:text-primary hover:bg-surface-container-low transition-colors">Afgeschermd Onderhoud</a>
+            <a href="dienst-beglazing.html" class="block px-4 py-2.5 font-body text-sm text-on-surface-variant hover:text-primary hover:bg-surface-container-low transition-colors">Beglazing</a>
+          </div>
+        </div>
+      </div>
+      <a href="portfolio.html" class="text-on-surface-variant hover:text-primary transition-colors">Portfolio</a>
+      <a href="over-ons.html" class="text-on-surface-variant hover:text-primary transition-colors">Over Ons</a>
+      <a href="contact.html" class="text-on-surface-variant hover:text-primary transition-colors">Contact</a>
+    </div>
+    <a href="contact.html" class="hidden md:inline-block bg-secondary text-on-secondary font-label font-semibold text-sm px-5 py-2.5 rounded-md hover:opacity-90 transition-opacity">Offerte Aanvragen</a>
+    <button id="menu-toggle" class="md:hidden text-primary" aria-label="Menu">
+      <span class="material-symbols-outlined">menu</span>
+    </button>
+  </div>
+  <div id="mobile-menu" class="md:hidden border-t border-outline-variant/20">
+    <div class="px-6 py-4 flex flex-col gap-4 font-headline font-semibold text-sm bg-surface/95">
+      <a href="index.html" class="text-on-surface-variant">Home</a>
+      <a href="diensten.html" class="text-on-surface-variant">Diensten</a>
+      <a href="portfolio.html" class="text-on-surface-variant">Portfolio</a>
+      <a href="over-ons.html" class="text-on-surface-variant">Over Ons</a>
+      <a href="contact.html" class="text-on-surface-variant">Contact</a>
+      <a href="contact.html" class="gradient-primary text-on-primary font-label px-5 py-2.5 rounded-md text-center mt-2">Offerte Aanvragen</a>
+    </div>
+  </div>
+</nav>
+
+<main class="flex-grow flex items-center justify-center px-6 pt-32 pb-20">
+  <div class="max-w-2xl mx-auto text-center">
+
+    <!-- Paint roller icon -->
+    <div class="flex justify-center mb-6">
+      <div class="roller-spin">
+        <img src="resources/paint-roller-1-svgrepo-com.svg" alt="" style="width:64px;height:64px;opacity:0.6;filter:invert(27%) sepia(70%) saturate(600%) hue-rotate(340deg) brightness(85%) contrast(95%);"/>
+      </div>
+    </div>
+
+    <!-- 404 -->
+    <div class="relative inline-block mb-2">
+      <span class="drip-404">404</span>
+      <div class="paint-drip"></div>
+      <div class="paint-drip"></div>
+      <div class="paint-drip"></div>
+      <div class="paint-drip"></div>
+    </div>
+
+    <h1 class="font-headline text-2xl md:text-3xl font-extrabold text-primary mt-10 mb-4">Deze muur is nog niet geschilderd.</h1>
+    <p class="font-body text-on-surface-variant text-lg leading-relaxed mb-10">
+      De pagina die u zoekt bestaat niet of is verplaatst. Misschien helpt een van de onderstaande links u verder.
+    </p>
+
+    <div class="flex flex-wrap justify-center gap-4">
+      <a href="index.html" class="inline-flex items-center gap-2 bg-secondary text-on-secondary font-label font-semibold px-7 py-3.5 rounded-md hover:opacity-90 transition-opacity">
+        <span class="material-symbols-outlined text-base">home</span> Terug naar home
+      </a>
+      <a href="diensten.html" class="inline-flex items-center gap-2 border-2 border-primary text-primary font-label font-semibold px-7 py-3.5 rounded-md hover:bg-primary hover:text-white transition-colors">
+        Onze diensten
+      </a>
+      <a href="contact.html" class="inline-flex items-center gap-2 border-2 border-outline-variant text-on-surface-variant font-label font-semibold px-7 py-3.5 rounded-md hover:border-primary hover:text-primary transition-colors">
+        Contact
+      </a>
+    </div>
+  </div>
+</main>
+
+<footer style="background:#051125;" class="text-slate-100 py-10 px-6 text-center">
+  <p class="font-body text-xs text-slate-600">© 2025 Van den Dam Schilderwerken. Alle rechten voorbehouden.</p>
+</footer>
+
+<script>
+  document.getElementById('menu-toggle').addEventListener('click', () => {
+    document.getElementById('mobile-menu').classList.toggle('open');
+  });
+</script>
+</body>
+</html>

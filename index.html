@@ -71,6 +71,12 @@ tailwind.config = {
  .gradient-primary { background: linear-gradient(135deg, #051125 0%, #1b263b 100%); }
  #mobile-menu { display: none; }
  #mobile-menu.open { display: block; }
+ #hero-title { clip-path: polygon(-2% 0%, 0% 0%, -2% 100%, -4% 100%); }
+ #hero-title.revealed { clip-path: polygon(0% 0%, 105% 0%, 103% 100%, 0% 100%); transition: clip-path 1.6s cubic-bezier(0.4,0,0.2,1); }
+ .paint-roller-wrap { position:relative; display:inline-block; }
+ #paint-roller { position:absolute; left:-4px; top:-12px; width:32px; height:32px; opacity:0; transform:rotate(-10deg) scaleX(-1); transition: left 1.6s cubic-bezier(0.4,0,0.2,1), top 1.6s cubic-bezier(0.4,0,0.2,1), opacity 0.15s; pointer-events:none; filter:invert(1); }
+ #paint-roller.active { opacity:0.85; }
+ #paint-roller.done { left:calc(100% + 4px); top:calc(100% - 12px); opacity:0; transition: left 1.6s cubic-bezier(0.4,0,0.2,1), top 1.6s cubic-bezier(0.4,0,0.2,1), opacity 0.15s 1.45s; }
 </style>
 </head>
 <body class="bg-surface text-on-surface font-body antialiased">
@@ -78,10 +84,21 @@ tailwind.config = {
 <!-- Navigation -->
 <nav id="navbar" class="fixed top-0 w-full z-50 transition-all duration-300" style="background:rgba(251,248,255,0.85);backdrop-filter:blur(12px);box-shadow:0 10px 40px rgba(24,26,46,0.06);">
  <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
- <a href="index.html"><img src="resources/vandenDam-logo.jpg" alt="Van den Dam Schilderwerken" class="h-10 w-auto"/></a>
+ <a href="index.html"><img src="resources/vandenDam-logo.jpg" alt="Van den Dam Schilderwerken" class="h-14 w-auto"/></a>
  <div class="hidden md:flex items-center gap-8 font-headline font-semibold text-sm tracking-tight">
  <a href="index.html" class="text-primary border-b-2 border-primary pb-0.5">Home</a>
- <a href="diensten.html" class="text-on-surface-variant hover:text-primary transition-colors">Diensten</a>
+ <div class="relative group">
+ <a href="diensten.html" class="text-on-surface-variant hover:text-primary transition-colors flex items-center gap-0.5">Diensten <span class="material-symbols-outlined" style="font-size:16px;line-height:1;vertical-align:middle;">expand_more</span></a>
+ <div class="absolute top-full left-0 pt-3 w-52 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-150 z-50">
+ <div class="bg-white rounded-xl py-1" style="box-shadow:0 8px 30px rgba(24,26,46,0.12);">
+ <a href="dienst-binnenschilderwerk.html" class="block px-4 py-2.5 font-body text-sm text-on-surface-variant hover:text-primary hover:bg-surface-container-low transition-colors">Schilderen</a>
+ <a href="dienst-behangen.html" class="block px-4 py-2.5 font-body text-sm text-on-surface-variant hover:text-primary hover:bg-surface-container-low transition-colors">Behangen</a>
+ <a href="dienst-buitenschilderwerk.html" class="block px-4 py-2.5 font-body text-sm text-on-surface-variant hover:text-primary hover:bg-surface-container-low transition-colors">Onderhoud</a>
+ <a href="dienst-afgeschermd-onderhoud.html" class="block px-4 py-2.5 font-body text-sm text-on-surface-variant hover:text-primary hover:bg-surface-container-low transition-colors">Afgeschermd Onderhoud</a>
+ <a href="dienst-beglazing.html" class="block px-4 py-2.5 font-body text-sm text-on-surface-variant hover:text-primary hover:bg-surface-container-low transition-colors">Beglazing</a>
+ </div>
+ </div>
+ </div>
  <a href="portfolio.html" class="text-on-surface-variant hover:text-primary transition-colors">Portfolio</a>
  <a href="over-ons.html" class="text-on-surface-variant hover:text-primary transition-colors">Over Ons</a>
  <a href="contact.html" class="text-on-surface-variant hover:text-primary transition-colors">Contact</a>
@@ -95,6 +112,13 @@ tailwind.config = {
  <div class="px-6 py-4 flex flex-col gap-4 font-headline font-semibold text-sm bg-surface/95">
  <a href="index.html" class="text-primary">Home</a>
  <a href="diensten.html" class="text-on-surface-variant">Diensten</a>
+ <div class="pl-4 flex flex-col gap-1 mt-0.5">
+ <a href="dienst-binnenschilderwerk.html" class="text-on-surface-variant/80 font-normal font-body" style="font-size:0.75rem;">&#8627; Schilderen</a>
+ <a href="dienst-behangen.html" class="text-on-surface-variant/80 font-normal font-body" style="font-size:0.75rem;">&#8627; Behangen</a>
+ <a href="dienst-buitenschilderwerk.html" class="text-on-surface-variant/80 font-normal font-body" style="font-size:0.75rem;">&#8627; Onderhoud</a>
+ <a href="dienst-afgeschermd-onderhoud.html" class="text-on-surface-variant/80 font-normal font-body" style="font-size:0.75rem;">&#8627; Afgeschermd Onderhoud</a>
+ <a href="dienst-beglazing.html" class="text-on-surface-variant/80 font-normal font-body" style="font-size:0.75rem;">&#8627; Beglazing</a>
+ </div>
  <a href="portfolio.html" class="text-on-surface-variant">Portfolio</a>
  <a href="over-ons.html" class="text-on-surface-variant">Over Ons</a>
  <a href="contact.html" class="text-on-surface-variant">Contact</a>
@@ -112,9 +136,12 @@ tailwind.config = {
  <div class="relative z-10 max-w-7xl mx-auto px-6 pt-32 pb-20 w-full">
  <div class="max-w-2xl">
  <span class="font-label text-xs font-semibold tracking-widest text-secondary uppercase mb-6 block">Familiebedrijf · Sinds 1997</span>
- <h1 class="font-headline text-5xl md:text-7xl font-extrabold text-white leading-tight tracking-tight mb-8" style="letter-spacing:-0.02em;">
+ <div class="paint-roller-wrap">
+ <img id="paint-roller" src="resources/paint-roller-1-svgrepo-com.svg" alt=""/>
+ <h1 id="hero-title" class="font-headline text-5xl md:text-7xl font-extrabold text-white leading-tight tracking-tight mb-8" style="letter-spacing:-0.02em;">
  Meesterlijk Schilderwerk &amp; Afwerking
  </h1>
+ </div>
  <p class="font-body text-xl text-white/80 leading-relaxed mb-10 max-w-xl">
  Met meer dan 25 jaar expertise brengen wij precisie en passie in elke penseelstreek. Voor uw woning, kantoor of monument.
  </p>
@@ -205,6 +232,11 @@ tailwind.config = {
  </div>
  </div>
  </div>
+ <div class="mt-12 text-center">
+ <a href="diensten.html" class="inline-flex items-center gap-2 bg-secondary text-on-secondary font-label font-semibold px-8 py-4 rounded-md hover:opacity-90 transition-opacity">
+ Bekijk al onze diensten <span class="material-symbols-outlined text-sm">arrow_forward</span>
+ </a>
+ </div>
  </div>
 </section>
 
@@ -291,7 +323,7 @@ tailwind.config = {
  <div class="max-w-3xl mx-auto px-6 text-center">
  <h2 class="font-headline text-4xl md:text-5xl font-extrabold text-primary tracking-tight mb-6">Klaar om uw ruimte te transformeren?</h2>
  <p class="font-body text-xl text-on-surface-variant mb-10">Neem contact met ons op voor een vrijblijvend adviesgesprek.</p>
- <a href="contact.html" class="inline-block gradient-primary text-on-primary font-label font-semibold text-lg px-10 py-4 rounded-md hover:opacity-90 transition-opacity ambient-shadow">
+ <a href="contact.html" class="inline-block bg-secondary text-on-secondary font-label font-semibold text-lg px-10 py-4 rounded-md hover:opacity-90 transition-opacity ambient-shadow">
  Neem Contact Op
  </a>
  </div>
@@ -335,6 +367,16 @@ tailwind.config = {
  document.getElementById('menu-toggle').addEventListener('click', () => {
  document.getElementById('mobile-menu').classList.toggle('open');
  });
+ // Paint roller reveal animation
+ const heroTitle = document.getElementById('hero-title');
+ const roller = document.getElementById('paint-roller');
+ if (heroTitle && roller) {
+ setTimeout(() => {
+ roller.classList.add('active');
+ heroTitle.classList.add('revealed');
+ setTimeout(() => { roller.classList.add('done'); }, 200);
+ }, 350);
+ }
 </script>
 </body>
 </html>

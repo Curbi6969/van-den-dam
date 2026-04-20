@@ -37,10 +37,21 @@ tailwind.config = {
 <!-- Navigation -->
 <nav class="fixed top-0 w-full z-50" style="background:rgba(251,248,255,0.85);backdrop-filter:blur(12px);box-shadow:0 10px 40px rgba(24,26,46,0.06);">
  <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
- <a href="index.html"><img src="resources/vandenDam-logo.jpg" alt="Van den Dam Schilderwerken" class="h-10 w-auto"/></a>
+ <a href="index.html"><img src="resources/vandenDam-logo.jpg" alt="Van den Dam Schilderwerken" class="h-14 w-auto"/></a>
  <div class="hidden md:flex items-center gap-8 font-headline font-semibold text-sm tracking-tight">
  <a href="index.html" class="text-on-surface-variant hover:text-primary transition-colors">Home</a>
- <a href="diensten.html" class="text-on-surface-variant hover:text-primary transition-colors">Diensten</a>
+ <div class="relative group">
+ <a href="diensten.html" class="text-on-surface-variant hover:text-primary transition-colors flex items-center gap-0.5">Diensten <span class="material-symbols-outlined" style="font-size:16px;line-height:1;vertical-align:middle;">expand_more</span></a>
+ <div class="absolute top-full left-0 pt-3 w-52 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-150 z-50">
+ <div class="bg-white rounded-xl py-1" style="box-shadow:0 8px 30px rgba(24,26,46,0.12);">
+ <a href="dienst-binnenschilderwerk.html" class="block px-4 py-2.5 font-body text-sm text-on-surface-variant hover:text-primary hover:bg-surface-container-low transition-colors">Schilderen</a>
+ <a href="dienst-behangen.html" class="block px-4 py-2.5 font-body text-sm text-on-surface-variant hover:text-primary hover:bg-surface-container-low transition-colors">Behangen</a>
+ <a href="dienst-buitenschilderwerk.html" class="block px-4 py-2.5 font-body text-sm text-on-surface-variant hover:text-primary hover:bg-surface-container-low transition-colors">Onderhoud</a>
+ <a href="dienst-afgeschermd-onderhoud.html" class="block px-4 py-2.5 font-body text-sm text-on-surface-variant hover:text-primary hover:bg-surface-container-low transition-colors">Afgeschermd Onderhoud</a>
+ <a href="dienst-beglazing.html" class="block px-4 py-2.5 font-body text-sm text-on-surface-variant hover:text-primary hover:bg-surface-container-low transition-colors">Beglazing</a>
+ </div>
+ </div>
+ </div>
  <a href="portfolio.html" class="text-primary border-b-2 border-primary pb-0.5">Portfolio</a>
  <a href="over-ons.html" class="text-on-surface-variant hover:text-primary transition-colors">Over Ons</a>
  <a href="contact.html" class="text-on-surface-variant hover:text-primary transition-colors">Contact</a>
@@ -54,6 +65,13 @@ tailwind.config = {
  <div class="px-6 py-4 flex flex-col gap-4 font-headline font-semibold text-sm bg-surface/95">
  <a href="index.html" class="text-on-surface-variant">Home</a>
  <a href="diensten.html" class="text-on-surface-variant">Diensten</a>
+ <div class="pl-4 flex flex-col gap-1 mt-0.5">
+ <a href="dienst-binnenschilderwerk.html" class="text-on-surface-variant/80 font-normal font-body" style="font-size:0.75rem;">&#8627; Schilderen</a>
+ <a href="dienst-behangen.html" class="text-on-surface-variant/80 font-normal font-body" style="font-size:0.75rem;">&#8627; Behangen</a>
+ <a href="dienst-buitenschilderwerk.html" class="text-on-surface-variant/80 font-normal font-body" style="font-size:0.75rem;">&#8627; Onderhoud</a>
+ <a href="dienst-afgeschermd-onderhoud.html" class="text-on-surface-variant/80 font-normal font-body" style="font-size:0.75rem;">&#8627; Afgeschermd Onderhoud</a>
+ <a href="dienst-beglazing.html" class="text-on-surface-variant/80 font-normal font-body" style="font-size:0.75rem;">&#8627; Beglazing</a>
+ </div>
  <a href="portfolio.html" class="text-primary">Portfolio</a>
  <a href="over-ons.html" class="text-on-surface-variant">Over Ons</a>
  <a href="contact.html" class="text-on-surface-variant">Contact</a>
