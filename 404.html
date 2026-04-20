@@ -50,8 +50,7 @@ tailwind.config = {
     clip-path: polygon(0 60%, 100% 55%, 100% 100%, 0 100%);
     opacity: 0.12;
   }
-  #p5-drip { position: fixed; top: 0; left: 0; z-index: 2; pointer-events: none; }
-  main, footer { position: relative; z-index: 10; }
+  main, footer { position: relative; z-index: 1; }
 </style>
 </head>
 <body class="bg-surface text-on-surface font-body antialiased">
@@ -96,7 +95,7 @@ tailwind.config = {
 </nav>
 
 <main class="flex-grow flex items-center justify-center px-6 pt-32 pb-20">
-  <div class="max-w-2xl mx-auto text-center">
+  <div class="max-w-2xl mx-auto text-center bg-white/80 backdrop-blur-sm rounded-2xl px-10 py-12 shadow-xl">
 
     <!-- 404 -->
     <div class="relative inline-block mb-2">
@@ -120,7 +119,8 @@ tailwind.config = {
 </main>
 
 <footer style="background:#051125;" class="text-slate-100 py-10 px-6 text-center">
-  <p class="font-body text-xs text-slate-600">© 2025 Van den Dam Schilderwerken. Alle rechten voorbehouden.</p>
+  <p class="font-body text-xs text-slate-600">© 2026 Van den Dam Schilderwerken. Alle rechten voorbehouden.</p>
+  <p class="font-body text-xs text-slate-700 mt-2">Website gemaakt door <a href="https://nl.linkedin.com/in/beau-nolten-a98a89a7" target="_blank" rel="noopener noreferrer" class="underline hover:text-slate-400 transition-colors">Beau Nolten</a></p>
 </footer>
 
 <script>
@@ -134,7 +134,11 @@ tailwind.config = {
 
   function setup() {
     let canvas = createCanvas(windowWidth, windowHeight);
-    canvas.id('p5-drip');
+    canvas.elt.style.position = 'fixed';
+    canvas.elt.style.top = '0';
+    canvas.elt.style.left = '0';
+    canvas.elt.style.zIndex = '0';
+    canvas.elt.style.pointerEvents = 'none';
     noFill();
     strokeWeight(2);
     reset();
