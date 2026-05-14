@@ -61,18 +61,25 @@ document.documentElement.style.scrollBehavior = 'smooth';
   });
 })();
 
-// Uitvoermaand picker: min = volgende maand, max = huidige maand + 2 jaar
+// Uitvoermaand picker: volgende maand t/m huidige maand + 1 jaar
 (function() {
   document.addEventListener('DOMContentLoaded', function() {
-    var input = document.getElementById('uitvoer');
-    if (!input) return;
+    var sel = document.getElementById('uitvoer');
+    if (!sel) return;
+    var maanden = ['Januari','Februari','Maart','April','Mei','Juni','Juli','Augustus','September','Oktober','November','December'];
     var now = new Date();
-    var minYear = now.getMonth() === 11 ? now.getFullYear() + 1 : now.getFullYear();
-    var minMonth = now.getMonth() === 11 ? 0 : now.getMonth() + 1;
-    var maxYear = now.getFullYear() + 1;
-    var maxMonth = now.getMonth();
-    function fmt(y, m) { return y + '-' + String(m + 1).padStart(2, '0'); }
-    input.min = fmt(minYear, minMonth);
-    input.max = fmt(maxYear, maxMonth);
+    var y = now.getFullYear();
+    var m = now.getMonth() + 1; // volgende maand
+    if (m > 11) { m = 0; y++; }
+    var endY = now.getFullYear() + 1;
+    var endM = now.getMonth();
+    while (y < endY || (y === endY && m <= endM)) {
+      var opt = document.createElement('option');
+      opt.value = y + '-' + String(m + 1).padStart(2, '0');
+      opt.textContent = maanden[m] + ' ' + y;
+      sel.appendChild(opt);
+      m++;
+      if (m > 11) { m = 0; y++; }
+    }
   });
 })();
