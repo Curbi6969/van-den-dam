@@ -26,6 +26,7 @@
   height: 8px;
   border-radius: 9999px;
   background-color: #ff0000;
+  opacity: 0;
   animation: drip-drop 8s cubic-bezier(0.4, 0, 1, 1) infinite;
 }
 
