@@ -69,7 +69,7 @@ document.documentElement.style.scrollBehavior = 'smooth';
     var now = new Date();
     var minYear = now.getMonth() === 11 ? now.getFullYear() + 1 : now.getFullYear();
     var minMonth = now.getMonth() === 11 ? 0 : now.getMonth() + 1;
-    var maxYear = now.getFullYear() + 2;
+    var maxYear = now.getFullYear() + 1;
     var maxMonth = now.getMonth();
     function fmt(y, m) { return y + '-' + String(m + 1).padStart(2, '0'); }
     input.min = fmt(minYear, minMonth);
