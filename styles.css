@@ -8,7 +8,7 @@
   position: absolute;
   top: 99%;
   transform-origin: top;
-  animation: drip-pulse 4s cubic-bezier(0.4, 0, 1, 1) infinite;
+  animation: drip-pulse 8s cubic-bezier(0.4, 0, 1, 1) infinite;
 }
 
 .drip-body {
@@ -26,17 +26,17 @@
   height: 8px;
   border-radius: 9999px;
   background-color: #ff0000;
-  animation: drip-drop 4s cubic-bezier(0.4, 0, 1, 1) infinite;
+  animation: drip-drop 8s cubic-bezier(0.4, 0, 1, 1) infinite;
 }
 
 @keyframes drip-pulse {
   0%    { transform: scaleY(0.75); }
-  12.5% { transform: scaleY(1); }
-  50%, 100% { transform: scaleY(0.75); }
+  6.25% { transform: scaleY(1); }
+  25%, 100% { transform: scaleY(0.75); }
 }
 
 @keyframes drip-drop {
   0%    { transform: translateY(-8px); opacity: 1; }
-  49.9% { transform: translateY(50px); opacity: 0; }
-  50%, 100% { transform: translateY(-8px); opacity: 0; }
+  24.9% { transform: translateY(50px); opacity: 0; }
+  25%, 100% { transform: translateY(-8px); opacity: 0; }
 }
