@@ -60,3 +60,19 @@ document.documentElement.style.scrollBehavior = 'smooth';
     });
   });
 })();
+
+// Uitvoermaand picker: min = volgende maand, max = huidige maand + 2 jaar
+(function() {
+  document.addEventListener('DOMContentLoaded', function() {
+    var input = document.getElementById('uitvoer');
+    if (!input) return;
+    var now = new Date();
+    var minYear = now.getMonth() === 11 ? now.getFullYear() + 1 : now.getFullYear();
+    var minMonth = now.getMonth() === 11 ? 0 : now.getMonth() + 1;
+    var maxYear = now.getFullYear() + 2;
+    var maxMonth = now.getMonth();
+    function fmt(y, m) { return y + '-' + String(m + 1).padStart(2, '0'); }
+    input.min = fmt(minYear, minMonth);
+    input.max = fmt(maxYear, maxMonth);
+  });
+})();
