@@ -26,8 +26,7 @@
   height: 8px;
   border-radius: 9999px;
   background-color: #ff0000;
-  opacity: 0;
-  animation: drip-drop 8s cubic-bezier(0.4, 0, 1, 1) infinite;
+  animation: drip-drop 8s cubic-bezier(0.4, 0, 1, 1) infinite backwards;
 }
 
 @keyframes drip-pulse {
@@ -37,7 +36,8 @@
 }
 
 @keyframes drip-drop {
-  0%    { transform: translateY(-8px); opacity: 1; }
+  0%    { transform: translateY(-8px); opacity: 0; }
+  3%    { transform: translateY(-8px); opacity: 1; }
   24.9% { transform: translateY(50px); opacity: 0; }
   25%, 100% { transform: translateY(-8px); opacity: 0; }
 }
