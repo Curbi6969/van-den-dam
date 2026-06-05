@@ -7,6 +7,7 @@ const isAdmin = ({ req }: { req: { user?: { role?: string } | null } }) =>
 
 export const Users: CollectionConfig = {
   slug: 'users',
+  labels: { singular: 'Gebruiker', plural: 'Gebruikers' },
   admin: {
     useAsTitle: 'name',
     defaultColumns: ['name', 'email', 'role'],
