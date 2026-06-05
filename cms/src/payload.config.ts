@@ -2,6 +2,7 @@ import { sqliteAdapter } from '@payloadcms/db-sqlite'
 import { postgresAdapter } from '@payloadcms/db-postgres'
 import { lexicalEditor } from '@payloadcms/richtext-lexical'
 import { seoPlugin } from '@payloadcms/plugin-seo'
+import { nl } from '@payloadcms/translations/languages/nl'
 import path from 'path'
 import { buildConfig } from 'payload'
 import { fileURLToPath } from 'url'
@@ -29,6 +30,11 @@ export default buildConfig({
   collections: [Users, Media, Services],
   globals: [SiteSettings, Home],
   editor: lexicalEditor(),
+  // Admin interface language: Dutch (separate from the NL/EN content above).
+  i18n: {
+    supportedLanguages: { nl },
+    fallbackLanguage: 'nl',
+  },
   // Bilingual content: editors fill each localized field in both NL and EN,
   // and the public site renders per-locale (the language toggle).
   localization: {
