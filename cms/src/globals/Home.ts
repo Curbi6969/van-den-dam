@@ -11,6 +11,7 @@ export const Home: GlobalConfig = {
       type: 'group',
       name: 'hero',
       label: 'Hero-sectie',
+      localized: true,
       fields: [
         { name: 'eyebrow', type: 'text', label: 'Bovenkop' },
         { name: 'title', type: 'text', label: 'Titel' },
@@ -22,6 +23,7 @@ export const Home: GlobalConfig = {
       type: 'array',
       name: 'trust',
       label: 'Vertrouwensstrook',
+      localized: true,
       labels: { singular: 'Item', plural: 'Items' },
       fields: [
         { name: 'icon', type: 'text', label: 'Icoon (Material Symbol naam)' },
@@ -33,6 +35,7 @@ export const Home: GlobalConfig = {
       type: 'group',
       name: 'servicesIntro',
       label: 'Intro diensten',
+      localized: true,
       fields: [
         { name: 'eyebrow', type: 'text', label: 'Bovenkop' },
         { name: 'title', type: 'text', label: 'Titel' },
@@ -43,6 +46,7 @@ export const Home: GlobalConfig = {
       type: 'array',
       name: 'servicesCards',
       label: 'Dienstenkaarten',
+      localized: true,
       labels: { singular: 'Kaart', plural: 'Kaarten' },
       fields: [
         { name: 'title', type: 'text', label: 'Titel' },
@@ -55,6 +59,7 @@ export const Home: GlobalConfig = {
       type: 'group',
       name: 'about',
       label: 'Over ons sectie',
+      localized: true,
       fields: [
         { name: 'eyebrow', type: 'text', label: 'Bovenkop' },
         { name: 'title', type: 'text', label: 'Titel' },
@@ -69,6 +74,7 @@ export const Home: GlobalConfig = {
       type: 'group',
       name: 'portfolioIntro',
       label: 'Intro portfolio',
+      localized: true,
       fields: [
         { name: 'eyebrow', type: 'text', label: 'Bovenkop' },
         { name: 'title', type: 'text', label: 'Titel' },
@@ -78,6 +84,7 @@ export const Home: GlobalConfig = {
       type: 'array',
       name: 'portfolio',
       label: 'Portfolio items (homepage)',
+      localized: true,
       labels: { singular: 'Item', plural: 'Items' },
       fields: [
         { name: 'category', type: 'text', label: 'Categorie' },
@@ -89,6 +96,7 @@ export const Home: GlobalConfig = {
       type: 'group',
       name: 'reviewsIntro',
       label: 'Intro recensies',
+      localized: true,
       fields: [
         { name: 'eyebrow', type: 'text', label: 'Bovenkop' },
         { name: 'title', type: 'text', label: 'Titel' },
@@ -100,6 +108,7 @@ export const Home: GlobalConfig = {
       type: 'array',
       name: 'reviews',
       label: 'Recensies',
+      localized: true,
       labels: { singular: 'Recensie', plural: 'Recensies' },
       fields: [
         { name: 'quote', type: 'textarea', label: 'Citaat' },
@@ -110,6 +119,7 @@ export const Home: GlobalConfig = {
       type: 'group',
       name: 'cta',
       label: 'Call-to-action',
+      localized: true,
       fields: [
         { name: 'title', type: 'text', label: 'Titel' },
         { name: 'text', type: 'textarea', label: 'Tekst' },

@@ -15,7 +15,7 @@ export const Services: CollectionConfig = {
     {
       type: 'row',
       fields: [
-        { name: 'title', type: 'text', label: 'Titel', required: true },
+        { name: 'title', type: 'text', label: 'Titel', required: true, localized: true },
         {
           name: 'slug',
           type: 'text',
@@ -26,8 +26,8 @@ export const Services: CollectionConfig = {
         },
       ],
     },
-    { name: 'eyebrow', type: 'text', label: 'Bovenkop' },
-    { name: 'heading', type: 'text', label: 'Kop' },
+    { name: 'eyebrow', type: 'text', label: 'Bovenkop', localized: true },
+    { name: 'heading', type: 'text', label: 'Kop', localized: true },
     {
       name: 'heroImage',
       type: 'upload',
@@ -38,6 +38,7 @@ export const Services: CollectionConfig = {
       name: 'body',
       type: 'richText',
       label: 'Tekst',
+      localized: true,
     },
     {
       name: 'inlineImage',
@@ -48,8 +49,8 @@ export const Services: CollectionConfig = {
     {
       type: 'row',
       fields: [
-        { name: 'ctaPrimary', type: 'text', label: 'Primaire knoptekst' },
-        { name: 'ctaSecondary', type: 'text', label: 'Secundaire knoptekst' },
+        { name: 'ctaPrimary', type: 'text', label: 'Primaire knoptekst', localized: true },
+        { name: 'ctaSecondary', type: 'text', label: 'Secundaire knoptekst', localized: true },
       ],
     },
   ],

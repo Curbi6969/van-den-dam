@@ -88,7 +88,7 @@ export interface Config {
   db: {
     defaultIDType: number;
   };
-  fallbackLocale: null;
+  fallbackLocale: ('false' | 'none' | 'null') | false | null | ('nl' | 'en') | ('nl' | 'en')[];
   globals: {
     'site-settings': SiteSetting;
     home: Home;
@@ -97,7 +97,7 @@ export interface Config {
     'site-settings': SiteSettingsSelect<false> | SiteSettingsSelect<true>;
     home: HomeSelect<false> | HomeSelect<true>;
   };
-  locale: null;
+  locale: 'nl' | 'en';
   widgets: {
     collections: CollectionsWidget;
   };

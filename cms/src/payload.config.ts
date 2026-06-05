@@ -29,6 +29,16 @@ export default buildConfig({
   collections: [Users, Media, Services],
   globals: [SiteSettings, Home],
   editor: lexicalEditor(),
+  // Bilingual content: editors fill each localized field in both NL and EN,
+  // and the public site renders per-locale (the language toggle).
+  localization: {
+    locales: [
+      { label: 'Nederlands', code: 'nl' },
+      { label: 'English', code: 'en' },
+    ],
+    defaultLocale: 'nl',
+    fallback: true,
+  },
   secret: process.env.PAYLOAD_SECRET || '',
   typescript: {
     outputFile: path.resolve(dirname, 'payload-types.ts'),

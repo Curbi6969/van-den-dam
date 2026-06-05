@@ -14,7 +14,7 @@ export const SiteSettings: GlobalConfig = {
       fields: [
         { name: 'name', type: 'text', label: 'Bedrijfsnaam', required: true },
         { name: 'shortName', type: 'text', label: 'Korte naam' },
-        { name: 'tagline', type: 'text', label: 'Tagline' },
+        { name: 'tagline', type: 'text', label: 'Tagline', localized: true },
         { name: 'founded', type: 'text', label: 'Oprichtingsjaar' },
         { name: 'yearsExperience', type: 'text', label: 'Jaren ervaring' },
       ],
@@ -47,7 +47,7 @@ export const SiteSettings: GlobalConfig = {
       label: 'Navigatie: diensten',
       labels: { singular: 'Dienst', plural: 'Diensten' },
       fields: [
-        { name: 'title', type: 'text', label: 'Titel', required: true },
+        { name: 'title', type: 'text', label: 'Titel', required: true, localized: true },
         { name: 'url', type: 'text', label: 'URL (bijv. dienst-behangen.html)', required: true },
       ],
     },
