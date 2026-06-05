@@ -1,0 +1,51 @@
+import { sqliteAdapter } from '@payloadcms/db-sqlite'
+import { lexicalEditor } from '@payloadcms/richtext-lexical'
+import { seoPlugin } from '@payloadcms/plugin-seo'
+import path from 'path'
+import { buildConfig } from 'payload'
+import { fileURLToPath } from 'url'
+import sharp from 'sharp'
+
+import { Users } from './collections/Users'
+import { Media } from './collections/Media'
+import { Services } from './collections/Services'
+import { SiteSettings } from './globals/SiteSettings'
+import { Home } from './globals/Home'
+
+const filename = fileURLToPath(import.meta.url)
+const dirname = path.dirname(filename)
+
+export default buildConfig({
+  admin: {
+    user: Users.slug,
+    importMap: {
+      baseDir: path.resolve(dirname),
+    },
+    meta: {
+      titleSuffix: '· Van den Dam CMS',
+    },
+  },
+  collections: [Users, Media, Services],
+  globals: [SiteSettings, Home],
+  editor: lexicalEditor(),
+  secret: process.env.PAYLOAD_SECRET || '',
+  typescript: {
+    outputFile: path.resolve(dirname, 'payload-types.ts'),
+  },
+  db: sqliteAdapter({
+    client: {
+      url: process.env.DATABASE_URI || 'file:./vandendam.db',
+    },
+  }),
+  sharp,
+  plugins: [
+    seoPlugin({
+      collections: ['services'],
+      globals: ['home'],
+      uploadsCollection: 'media',
+      tabbedUI: true,
+      generateTitle: ({ doc }: { doc?: { title?: string } }) =>
+        doc?.title ? `${doc.title} | Van den Dam Schilderwerken` : 'Van den Dam Schilderwerken',
+    }),
+  ],
+})
