@@ -7,7 +7,7 @@
 <meta name="description" content="{{ description }}"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Work+Sans:wght@300;400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=block" rel="stylesheet"/>
 <script>
 tailwind.config = {
  theme: {
@@ -66,6 +66,23 @@ tailwind.config = {
 }
 </script>
 <style>
+ /* Define the Material Symbols helper class locally so icon rendering never
+    depends on Google serving it only to recognised browser User-Agents. */
+ .material-symbols-outlined {
+ font-family: 'Material Symbols Outlined';
+ font-weight: normal;
+ font-style: normal;
+ line-height: 1;
+ letter-spacing: normal;
+ text-transform: none;
+ display: inline-block;
+ white-space: nowrap;
+ word-wrap: normal;
+ direction: ltr;
+ -webkit-font-smoothing: antialiased;
+ -webkit-font-feature-settings: 'liga';
+ font-feature-settings: 'liga';
+ }
  .ambient-shadow { box-shadow: 0 10px 40px rgba(35,34,39,0.06); }
  .ghost-border { border: 1px solid rgba(197,198,205,0.15); }
  .gradient-primary { background: linear-gradient(135deg, #232227 0%, #3a393e 100%); }
