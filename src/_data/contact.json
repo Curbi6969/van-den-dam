@@ -1,0 +1,44 @@
+{
+  "title": "Contact Van den Dam Schilderwerken",
+  "description": "Neem contact op met Van den Dam Schilderwerken voor een vrijblijvende offerte.",
+  "hero": {
+    "eyebrow": "Laten we praten",
+    "heading": "Neem Contact Op",
+    "intro": "Klaar om uw ruimte te transformeren? Bespreek uw visie met onze experts en ontvang een advies op maat."
+  },
+  "infoCard": {
+    "heading": "Contactgegevens",
+    "addressLabel": "Adres",
+    "phoneLabel": "Telefoon",
+    "emailLabel": "Email"
+  },
+  "businessCard": {
+    "heading": "Bedrijfsgegevens",
+    "kvkLabel": "KvK",
+    "bankLabel": "Bank",
+    "accountLabel": "Rekeningnummer"
+  },
+  "form": {
+    "heading": "Offerte Aanvragen",
+    "intro": "Vul uw gegevens in en wij nemen zo spoedig mogelijk contact met u op.",
+    "labelName": "Naam *",
+    "labelPhone": "Telefoonnummer *",
+    "labelMobile": "Mobiel nummer",
+    "labelEmail": "E-mailadres *",
+    "labelCopy": "Stuur me een kopie van de aanvraag",
+    "labelCity": "Woonplaats",
+    "labelUitvoeringMonth": "Gewenste maand van uitvoer",
+    "labelWerkzaamheden": "Werkzaamheden",
+    "optionChoose": "Maak een keuze",
+    "optionSchilderen": "Schilderen",
+    "optionBehangen": "Behangen",
+    "optionOnderhoud": "Onderhoud",
+    "optionAfgeschermd": "Afgeschermd onderhoud",
+    "optionBeglazing": "Beglazing",
+    "optionRamen": "Ramen zetten",
+    "labelMessage": "Aanvullende informatie",
+    "labelPrivacy": "Ik ga akkoord met de",
+    "labelPrivacyLink": "privacyverklaring",
+    "submitButton": "Verstuur Aanvraag"
+  }
+}

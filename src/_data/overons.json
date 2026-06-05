@@ -1,0 +1,48 @@
+{
+  "title": "Over Ons Van den Dam Schilderwerken",
+  "description": "Maak kennis met Van den Dam Schilderwerken een familiebedrijf met 25+ jaar vakmanschap in schilder- en renovatiewerk.",
+  "hero": {
+    "eyebrow": "Sinds 1997",
+    "title": "Vakmanschap in het DNA.",
+    "text": "Wat begon als een gedeelde passie is uitgegroeid tot een referentie in hoogwaardig schilder- en renovatiewerk. Wij geloven dat kleur en textuur de architectuur van een ruimte definiëren.",
+    "ctaLabel": "Kom in contact",
+    "ctaHref": "contact.html",
+    "image": "resources/team.jpg",
+    "imageAlt": "Ons team"
+  },
+  "values": {
+    "eyebrow": "Onze waarden",
+    "heading": "Wat ons drijft",
+    "items": [
+      {
+        "icon": "architecture",
+        "title": "Architecturaal Inzicht",
+        "text": "Wij kijken verder dan de verf. We begrijpen hoe licht, ruimte en materiaal interageren, en adviseren afwerkingen die de ruimtelijke ervaring versterken."
+      },
+      {
+        "icon": "verified",
+        "title": "25+ Jaar Ervaring",
+        "text": "Een kwarteeuw aan opgebouwde expertise. Van historische restauraties tot strakke, moderne nieuwbouwprojecten we beheersen elke techniek tot in de perfectie.",
+        "raised": true
+      },
+      {
+        "icon": "diversity_3",
+        "title": "Familiale Waarden",
+        "text": "Als familiebedrijf staan we voor direct contact, absolute betrouwbaarheid en een persoonlijke benadering bij elk project, groot of klein."
+      }
+    ]
+  },
+  "team": {
+    "eyebrow": "Ons team",
+    "heading": "Meesters in het Vak.",
+    "paragraph1": "Ons team bestaat uitsluitend uit gediplomeerde vakmensen die onze visie op kwaliteit delen. Wij werken uitsluitend met premium materialen en volgen de nieuwste innovaties in verf- en afwerkingstechnieken op de voet.",
+    "paragraph2": "Van minutieus voorbereidend werk tot de finale, feilloze afwerkingslaag: wij behandelen uw eigendom met het uiterste respect, alsof het ons eigen atelier is.",
+    "ctaLabel": "Neem contact op",
+    "ctaHref": "contact.html",
+    "quote": "Elke streek is een handtekening van onze toewijding aan perfectie.",
+    "image1": "resources/vakman.jpg",
+    "image1Alt": "Detail verfkwast",
+    "image2": "resources/team.jpg",
+    "image2Alt": "Vakman aan het werk"
+  }
+}

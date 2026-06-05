@@ -1,0 +1,37 @@
+---
+layout: base.njk
+nav: diensten
+eleventyComputed:
+  title: "{{ dienst_binnenschilderwerk.title }}"
+  description: "{{ dienst_binnenschilderwerk.description }}"
+---
+<main class="pt-28 pb-24">
+ <!-- Hero image -->
+ <div class="w-full h-72 md:h-96 overflow-hidden">
+ <img src="{{ dienst_binnenschilderwerk.heroImage }}" alt="{{ dienst_binnenschilderwerk.heroImageAlt }}" class="w-full h-full object-cover"/>
+ </div>
+
+ <div class="max-w-3xl mx-auto px-6 mt-12">
+ <span class="font-label text-xs font-semibold tracking-widest text-secondary uppercase mb-4 block">{{ dienst_binnenschilderwerk.eyebrow }}</span>
+ <h1 class="font-headline text-4xl md:text-5xl font-extrabold text-primary mb-10" style="letter-spacing:-0.02em;">{{ dienst_binnenschilderwerk.heading }}</h1>
+
+ <div class="prose">
+ <p>
+ {{ dienst_binnenschilderwerk.paragraph }}
+ </p>
+ </div>
+
+ <div class="my-10 rounded-xl overflow-hidden ambient-shadow">
+ <img src="{{ dienst_binnenschilderwerk.inlineImage }}" alt="{{ dienst_binnenschilderwerk.inlineImageAlt }}" class="w-full object-cover" style="max-height:420px;"/>
+ </div>
+
+ <div class="mt-10 flex flex-wrap gap-4">
+ <a href="contact.html" class="inline-flex items-center gap-2 bg-secondary text-on-secondary font-label font-semibold px-7 py-3.5 rounded-md hover:opacity-90 transition-opacity">
+ {{ dienst_binnenschilderwerk.ctaPrimary }} <span class="material-symbols-outlined text-sm">arrow_forward</span>
+ </a>
+ <a href="diensten.html" class="inline-flex items-center gap-2 font-label text-sm text-secondary font-semibold hover:text-primary transition-colors">
+ <span class="material-symbols-outlined text-base">arrow_back</span> {{ dienst_binnenschilderwerk.ctaSecondary }}
+ </a>
+ </div>
+ </div>
+</main>

@@ -1,0 +1,106 @@
+---
+layout: base.njk
+permalink: 404.html
+eleventyComputed:
+  title: "{{ page404.title }}"
+  description: "{{ page404.description }}"
+---
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.4/p5.min.js"></script>
+<style>
+  body { min-height: 100vh; display: flex; flex-direction: column; }
+  .drip-404 {
+    font-family: 'Manrope', sans-serif;
+    font-size: clamp(8rem, 22vw, 18rem);
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: -0.04em;
+    color: transparent;
+    -webkit-text-stroke: 3px #ff0000;
+    position: relative;
+    user-select: none;
+  }
+  .drip-404::before {
+    content: '404';
+    position: absolute;
+    inset: 0;
+    color: #ff0000;
+    clip-path: polygon(0 60%, 100% 55%, 100% 100%, 0 100%);
+    opacity: 0.12;
+  }
+</style>
+
+<main class="flex-grow flex items-center justify-center px-6 pt-32 pb-20">
+  <div class="max-w-2xl mx-auto text-center bg-white/80 backdrop-blur-sm rounded-2xl px-10 py-12 shadow-xl">
+
+    <!-- 404 -->
+    <div class="relative inline-block mb-2">
+      <span class="drip-404">404</span>
+    </div>
+
+    <h1 class="font-headline text-2xl md:text-3xl font-extrabold text-primary mt-10 mb-4">{{ page404.heading }}</h1>
+    <p class="font-body text-on-surface-variant text-lg leading-relaxed mb-10">
+      {{ page404.body }}
+    </p>
+
+    <div class="flex flex-wrap justify-center gap-4">
+      <a href="index.html" class="inline-flex items-center gap-2 bg-secondary text-on-secondary font-label font-semibold px-7 py-3.5 rounded-md hover:opacity-90 transition-opacity">
+        <span class="material-symbols-outlined text-base">home</span> {{ page404.linkHome }}
+      </a>
+      <a href="contact.html" class="inline-flex items-center gap-2 bg-secondary text-on-secondary font-label font-semibold px-7 py-3.5 rounded-md hover:opacity-90 transition-opacity">
+        {{ page404.linkContact }}
+      </a>
+    </div>
+  </div>
+</main>
+
+<script>
+  let points;
+  const stepsPerFrame = 5;
+
+  function setup() {
+    let canvas = createCanvas(windowWidth, windowHeight);
+    canvas.elt.style.position = 'fixed';
+    canvas.elt.style.top = '0';
+    canvas.elt.style.left = '0';
+    canvas.elt.style.zIndex = '-1';
+    canvas.elt.style.pointerEvents = 'none';
+    noFill();
+    strokeWeight(2);
+    reset();
+  }
+
+  function draw() {
+    for (let i = 0; i < stepsPerFrame; i++) {
+      stroke(255, 0, 0, 160 - i * 160 / stepsPerFrame);
+      drawLine();
+    }
+  }
+
+  function reset() {
+    background(251, 248, 255);
+    resetPoints();
+  }
+
+  function resetPoints() {
+    points = [];
+    for (let i = 0; i < windowWidth; i++) {
+      points.push([i, 0]);
+    }
+  }
+
+  function drawLine() {
+    beginShape();
+    let atLeastOneOnScreen = false;
+    points.forEach(p => {
+      vertex(p[0], p[1]);
+      p[1] += noise(frameCount / 100 + p[0] / 25);
+      if (p[1] < windowHeight * 1.1) atLeastOneOnScreen = true;
+    });
+    endShape();
+    if (!atLeastOneOnScreen) reset();
+  }
+
+  function windowResized() {
+    resizeCanvas(windowWidth, windowHeight);
+  }
+</script>

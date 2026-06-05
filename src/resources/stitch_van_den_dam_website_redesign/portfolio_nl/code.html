@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+
+<html class="light" lang="nl"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Portfolio - Van den Dam Schilderwerken</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Work+Sans:wght@300;400;500;600&amp;family=Inter:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        /* Custom Utilities */
+        .ambient-shadow {
+            box-shadow: 0 10px 40px rgba(24, 26, 46, 0.06);
+        }
+        .ghost-border {
+            border: 1px solid rgba(197, 198, 205, 0.15); /* outline-variant at 15% */
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "tertiary": "#001224",
+                      "on-error-container": "#93000a",
+                      "outline-variant": "#c5c6cd",
+                      "inverse-surface": "#2d2f44",
+                      "error": "#ba1a1a",
+                      "error-container": "#ffdad6",
+                      "primary-fixed": "#d7e2ff",
+                      "on-tertiary-fixed-variant": "#2f4865",
+                      "primary": "#051125",
+                      "on-error": "#ffffff",
+                      "surface": "#fbf8ff",
+                      "on-primary": "#ffffff",
+                      "surface-container-highest": "#e0e0fc",
+                      "secondary-fixed-dim": "#ffb4a7",
+                      "on-secondary": "#ffffff",
+                      "tertiary-container": "#0a2742",
+                      "surface-variant": "#e0e0fc",
+                      "on-surface-variant": "#45474d",
+                      "primary-fixed-dim": "#bbc6e2",
+                      "background": "#fbf8ff",
+                      "on-tertiary": "#ffffff",
+                      "on-primary-fixed": "#101b30",
+                      "tertiary-fixed": "#d1e4ff",
+                      "on-secondary-fixed": "#400200",
+                      "inverse-on-surface": "#f1efff",
+                      "secondary-fixed": "#ffdad4",
+                      "outline": "#75777d",
+                      "inverse-primary": "#bbc6e2",
+                      "surface-container-high": "#e6e6ff",
+                      "on-primary-fixed-variant": "#3c475d",
+                      "on-background": "#181a2e",
+                      "on-primary-container": "#828da7",
+                      "surface-tint": "#545e76",
+                      "on-secondary-fixed-variant": "#80281b",
+                      "surface-container-lowest": "#ffffff",
+                      "on-tertiary-container": "#768fae",
+                      "on-tertiary-fixed": "#001d36",
+                      "surface-container-low": "#f4f2ff",
+                      "surface-bright": "#fbf8ff",
+                      "tertiary-fixed-dim": "#afc9ea",
+                      "secondary": "#a03f30",
+                      "on-surface": "#181a2e",
+                      "surface-dim": "#d7d8f4",
+                      "surface-container": "#edecff",
+                      "secondary-container": "#fe8672",
+                      "on-secondary-container": "#741f13",
+                      "primary-container": "#1b263b"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {},
+              "fontFamily": {
+                      "headline": ["Manrope", "sans-serif"],
+                      "body": ["Work Sans", "sans-serif"],
+                      "label": ["Inter", "sans-serif"]
+              }
+      },
+          },
+        }
+      </script>
+</head>
+<body class="bg-surface text-on-surface font-body antialiased selection:bg-secondary selection:text-on-secondary min-h-screen flex flex-col">
+<!-- TopNavBar (Shared Component) -->
+<header class="fixed top-0 w-full z-50 bg-white/80 dark:bg-slate-950/80 backdrop-blur-md no-border-rule bg-surface-container-low shadow-xl shadow-slate-900/5 transition-all duration-300">
+<div class="flex justify-between items-center w-full px-8 py-4 max-w-7xl mx-auto">
+<!-- Brand -->
+<a class="font-headline text-xl font-bold tracking-tighter text-slate-900 dark:text-slate-50 hover:opacity-80 transition-all duration-300" href="#"><img alt="Van den Dam Schilderwerken" class="h-12 w-auto" src="https://lh3.googleusercontent.com/aida/ADBb0ui1kUqrgpd4zincDFHuHy69qwuNvMQxL64YnBQ79LrZKA8j-tEQ2ljklYCoue_0BsfB0mmdx83ekToGL3gS4Hg52DRUw9Iw9Afmm_8bETrs8wfGfh25Cl349lk8d7PKydudP5koNm_ilKi9Ezp0lKhSpmeqNDYzuaKtc15ZUWArCZgfAw-Dj459_sPJ7gqhGmx8noh-vpXfueQDiNp3XJLLZBGRiAGsbW6Yq-1XaSmQ3C_vwqjGFmVxsjBW8RuIPgQnp0imy24e"/></a>
+<!-- Desktop Nav -->
+<nav class="hidden md:flex gap-8 items-center font-headline tracking-tight font-semibold">
+<a class="text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 transition-colors hover:opacity-80 transition-all duration-300" href="#">Home</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 transition-colors hover:opacity-80 transition-all duration-300" href="#">Diensten</a>
+<!-- Active Item: Portfolio -->
+<a class="flex-col text-orange-700 dark:text-orange-500 font-bold border-b-2 border-orange-700 dark:border-orange-500 pb-1 hover:opacity-80 transition-all duration-300" href="#">Portfolio</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 transition-colors hover:opacity-80 transition-all duration-300" href="#">Over Ons</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 transition-colors hover:opacity-80 transition-all duration-300" href="#">Contact</a>
+</nav>
+<!-- Trailing Action -->
+<div class="hidden md:flex">
+<button class="bg-primary text-on-primary font-headline font-semibold px-6 py-2.5 rounded-md hover:opacity-80 transition-all duration-300 bg-gradient-to-r from-primary to-primary-container scale-95 duration-200 ease-in-out">
+                    Offerte Aanvragen
+                </button>
+</div>
+<!-- Mobile Menu Toggle (Placeholder) -->
+<button class="md:hidden text-primary hover:opacity-80 transition-all duration-300 p-2">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-grow pt-32 pb-24">
+<!-- Hero Section -->
+<section class="max-w-7xl mx-auto px-8 mb-20">
+<div class="max-w-3xl">
+<h1 class="font-headline text-5xl md:text-6xl font-extrabold tracking-tight text-primary mb-6" style="letter-spacing: -0.02em;">
+                    Ons Portfolio
+                </h1>
+<p class="font-body text-xl text-on-surface-variant leading-relaxed">
+                    Een selectie van onze meest verfijnde projecten. Van naadloze interieurs tot weerbestendige exterieurs, wij leveren vakmanschap dat de tand des tijds doorstaat. Ontdek Onze Realisaties.
+                </p>
+</div>
+</section>
+<!-- Filter Chips -->
+<section class="max-w-7xl mx-auto px-8 mb-16">
+<div class="flex flex-wrap gap-4">
+<button class="bg-secondary text-on-secondary px-6 py-2 rounded-full font-label text-sm font-semibold tracking-wide border-2 border-transparent transition-all">
+                    Alles
+                </button>
+<button class="bg-surface-container text-on-surface px-6 py-2 rounded-full font-label text-sm font-semibold tracking-wide border-2 border-surface-container-highest hover:bg-surface-container-high transition-all">
+                    Interieur
+                </button>
+<button class="bg-surface-container text-on-surface px-6 py-2 rounded-full font-label text-sm font-semibold tracking-wide border-2 border-surface-container-highest hover:bg-surface-container-high transition-all">
+                    Exterieur
+                </button>
+<button class="bg-surface-container text-on-surface px-6 py-2 rounded-full font-label text-sm font-semibold tracking-wide border-2 border-surface-container-highest hover:bg-surface-container-high transition-all">
+                    Speciaal Lakwerk
+                </button>
+</div>
+</section>
+<!-- Portfolio Grid (Asymmetric Bento Style) -->
+<section class="max-w-7xl mx-auto px-8">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-8 auto-rows-[400px]">
+<!-- Project 1: Large Feature -->
+<article class="md:col-span-8 md:row-span-2 relative group overflow-hidden bg-surface-container-lowest rounded-xl ambient-shadow ghost-border cursor-pointer">
+<img alt="Modern minimalist living room" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Modern high-end living room interior, perfectly painted white walls, soft natural light pouring through large windows, minimalist furniture, architectural clean lines" src="https://lh3.googleusercontent.com/aida/ADBb0uicH3kwXMwQ6k9dQcFSJ1qGrgi78aBpPT1lBolToqpzdmALgUWyiUzPckFjVxsBlFNXcOvdA2dC5DFr9S6HaBCJE2LLHxjuFOuNqcOWgWaJ3qx8SFdncgfsnDFL_2qUnA9hSFFYV1LaOT0P_ttr0kbkzv99q8f4vFmvOwjmqJ2_YKDE9RDMG7cgsmPc1x7MwsOcpccaqS-jj8kIMV8id_rWHdq3bCKVYdu7CvqGUmuRD1mKG2-_ekqrum7KJiakxQVVEMZ5zTZXgA"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/30 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-300"></div>
+<div class="absolute bottom-0 left-0 p-8 w-full">
+<span class="inline-block bg-white/20 backdrop-blur-md text-white font-label text-xs uppercase tracking-wider px-3 py-1 rounded-sm mb-4">Interieur</span>
+<h2 class="font-headline text-3xl font-bold text-white mb-2">Herenhuis Amsterdam-Zuid</h2>
+<p class="font-body text-slate-200 max-w-xl line-clamp-2">Complete renovatie van het interieur schilderwerk, met een focus op historische details en een ultramatte afwerking voor de wanden.</p>
+</div>
+</article>
+<!-- Project 2: Vertical -->
+<article class="md:col-span-4 md:row-span-2 relative group overflow-hidden bg-surface-container-lowest rounded-xl ambient-shadow ghost-border cursor-pointer">
+<img alt="Luxury villa exterior" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Stately luxury villa exterior, crisp white painted facade, dark grey trim, lush green landscaping, bright sunny day, high contrast" src="https://lh3.googleusercontent.com/aida/ADBb0ujAv2Mkwv9KXuH_k7DZCh4LS_bKd0ZHFu2cyazL_jcQK1Jp7oxSSlOWfEZ48OpKjJwfETnhB2EF8muskGKF9ykeG3ZyXqp1pUFlUi53JLtVybOo0bYwP7C7pZDsATZs3LndSDz05JdY8jyUBXE68pwW8PuymLOhUMY_SlaoiJzXb0RPjp1SkofWCbacF4hq3dqlAI6UJ7Vt-FYb3vcvJ40hiLYtpYIibSMuMFK6ledIY6b2QoZZbABU26gVeWpkUwIBW0Cy7cOl7Q"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/20 to-transparent opacity-80 transition-opacity duration-300"></div>
+<div class="absolute bottom-0 left-0 p-8 w-full">
+<span class="inline-block bg-white/20 backdrop-blur-md text-white font-label text-xs uppercase tracking-wider px-3 py-1 rounded-sm mb-4">Exterieur</span>
+<h2 class="font-headline text-2xl font-bold text-white mb-2">Villa Bloemendaal</h2>
+<p class="font-body text-slate-200 line-clamp-3">Duurzaam exterieur schilderwerk dat de architectuur beschermt en accentueert met een zijdeglans afwerking.</p>
+</div>
+</article>
+<!-- Project 3: Standard -->
+<article class="md:col-span-4 relative group overflow-hidden bg-surface-container-lowest rounded-xl ambient-shadow ghost-border cursor-pointer">
+<img alt="Detailed woodwork" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Close up of beautifully painted dark navy blue interior wooden door frame and trim, brass hardware, crisp white wall background, architectural detail" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6pZxGYHOgH1eKDpuVKPiovr7L4_7YGiIqmg_GrwoeNoBGYhwHPqlNa4oo9qh6_ynox-NHO6FxEwOStd8wlQMzUgKQBpe4dGOlf5VfOUn6H877mzGh29KLA3vnDSRncBaamjOSeemZT57KvPkPvDaT2f4kewk4AIDr_qpBYpetaD9w2Aio88mEU7BHgJ95OgoD3aSjQVe1YbVFYf4Wsbwy6n5xceKWVi3HAoaIe3pnIzEILVWS6_1COR-BdffKJ9rcf-jLX0kVl2s"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/90 via-transparent to-transparent opacity-80"></div>
+<div class="absolute bottom-0 left-0 p-6 w-full">
+<span class="inline-block bg-white/20 backdrop-blur-md text-white font-label text-xs uppercase tracking-wider px-3 py-1 rounded-sm mb-3">Speciaal Lakwerk</span>
+<h2 class="font-headline text-xl font-bold text-white mb-1">Klassiek Houtwerk</h2>
+<p class="font-body text-sm text-slate-200 line-clamp-1">Hoogglans restauratie van monumentaal houtwerk.</p>
+</div>
+</article>
+<!-- Project 4: Standard -->
+<article class="md:col-span-4 relative group overflow-hidden bg-surface-container-lowest rounded-xl ambient-shadow ghost-border cursor-pointer">
+<img alt="Modern kitchen" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Modern high-end kitchen with deep charcoal painted cabinets, marble countertops, subtle warm under-cabinet lighting, clean minimal aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDHV6BU1s30mCwRwQth-FOKHEDx6rb8UJxNWhA_cNpOITbzU3fmud_S7jzbWpHOotp8y1D3TLizzR5BxLE8PORtHU29dyfsNsn0eZc_elOZTou6XkI4HWEujjJPzBAOFx659bJQ4ZIefYJ3jRHvbCDXn4glZQTW7TD1Sh-Sr-adbs8D-PQ-PK85as58f5GUKnD-7GJyYzp-vCE5lIyAVcIwdJTxuNHPwwaPRnzIULhshoSe_U6ggBdRT92vrQUAu_3ZlNQVvd9b4lM"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/90 via-transparent to-transparent opacity-80"></div>
+<div class="absolute bottom-0 left-0 p-6 w-full">
+<span class="inline-block bg-white/20 backdrop-blur-md text-white font-label text-xs uppercase tracking-wider px-3 py-1 rounded-sm mb-3">Interieur</span>
+<h2 class="font-headline text-xl font-bold text-white mb-1">Design Keuken Laren</h2>
+<p class="font-body text-sm text-slate-200 line-clamp-1">Strak spuitwerk voor een naadloos, modern keukenontwerp.</p>
+</div>
+</article>
+<!-- Project 5: Standard -->
+<article class="md:col-span-4 relative group overflow-hidden bg-surface-container-lowest rounded-xl ambient-shadow ghost-border cursor-pointer">
+<img alt="Office exterior" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Modern commercial office building exterior, sleek painted metal cladding in deep grey, large glass windows reflecting sky, professional atmosphere" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBlsEaA2okPC5_EaCxruCigM4NvZDWG6FMb36trSTUpmY8Tdrum-_wnmoCViLkPG3WdYONwYoWXjtd2VB_i-4zwL3MQ9MU7XxL8yJuv65fu8SqaZqpFUYJ4XKqbReeNs6TJQEhlHLhzr7e-HUmKAuLochmx8P_3O7bSjEmh8yXygJxmdIjPrchrb8-mbC_boFdsEsp7H1C8Maz8IFd0F3pK9fRTaDlTniilOaYyxK8RwFXLLPKKHK1Cp5LZay0Oq77v1mpyDEPwgLw"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/90 via-transparent to-transparent opacity-80"></div>
+<div class="absolute bottom-0 left-0 p-6 w-full">
+<span class="inline-block bg-white/20 backdrop-blur-md text-white font-label text-xs uppercase tracking-wider px-3 py-1 rounded-sm mb-3">Exterieur</span>
+<h2 class="font-headline text-xl font-bold text-white mb-1">Kantoorpand Zuidas</h2>
+<p class="font-body text-sm text-slate-200 line-clamp-1">Grootschalig onderhoud en representatieve gevelafwerking.</p>
+</div>
+</article>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="max-w-4xl mx-auto px-8 mt-32 text-center">
+<div class="bg-surface-container-low p-12 md:p-16 rounded-2xl ghost-border ambient-shadow relative overflow-hidden">
+<!-- Subtle background decoration -->
+<div class="absolute -top-24 -right-24 w-64 h-64 bg-primary-container rounded-full opacity-10 blur-3xl"></div>
+<div class="absolute -bottom-24 -left-24 w-64 h-64 bg-secondary-container rounded-full opacity-10 blur-3xl"></div>
+<h2 class="font-headline text-3xl md:text-4xl font-extrabold text-primary mb-6 relative z-10">Klaar om uw ruimte te transformeren?</h2>
+<p class="font-body text-lg text-on-surface-variant mb-10 max-w-2xl mx-auto relative z-10">Neem contact met ons op voor een vrijblijvend adviesgesprek. Wij bespreken graag de mogelijkheden voor uw specifieke project.</p>
+<button class="relative z-10 bg-primary text-on-primary font-headline font-semibold px-8 py-4 rounded-md hover:opacity-90 transition-all duration-300 bg-gradient-to-r from-primary to-primary-container shadow-lg shadow-primary/20 text-lg">
+                    Offerte Aanvragen
+                </button>
+</div>
+</section>
+</main>
+<!-- Footer (Shared Component) -->
+<footer class="bg-slate-900 dark:bg-black w-full pt-16 pb-8 tonal-shift-bg flat fade-in transition-opacity">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12 px-8 max-w-7xl mx-auto">
+<!-- Brand & Copyright -->
+<div class="flex flex-col gap-4">
+<span class="font-manrope text-lg font-extrabold text-white">Van den Dam Schilderwerken</span>
+<p class="text-slate-100 dark:text-slate-300 font-work-sans text-sm tracking-wide mt-auto">
+                    © 2024 Van den Dam Schilderwerken. Vakmanschap in elke penseelstreek.
+                </p>
+</div>
+<!-- Links -->
+<div class="flex flex-col gap-3 font-work-sans text-sm tracking-wide">
+<h4 class="text-white font-bold mb-2">Informatie</h4>
+<a class="text-slate-400 hover:text-white transition-colors hover:text-orange-400" href="#">Privacybeleid</a>
+<a class="text-slate-400 hover:text-white transition-colors hover:text-orange-400" href="#">Algemene Voorwaarden</a>
+<a class="text-slate-400 hover:text-white transition-colors hover:text-orange-400" href="#">Cookies</a>
+</div>
+<!-- Contact/Social (Placeholder structure) -->
+<div class="flex flex-col gap-3 font-work-sans text-sm tracking-wide">
+<h4 class="text-white font-bold mb-2">Contact</h4>
+<p class="text-slate-400">info@vandendam.nl</p>
+<p class="text-slate-400">+31 (0)20 123 4567</p>
+</div>
+</div>
+</footer>
+</body></html>

@@ -1,0 +1,73 @@
+{
+  "title": "Portfolio Van den Dam Schilderwerken",
+  "description": "Bekijk ons portfolio van schilderwerken van herrenhuizen in Amsterdam tot villa's en speciale afwerkingen.",
+  "hero": {
+    "eyebrow": "Onze realisaties",
+    "title": "Ons Portfolio",
+    "subtitle": "Een selectie van onze meest verfijnde projecten. Van naadloze interieurs tot weerbestendige exterieurs vakmanschap dat de tand des tijds doorstaat."
+  },
+  "filters": [
+    { "value": "all", "label": "Alles" },
+    { "value": "interieur", "label": "Interieur" },
+    { "value": "exterieur", "label": "Exterieur" },
+    { "value": "speciaal", "label": "Speciaal Lakwerk" }
+  ],
+  "projects": [
+    {
+      "cat": "interieur",
+      "colSpan": "md:col-span-8 md:row-span-2",
+      "image": "resources/vakman.jpg",
+      "imageAlt": "Herenhuis Amsterdam",
+      "categoryLabel": "Interieur",
+      "title": "Herenhuis Amsterdam-Zuid",
+      "description": "Complete renovatie van het interieur schilderwerk, met een focus op historische details en een ultramatte afwerking.",
+      "size": "large"
+    },
+    {
+      "cat": "exterieur",
+      "colSpan": "md:col-span-4 md:row-span-2",
+      "image": "resources/vakman.jpg",
+      "imageAlt": "Villa Bloemendaal",
+      "categoryLabel": "Exterieur",
+      "title": "Villa Bloemendaal",
+      "description": "Duurzaam exterieur schilderwerk dat de architectuur beschermt en accentueert.",
+      "size": "medium"
+    },
+    {
+      "cat": "speciaal",
+      "colSpan": "md:col-span-4",
+      "image": "resources/vakman.jpg",
+      "imageAlt": "Klassiek houtwerk",
+      "categoryLabel": "Speciaal Lakwerk",
+      "title": "Klassiek Houtwerk",
+      "description": "Hoogglans restauratie van monumentaal houtwerk.",
+      "size": "small"
+    },
+    {
+      "cat": "interieur",
+      "colSpan": "md:col-span-4",
+      "image": "resources/vakman.jpg",
+      "imageAlt": "Design keuken",
+      "categoryLabel": "Interieur",
+      "title": "Design Keuken Laren",
+      "description": "Strak spuitwerk voor een naadloos, modern keukenontwerp.",
+      "size": "small"
+    },
+    {
+      "cat": "exterieur",
+      "colSpan": "md:col-span-4",
+      "image": "resources/vakman.jpg",
+      "imageAlt": "Kantoorpand Zuidas",
+      "categoryLabel": "Exterieur",
+      "title": "Kantoorpand Zuidas",
+      "description": "Grootschalig onderhoud en representatieve gevelafwerking.",
+      "size": "small"
+    }
+  ],
+  "cta": {
+    "title": "Ziet u uw woning hier ook bij?",
+    "text": "Bespreek uw wensen en wij geven u een eerlijk advies op maat, zonder verplichtingen.",
+    "button": "Offerte Aanvragen",
+    "href": "contact.html"
+  }
+}

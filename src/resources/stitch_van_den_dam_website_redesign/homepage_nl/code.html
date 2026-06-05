@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+
+<html class="light" lang="nl"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Van den Dam Schilderwerken</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&amp;family=Work+Sans:wght@400;500;600&amp;family=Inter:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-variant": "#e0e0fc",
+                        "surface-container-low": "#f4f2ff",
+                        "surface-container-highest": "#e0e0fc",
+                        "on-tertiary-fixed": "#001d36",
+                        "on-background": "#181a2e",
+                        "on-secondary-fixed": "#400200",
+                        "tertiary-fixed": "#d1e4ff",
+                        "inverse-surface": "#2d2f44",
+                        "on-surface-variant": "#45474d",
+                        "secondary-container": "#fe8672",
+                        "error-container": "#ffdad6",
+                        "on-tertiary-container": "#768fae",
+                        "surface-container": "#edecff",
+                        "tertiary-fixed-dim": "#afc9ea",
+                        "on-error-container": "#93000a",
+                        "outline": "#75777d",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary": "#001224",
+                        "on-primary-container": "#828da7",
+                        "surface-dim": "#d7d8f4",
+                        "on-secondary-fixed-variant": "#80281b",
+                        "inverse-on-surface": "#f1efff",
+                        "surface": "#fbf8ff",
+                        "surface-container-high": "#e6e6ff",
+                        "primary-container": "#1b263b",
+                        "surface-bright": "#fbf8ff",
+                        "surface-tint": "#545e76",
+                        "primary-fixed-dim": "#bbc6e2",
+                        "on-error": "#ffffff",
+                        "primary": "#051125",
+                        "on-secondary": "#ffffff",
+                        "on-primary-fixed-variant": "#3c475d",
+                        "on-primary": "#ffffff",
+                        "on-tertiary-fixed-variant": "#2f4865",
+                        "on-surface": "#181a2e",
+                        "error": "#ba1a1a",
+                        "background": "#fbf8ff",
+                        "on-primary-fixed": "#101b30",
+                        "secondary-fixed-dim": "#ffb4a7",
+                        "on-secondary-container": "#741f13",
+                        "inverse-primary": "#bbc6e2",
+                        "primary-fixed": "#d7e2ff",
+                        "secondary": "#a03f30",
+                        "tertiary-container": "#0a2742",
+                        "outline-variant": "#c5c6cd",
+                        "on-tertiary": "#ffffff",
+                        "secondary-fixed": "#ffdad4"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Manrope", "sans-serif"],
+                        "body": ["Work Sans", "sans-serif"],
+                        "label": ["Inter", "sans-serif"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: theme('colors.surface');
+            color: theme('colors.on-surface');
+            font-family: theme('fontFamily.body');
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+    </style>
+</head>
+<body class="antialiased bg-surface text-on-surface">
+<!-- Navigation -->
+<nav class="fixed top-0 w-full z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl bg-slate-50/50 dark:bg-slate-800/50 shadow-[0_10px_40px_rgba(24,26,46,0.06)] font-['Manrope'] font-bold tracking-tight text-slate-900 dark:text-slate-100">
+<div class="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto">
+<div class="text-xl font-extrabold text-[#1B263B] dark:text-slate-100">Van den Dam Schilderwerken</div>
+<div class="hidden md:flex gap-8 items-center">
+<a class="text-[#1B263B] dark:text-white border-b-2 border-[#1B263B] pb-1 opacity-80 scale-95 transition-transform hover:text-[#1B263B] dark:hover:text-white transition-colors duration-300" href="#">Home</a>
+<a class="text-slate-600 dark:text-slate-400 font-medium hover:text-[#1B263B] dark:hover:text-white transition-colors duration-300" href="#">Diensten</a>
+<a class="text-slate-600 dark:text-slate-400 font-medium hover:text-[#1B263B] dark:hover:text-white transition-colors duration-300" href="#">Portfolio</a>
+<a class="text-slate-600 dark:text-slate-400 font-medium hover:text-[#1B263B] dark:hover:text-white transition-colors duration-300" href="#">Over Ons</a>
+<a class="text-slate-600 dark:text-slate-400 font-medium hover:text-[#1B263B] dark:hover:text-white transition-colors duration-300" href="#">Contact</a>
+</div>
+<button class="hidden md:block bg-secondary text-on-secondary px-6 py-3 rounded-md font-label font-medium hover:bg-secondary-container hover:text-on-secondary-container transition-colors shadow-[0_10px_40px_rgba(24,26,46,0.06)]">Offerte Aanvragen</button>
+</div>
+</nav>
+<!-- Hero Section -->
+<section class="relative min-h-screen flex items-center justify-center pt-24 pb-16 overflow-hidden bg-surface">
+<div class="absolute inset-0 z-0">
+<img alt="Beautifully painted modern living room with natural light" class="w-full h-full object-cover opacity-90" data-alt="A high-end modern interior living space, sunlit with crisp white walls, minimalist elegant furniture, and a sophisticated, serene architectural atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCH5atSwHtAdGOQhX0rvcjinBkzqK2Xx8hzmGKGuTXvX7JPHDq5q3NaHh4SlkiD_wdSMbkiZe765qCPtOdCWIU3gAuXBZWMp1jOLlbOvp7AsLV1khuCtW_zc5rctxrIIg2Rz77baly25qrRwRdQgRcG6mSbqT1kzi6SL4zWr0-rKp3apCn74bjUwTnlC3-2HUWjZNoS-rHlnUOtaouJ80maW71Pa2c41GKaJDMZGW1f15H_N6OlX_YDkQoAbBDUKshP_M8MUniDlLA"/>
+<div class="absolute inset-0 bg-gradient-to-r from-primary/80 to-transparent mix-blend-multiply"></div>
+</div>
+<div class="relative z-10 container mx-auto px-6 max-w-7xl">
+<div class="max-w-3xl space-y-8 bg-surface/80 backdrop-blur-xl p-12 rounded-xl border border-white/10 shadow-[0_10px_40px_rgba(24,26,46,0.06)]">
+<h1 class="font-headline text-5xl md:text-7xl font-extrabold text-primary leading-tight tracking-tight">
+                    Meesterlijk Schilderwerk &amp; Afwerking voor Uw Woning
+                </h1>
+<p class="font-body text-xl md:text-2xl text-on-surface-variant leading-relaxed font-light">
+                    Met meer dan 25 jaar expertise als familiebedrijf, brengen we precisie en passie in elke penseelstreek.
+                </p>
+<div class="pt-4 flex gap-4">
+<button class="bg-secondary text-on-secondary px-8 py-4 rounded-md font-label font-medium text-lg hover:bg-secondary-container hover:text-on-secondary-container transition-colors shadow-[0_10px_40px_rgba(24,26,46,0.06)]">
+                        Offerte Aanvragen
+                    </button>
+<button class="bg-transparent border-2 border-primary text-primary px-8 py-4 rounded-md font-label font-medium text-lg hover:bg-surface-variant transition-colors">
+                        Bekijk Portfolio
+                    </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Trust Section -->
+<section class="bg-surface-container-low py-12 relative z-20 -mt-8 mx-6 rounded-2xl shadow-[0_10px_40px_rgba(24,26,46,0.06)] max-w-5xl mx-auto flex flex-col md:flex-row justify-center items-center gap-12 text-center md:text-left border border-white/20">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-4xl text-secondary" style="font-variation-settings: 'FILL' 1;">verified</span>
+<div>
+<h3 class="font-headline font-bold text-lg text-primary">Familiebedrijf</h3>
+<p class="font-body text-sm text-on-surface-variant">Sinds 1997</p>
+</div>
+</div>
+<div class="hidden md:block w-px h-12 bg-outline-variant/30"></div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-4xl text-secondary" style="font-variation-settings: 'FILL' 1;">award_star</span>
+<div>
+<h3 class="font-headline font-bold text-lg text-primary">Kwaliteit Gegarandeerd</h3>
+<p class="font-body text-sm text-on-surface-variant">Uitzonderlijk vakmanschap</p>
+</div>
+</div>
+</section>
+<!-- Services Bento Grid -->
+<section class="py-24 bg-surface container mx-auto px-6 max-w-7xl">
+<div class="mb-16 text-center max-w-2xl mx-auto">
+<h2 class="font-headline text-4xl font-extrabold text-primary mb-4 tracking-tight">Onze Expertise</h2>
+<p class="font-body text-lg text-on-surface-variant">Het verfijnen van ruimtes met nauwgezette zorg en hoogwaardige materialen.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Service 1 -->
+<div class="group relative bg-surface-container-lowest rounded-xl overflow-hidden shadow-[0_10px_40px_rgba(24,26,46,0.06)] border border-outline-variant/15 flex flex-col hover:-translate-y-1 transition-transform duration-300">
+<div class="h-64 relative overflow-hidden">
+<img alt="Interior painting" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Close up of a painter carefully cutting in edges along ceiling trim in a modern room, soft natural lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBMq6LPMn0J6Tn2KjtjXvIZ-8iS0emEuosDAjpuqtELFe9Fc6Yo9jCHpLcUtFw5DnZRAAw7mH6p9WeQnINj1JHhmtH-CRDA3XqYkPHZs5FNNuHbi14tCs9ONgfPPPgbjN4l1MZbBtDrRZQJYyIVc5BWdWcDyc0e9r7tbfMGNncA6vQA1YwHFME9C20Ocm6d-QiXQ2SQ3DUocDfEBwgiuMmqtVbFuvc35i4ePIFYzNEbxAN9vjPWXqGgiwoFCN6fU35v8ZEzvkto9hQ"/>
+</div>
+<div class="p-8 flex-1 flex flex-col">
+<h3 class="font-headline text-2xl font-bold text-primary mb-3">Binnenschilderwerk</h3>
+<p class="font-body text-on-surface-variant mb-6 flex-1">Vlekkeloze afwerkingen voor muren, plafonds en houtwerk, die de sfeer van uw woonruimtes naar een hoger niveau tillen.</p>
+<a class="font-label text-secondary font-medium inline-flex items-center gap-2 hover:text-primary transition-colors" href="#">
+                        Meer Lezen <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Service 2 -->
+<div class="group relative bg-surface-container-lowest rounded-xl overflow-hidden shadow-[0_10px_40px_rgba(24,26,46,0.06)] border border-outline-variant/15 flex flex-col hover:-translate-y-1 transition-transform duration-300 md:-translate-y-8">
+<div class="h-64 relative overflow-hidden">
+<img alt="Exterior painting" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Beautifully restored classic home exterior painted in deep navy with crisp white trim, surrounded by manicured landscaping." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAuRNCX1usSmvODGEFoLPkkJ3ewQB8GTytNMssmmlqGGZT1Up1lTnDqKHKEtTaxQ5Rtu_M9jZzYt8pV0NoKFW75g3nEqrfvf7yvone2qriaUFD1vcVtrKtf1pK0_eti8-D13_xRYtyAAdzbCuz48m-2og28iyW92lEtl3rKd8JFt9Z0xCyb2cT4EsLuj4y4xXLTVOo77-EMU2ObGxsUSdqSLm0Pdp9J-wy3u8sCYRTb-pZ8_GDhuBQXnmu01023rVtvoa66-v9od8U"/>
+</div>
+<div class="p-8 flex-1 flex flex-col">
+<h3 class="font-headline text-2xl font-bold text-primary mb-3">Buitenschilderwerk</h3>
+<p class="font-body text-on-surface-variant mb-6 flex-1">Duurzame, weerbestendige coatings die de gevel van uw huis jarenlang beschermen en verfraaien.</p>
+<a class="font-label text-secondary font-medium inline-flex items-center gap-2 hover:text-primary transition-colors" href="#">
+                        Meer Lezen <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Service 3 -->
+<div class="group relative bg-surface-container-lowest rounded-xl overflow-hidden shadow-[0_10px_40px_rgba(24,26,46,0.06)] border border-outline-variant/15 flex flex-col hover:-translate-y-1 transition-transform duration-300">
+<div class="h-64 relative overflow-hidden">
+<img alt="Specialist finishes" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Detail shot of a textured venetian plaster wall surface with warm earthy tones and soft grazing light." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCBxSMmu0fkwmBs9m4IX0zp8-G7E_vN81CzepMnMPREnGG5oykPfU0L6Ij1JDKyRK-WYMPxaspTohegBLtuIMxFu9-bZSdNLsQP3goCh0Ymu-6_O1ysXkjA24N93F5Ku2xCTJgCUbdaxZddftdBUK5S3RHhwCLNJ-ctaGTI_CjutFxu5ROe-SYjui1utlRyA6HmdwnJgbB-PJuUlAJSIYmINDs_xyMDDVC41X4vNarUsIn4Frwk7hyhLxEn4pwE9JBerSK4RDBIHUo"/>
+</div>
+<div class="p-8 flex-1 flex flex-col">
+<h3 class="font-headline text-2xl font-bold text-primary mb-3">Speciale Afwerkingen</h3>
+<p class="font-body text-on-surface-variant mb-6 flex-1">Op maat gemaakte texturen, lakken en ambachtelijke technieken voor unieke architectonische details.</p>
+<a class="font-label text-secondary font-medium inline-flex items-center gap-2 hover:text-primary transition-colors" href="#">
+                        Meer Lezen <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-[#051125] dark:bg-slate-950 text-slate-100 font-['Work_Sans'] text-sm leading-relaxed w-full py-12 px-8 border-t border-white/10">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-8 max-w-7xl mx-auto">
+<div class="col-span-1 md:col-span-1">
+<div class="text-lg font-bold text-white mb-4">Van den Dam Schilderwerken</div>
+<p class="text-slate-400 mb-6">Het creëren van prachtige ruimtes met precisie en passie sinds 1997.</p>
+<div class="text-slate-500 text-xs">© 2024 Van den Dam Schilderwerken. Alle rechten voorbehouden.</div>
+</div>
+<div class="col-span-1">
+<h4 class="font-bold text-white mb-4">Snelle Links</h4>
+<ul class="space-y-2">
+<li><a class="text-slate-400 hover:text-white transition-colors" href="#">Privacybeleid</a></li>
+<li><a class="text-slate-400 hover:text-white transition-colors" href="#">Servicevoorwaarden</a></li>
+</ul>
+</div>
+<div class="col-span-1">
+<h4 class="font-bold text-white mb-4">Ondersteuning</h4>
+<ul class="space-y-2">
+<li><a class="text-slate-400 hover:text-white transition-colors" href="#">Werkgebieden</a></li>
+<li><a class="text-slate-400 hover:text-white transition-colors" href="#">Veelgestelde Vragen</a></li>
+</ul>
+</div>
+<div class="col-span-1">
+<h4 class="font-bold text-white mb-4">Contact</h4>
+<p class="text-slate-400">123 Paint Avenue<br/>1000 AB Amsterdam<br/>Nederland</p>
+</div>
+</div>
+</footer>
+</body></html>

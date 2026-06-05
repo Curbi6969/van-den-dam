@@ -1,0 +1,157 @@
+---
+layout: base.njk
+nav: contact
+eleventyComputed:
+  title: "{{ contact.title }}"
+  description: "{{ contact.description }}"
+---
+<main class="flex-grow">
+ <!-- Hero -->
+ <section class="bg-surface-container-low pt-36 pb-32 px-6 relative overflow-hidden">
+ <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 relative z-10">
+ <div class="flex flex-col justify-center">
+ <span class="font-label text-xs font-semibold tracking-widest text-secondary uppercase mb-4 block">{{ contact.hero.eyebrow }}</span>
+ <h1 class="font-headline text-5xl md:text-6xl lg:text-7xl font-extrabold text-primary tracking-tight mb-6 leading-tight" style="letter-spacing:-0.02em;">
+ {{ contact.hero.heading }}
+ </h1>
+ <p class="font-body text-xl text-on-surface-variant max-w-xl leading-relaxed">
+ {{ contact.hero.intro }}
+ </p>
+ </div>
+ </div>
+ <div class="absolute right-0 top-0 w-1/3 h-full opacity-40" style="background:linear-gradient(to left,rgba(35,34,39,0.15),transparent);transform:skewX(12deg) translateX(25%);"></div>
+ </section>
+
+ <!-- Contact Split -->
+ <section class="px-6 -mt-20 relative z-20 pb-24">
+ <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10">
+
+ <!-- Info -->
+ <div class="lg:col-span-5 flex flex-col gap-8">
+ <div class="rounded-xl overflow-hidden ambient-shadow">
+ <img src="resources/team.jpg" alt="Ons team" class="w-full h-48 object-cover"/>
+ </div>
+ <div class="bg-surface-container-lowest rounded-xl ambient-shadow ghost-border p-8">
+ <h2 class="font-headline text-xl font-bold text-primary mb-6">{{ contact.infoCard.heading }}</h2>
+ <div class="space-y-5">
+ <div class="flex items-start gap-4">
+ <span class="material-symbols-outlined text-secondary text-2xl mt-0.5">location_on</span>
+ <div>
+ <p class="font-label text-xs font-semibold text-primary uppercase tracking-wider mb-1">{{ contact.infoCard.addressLabel }}</p>
+ <p class="font-body text-on-surface-variant">{{ site.contact.addressLine1 }}<br/>{{ site.contact.addressLine2 }}</p>
+ </div>
+ </div>
+ <div class="flex items-start gap-4">
+ <span class="material-symbols-outlined text-secondary text-2xl mt-0.5">call</span>
+ <div>
+ <p class="font-label text-xs font-semibold text-primary uppercase tracking-wider mb-1">{{ contact.infoCard.phoneLabel }}</p>
+ <a href="tel:{{ site.contact.phoneHref }}" class="font-body text-on-surface-variant hover:text-secondary transition-colors">{{ site.contact.phoneDisplay }}</a>
+ </div>
+ </div>
+ <div class="flex items-start gap-4">
+ <span class="material-symbols-outlined text-secondary text-2xl mt-0.5">mail</span>
+ <div>
+ <p class="font-label text-xs font-semibold text-primary uppercase tracking-wider mb-1">{{ contact.infoCard.emailLabel }}</p>
+ <a href="mailto:{{ site.contact.email }}" class="font-body text-on-surface-variant hover:text-secondary transition-colors">{{ site.contact.email }}</a>
+ </div>
+ </div>
+ </div>
+ </div>
+
+ <div class="bg-surface-container-lowest rounded-xl ambient-shadow ghost-border p-8">
+ <h2 class="font-headline text-xl font-bold text-primary mb-6">{{ contact.businessCard.heading }}</h2>
+ <div class="grid grid-cols-2 gap-x-6 gap-y-5">
+ <div>
+ <p class="font-label text-xs font-semibold text-primary uppercase tracking-wider mb-1">{{ contact.businessCard.kvkLabel }}</p>
+ <p class="font-body text-on-surface-variant text-sm">{{ site.business.kvk }}</p>
+ </div>
+ <div>
+ <p class="font-label text-xs font-semibold text-primary uppercase tracking-wider mb-1">{{ contact.businessCard.bankLabel }}</p>
+ <p class="font-body text-on-surface-variant text-sm">{{ site.business.bankName }}</p>
+ </div>
+ <div class="col-span-2">
+ <p class="font-label text-xs font-semibold text-primary uppercase tracking-wider mb-1">{{ contact.businessCard.accountLabel }}</p>
+ <p class="font-body text-on-surface-variant text-sm">{{ site.business.bankAccount }}</p>
+ </div>
+ </div>
+ </div>
+ </div>
+
+ <!-- Form -->
+ <div class="lg:col-span-7">
+ <div class="bg-surface-container-lowest rounded-xl ambient-shadow p-10 md:p-14 relative overflow-hidden">
+ <div class="absolute -top-24 -right-24 w-64 h-64 rounded-full blur-3xl opacity-20 pointer-events-none" style="background:#c5c5c7;"></div>
+ <h3 class="font-headline text-2xl font-bold text-primary mb-2">{{ contact.form.heading }}</h3>
+ <p class="font-body text-on-surface-variant text-sm mb-8">{{ contact.form.intro }}</p>
+ <form class="space-y-6" id="contact-form">
+ <!-- Naam -->
+ <div class="relative group">
+ <input class="w-full bg-surface-container border-0 border-b-2 border-outline focus:border-secondary focus:ring-0 text-on-surface font-body pt-6 pb-2 px-4 rounded-t-md transition-colors peer placeholder-transparent" id="name" name="name" placeholder=" " type="text" required/>
+ <label class="absolute left-4 top-2 text-on-surface-variant font-label text-xs transition-all peer-placeholder-shown:text-sm peer-placeholder-shown:top-4 peer-focus:text-xs peer-focus:top-2 peer-focus:text-secondary" for="name">{{ contact.form.labelName }}</label>
+ </div>
+ <!-- Telefoon + Mobiel -->
+ <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+ <div class="relative group">
+ <input class="w-full bg-surface-container border-0 border-b-2 border-outline focus:border-secondary focus:ring-0 text-on-surface font-body pt-6 pb-2 px-4 rounded-t-md transition-colors peer placeholder-transparent" id="phone" name="phone" placeholder=" " type="tel" required/>
+ <label class="absolute left-4 top-2 text-on-surface-variant font-label text-xs transition-all peer-placeholder-shown:text-sm peer-placeholder-shown:top-4 peer-focus:text-xs peer-focus:top-2 peer-focus:text-secondary" for="phone">{{ contact.form.labelPhone }}</label>
+ </div>
+ <div class="relative group">
+ <input class="w-full bg-surface-container border-0 border-b-2 border-outline focus:border-secondary focus:ring-0 text-on-surface font-body pt-6 pb-2 px-4 rounded-t-md transition-colors peer placeholder-transparent" id="mobile" name="mobile" placeholder=" " type="tel"/>
+ <label class="absolute left-4 top-2 text-on-surface-variant font-label text-xs transition-all peer-placeholder-shown:text-sm peer-placeholder-shown:top-4 peer-focus:text-xs peer-focus:top-2 peer-focus:text-secondary" for="mobile">{{ contact.form.labelMobile }}</label>
+ </div>
+ </div>
+ <!-- E-mail -->
+ <div class="relative group">
+ <input class="w-full bg-surface-container border-0 border-b-2 border-outline focus:border-secondary focus:ring-0 text-on-surface font-body pt-6 pb-2 px-4 rounded-t-md transition-colors peer placeholder-transparent" id="email" name="email" placeholder=" " type="email" required/>
+ <label class="absolute left-4 top-2 text-on-surface-variant font-label text-xs transition-all peer-placeholder-shown:text-sm peer-placeholder-shown:top-4 peer-focus:text-xs peer-focus:top-2 peer-focus:text-secondary" for="email">{{ contact.form.labelEmail }}</label>
+ </div>
+ <!-- Kopie checkbox -->
+ <div class="flex items-center gap-3">
+ <input type="checkbox" id="copy" name="copy" class="rounded border-outline text-secondary focus:ring-secondary"/>
+ <label for="copy" class="font-body text-sm text-on-surface-variant">{{ contact.form.labelCopy }}</label>
+ </div>
+ <!-- Woonplaats -->
+ <div class="relative group">
+ <input class="w-full bg-surface-container border-0 border-b-2 border-outline focus:border-secondary focus:ring-0 text-on-surface font-body pt-6 pb-2 px-4 rounded-t-md transition-colors peer placeholder-transparent" id="city" name="city" placeholder=" " type="text"/>
+ <label class="absolute left-4 top-2 text-on-surface-variant font-label text-xs transition-all peer-placeholder-shown:text-sm peer-placeholder-shown:top-4 peer-focus:text-xs peer-focus:top-2 peer-focus:text-secondary" for="city">{{ contact.form.labelCity }}</label>
+ </div>
+ <!-- Gewenste uitvoermaand + Werkzaamheden -->
+ <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+ <div>
+ <label class="font-label text-xs font-semibold text-on-surface-variant uppercase tracking-wider block mb-2" for="uitvoer">{{ contact.form.labelUitvoeringMonth }}</label>
+ <input type="month" id="uitvoer" name="uitvoer" class="w-full bg-surface-container border-0 border-b-2 border-outline focus:border-secondary focus:ring-0 text-on-surface font-body py-3 px-4 rounded-t-md transition-colors"/>
+ </div>
+ <div>
+ <label class="font-label text-xs font-semibold text-on-surface-variant uppercase tracking-wider block mb-2" for="werkzaamheden">{{ contact.form.labelWerkzaamheden }}</label>
+ <select id="werkzaamheden" name="werkzaamheden" class="w-full bg-surface-container border-0 border-b-2 border-outline focus:border-secondary focus:ring-0 text-on-surface font-body py-3 px-4 rounded-t-md transition-colors appearance-none">
+ <option value="">{{ contact.form.optionChoose }}</option>
+ <option value="schilderen">{{ contact.form.optionSchilderen }}</option>
+ <option value="behangen">{{ contact.form.optionBehangen }}</option>
+ <option value="onderhoud">{{ contact.form.optionOnderhoud }}</option>
+ <option value="afgeschermd-onderhoud">{{ contact.form.optionAfgeschermd }}</option>
+ <option value="beglazing">{{ contact.form.optionBeglazing }}</option>
+ <option value="ramen-zetten">{{ contact.form.optionRamen }}</option>
+ </select>
+ </div>
+ </div>
+ <!-- Aanvullende informatie -->
+ <div class="relative group">
+ <textarea class="w-full bg-surface-container border-0 border-b-2 border-outline focus:border-secondary focus:ring-0 text-on-surface font-body pt-6 pb-2 px-4 rounded-t-md transition-colors peer resize-none placeholder-transparent" id="message" name="message" placeholder=" " rows="4"></textarea>
+ <label class="absolute left-4 top-2 text-on-surface-variant font-label text-xs transition-all peer-placeholder-shown:text-sm peer-placeholder-shown:top-4 peer-focus:text-xs peer-focus:top-2 peer-focus:text-secondary" for="message">{{ contact.form.labelMessage }}</label>
+ </div>
+ <div class="flex items-start gap-3">
+ <input type="checkbox" id="privacy" name="privacy" required class="mt-1 rounded border-outline text-secondary focus:ring-secondary"/>
+ <label for="privacy" class="font-body text-sm text-on-surface-variant">
+ {{ contact.form.labelPrivacy }} <a href="privacyverklaring.html" class="text-secondary hover:text-primary transition-colors underline">{{ contact.form.labelPrivacyLink }}</a>.
+ </label>
+ </div>
+ <button type="submit" class="bg-secondary text-on-secondary font-label font-semibold px-8 py-4 rounded-md w-full md:w-auto hover:opacity-90 transition-opacity flex items-center justify-center gap-2">
+ {{ contact.form.submitButton }}
+ <span class="material-symbols-outlined text-sm">arrow_forward</span>
+ </button>
+ </form>
+ </div>
+ </div>
+ </div>
+ </section>
+</main>

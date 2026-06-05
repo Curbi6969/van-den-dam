@@ -1,0 +1,468 @@
+# Sveltia CMS configuration.
+# Auth: GitHub backend via a Sveltia CMS Authenticator worker.
+# Replace AUTH_WORKER_URL below with the deployed worker URL (see CMS-SETUP.md).
+backend:
+  name: github
+  repo: Curbi6969/van-den-dam
+  branch: main
+  base_url: https://AUTH_WORKER_URL
+
+# Uploaded images are stored in the Eleventy source tree and referenced as resources/<file>
+media_folder: "src/resources"
+public_folder: "resources"
+
+# Friendlier Dutch UI labels
+i18n: false
+publish_mode: simple
+
+collections:
+
+  # ─── 1. Algemene instellingen ─────────────────────────────────────────────
+  - name: algemeen
+    label: "Algemene instellingen"
+    files:
+      - label: "Bedrijfsgegevens en navigatie"
+        name: site
+        file: "src/_data/site.json"
+        fields:
+          - { name: name, label: "Bedrijfsnaam", widget: string }
+          - { name: shortName, label: "Korte naam", widget: string }
+          - { name: tagline, label: "Tagline", widget: string }
+          - { name: founded, label: "Oprichtingsjaar", widget: string }
+          - { name: yearsExperience, label: "Jaren ervaring", widget: string }
+          - name: contact
+            label: "Contactgegevens"
+            widget: object
+            fields:
+              - { name: addressLine1, label: "Adresregel 1", widget: string }
+              - { name: addressLine2, label: "Adresregel 2 (postcode, plaats)", widget: string }
+              - { name: phoneDisplay, label: "Telefoonnummer (weergave)", widget: string }
+              - { name: phoneHref, label: "Telefoonnummer (tel: link)", widget: string }
+              - { name: email, label: "E-mailadres", widget: string }
+          - name: business
+            label: "Bedrijfsgegevens"
+            widget: object
+            fields:
+              - { name: kvk, label: "KvK-nummer", widget: string }
+              - { name: bankName, label: "Banknaam", widget: string }
+              - { name: bankAccount, label: "Rekeningnummer", widget: string }
+          - name: credit
+            label: "Website credits"
+            widget: object
+            fields:
+              - { name: name, label: "Naam", widget: string }
+              - { name: url, label: "URL", widget: string }
+          - name: services
+            label: "Navigatie diensten"
+            label_singular: "Dienst"
+            widget: list
+            fields:
+              - { name: title, label: "Titel", widget: string }
+              - { name: url, label: "URL (bijv. dienst-schilderen.html)", widget: string }
+
+  # ─── 2. Pagina's ──────────────────────────────────────────────────────────
+  - name: paginas
+    label: "Pagina's"
+    files:
+
+      - label: "Homepage"
+        name: home
+        file: "src/_data/home.json"
+        fields:
+          - { name: title, label: "Paginatitel (SEO)", widget: string }
+          - { name: description, label: "Meta-omschrijving (SEO)", widget: text }
+          - name: hero
+            label: "Hero-sectie"
+            widget: object
+            fields:
+              - { name: eyebrow, label: "Bovenkop", widget: string }
+              - { name: title, label: "Titel", widget: string }
+              - { name: subtitle, label: "Ondertitel", widget: text }
+              - { name: image, label: "Afbeelding", widget: image }
+          - name: trust
+            label: "Vertrouwensstrook"
+            label_singular: "Vertrouwensitem"
+            widget: list
+            fields:
+              - { name: icon, label: "Icoon (Material Symbol naam)", widget: string }
+              - { name: title, label: "Titel", widget: string }
+              - { name: subtitle, label: "Ondertitel", widget: string }
+          - name: servicesIntro
+            label: "Intro diensten"
+            widget: object
+            fields:
+              - { name: eyebrow, label: "Bovenkop", widget: string }
+              - { name: title, label: "Titel", widget: string }
+              - { name: text, label: "Tekst", widget: text }
+          - name: servicesCards
+            label: "Dienstenkaarten"
+            label_singular: "Dienstenkaart"
+            widget: list
+            fields:
+              - { name: title, label: "Titel", widget: string }
+              - { name: text, label: "Tekst", widget: text }
+              - { name: image, label: "Afbeelding", widget: image }
+              - { name: raised, label: "Uitgelicht (raised)", widget: boolean }
+          - name: about
+            label: "Over ons sectie"
+            widget: object
+            fields:
+              - { name: eyebrow, label: "Bovenkop", widget: string }
+              - { name: title, label: "Titel", widget: string }
+              - { name: image, label: "Afbeelding", widget: image }
+              - { name: badgeNumber, label: "Badge getal (bijv. 25+)", widget: string }
+              - { name: badgeLabel, label: "Badge label (bijv. jaar ervaring)", widget: string }
+              - { name: paragraph1, label: "Alinea 1", widget: text }
+              - { name: paragraph2, label: "Alinea 2", widget: text }
+          - name: portfolioIntro
+            label: "Intro portfolio"
+            widget: object
+            fields:
+              - { name: eyebrow, label: "Bovenkop", widget: string }
+              - { name: title, label: "Titel", widget: string }
+          - name: portfolio
+            label: "Portfolio items (homepage)"
+            label_singular: "Portfolio item"
+            widget: list
+            fields:
+              - { name: category, label: "Categorie", widget: string }
+              - { name: title, label: "Titel", widget: string }
+              - { name: image, label: "Afbeelding", widget: image }
+          - name: reviewsIntro
+            label: "Intro recensies"
+            widget: object
+            fields:
+              - { name: eyebrow, label: "Bovenkop", widget: string }
+              - { name: title, label: "Titel", widget: string }
+          - name: reviews
+            label: "Recensies"
+            label_singular: "Recensie"
+            widget: list
+            fields:
+              - { name: quote, label: "Citaat", widget: text }
+              - { name: name, label: "Naam klant", widget: string }
+          - { name: reviewScore, label: "Beoordelingsscore (bijv. 9.2/10)", widget: string }
+          - { name: reviewCount, label: "Aantal beoordelingen (bijv. 27+)", widget: string }
+          - name: cta
+            label: "Call-to-action"
+            widget: object
+            fields:
+              - { name: title, label: "Titel", widget: string }
+              - { name: text, label: "Tekst", widget: text }
+              - { name: button, label: "Knoptekst", widget: string }
+
+      - label: "Diensten overzicht"
+        name: diensten
+        file: "src/_data/diensten.json"
+        fields:
+          - { name: title, label: "Paginatitel (SEO)", widget: string }
+          - { name: description, label: "Meta-omschrijving (SEO)", widget: text }
+          - name: hero
+            label: "Hero-sectie"
+            widget: object
+            fields:
+              - { name: eyebrow, label: "Bovenkop", widget: string }
+              - { name: title, label: "Titel", widget: string }
+              - { name: subtitle, label: "Ondertitel", widget: text }
+          - name: binnenwerk
+            label: "Binnenwerk sectie"
+            widget: object
+            fields:
+              - { name: eyebrow, label: "Bovenkop", widget: string }
+              - { name: heading, label: "Kop", widget: string }
+              - name: items
+                label: "Items"
+                label_singular: "Item"
+                widget: list
+                fields:
+                  - { name: categoryLabel, label: "Categorie label", widget: string }
+                  - { name: title, label: "Titel", widget: string }
+                  - { name: image, label: "Afbeelding", widget: image }
+                  - { name: imageAlt, label: "Afbeelding alt-tekst", widget: string }
+                  - { name: text, label: "Tekst", widget: text }
+                  - { name: linkHref, label: "Link URL", widget: string }
+                  - { name: linkLabel, label: "Link tekst", widget: string }
+          - name: buitenwerk
+            label: "Buitenwerk sectie"
+            widget: object
+            fields:
+              - { name: eyebrow, label: "Bovenkop", widget: string }
+              - { name: heading, label: "Kop", widget: string }
+              - name: items
+                label: "Items"
+                label_singular: "Item"
+                widget: list
+                fields:
+                  - { name: categoryLabel, label: "Categorie label", widget: string }
+                  - { name: title, label: "Titel", widget: string }
+                  - { name: image, label: "Afbeelding", widget: image }
+                  - { name: imageAlt, label: "Afbeelding alt-tekst", widget: string }
+                  - { name: text, label: "Tekst", widget: text }
+                  - { name: linkHref, label: "Link URL", widget: string }
+                  - { name: linkLabel, label: "Link tekst", widget: string }
+          - name: cta
+            label: "Call-to-action"
+            widget: object
+            fields:
+              - { name: title, label: "Titel", widget: string }
+              - { name: text, label: "Tekst", widget: text }
+              - { name: button, label: "Knoptekst", widget: string }
+              - { name: href, label: "Link URL", widget: string }
+
+      - label: "Portfolio"
+        name: portfolio
+        file: "src/_data/portfolio.json"
+        fields:
+          - { name: title, label: "Paginatitel (SEO)", widget: string }
+          - { name: description, label: "Meta-omschrijving (SEO)", widget: text }
+          - name: hero
+            label: "Hero-sectie"
+            widget: object
+            fields:
+              - { name: eyebrow, label: "Bovenkop", widget: string }
+              - { name: title, label: "Titel", widget: string }
+              - { name: subtitle, label: "Ondertitel", widget: text }
+          - name: filters
+            label: "Filteropties"
+            label_singular: "Filter"
+            widget: list
+            fields:
+              - { name: value, label: "Waarde (intern, geen spaties)", widget: string }
+              - { name: label, label: "Label (weergave)", widget: string }
+          - name: projects
+            label: "Projecten"
+            label_singular: "Project"
+            widget: list
+            fields:
+              - { name: cat, label: "Categorie (intern, bijv. interieur)", widget: string }
+              - { name: colSpan, label: "Grid breedte (CSS klassen)", widget: string }
+              - { name: image, label: "Afbeelding", widget: image }
+              - { name: imageAlt, label: "Afbeelding alt-tekst", widget: string }
+              - { name: categoryLabel, label: "Categorie label (weergave)", widget: string }
+              - { name: title, label: "Titel", widget: string }
+              - { name: description, label: "Omschrijving", widget: text }
+              - { name: size, label: "Grootte (large/medium/small)", widget: string }
+          - name: cta
+            label: "Call-to-action"
+            widget: object
+            fields:
+              - { name: title, label: "Titel", widget: string }
+              - { name: text, label: "Tekst", widget: text }
+              - { name: button, label: "Knoptekst", widget: string }
+              - { name: href, label: "Link URL", widget: string }
+
+      - label: "Over ons"
+        name: overons
+        file: "src/_data/overons.json"
+        fields:
+          - { name: title, label: "Paginatitel (SEO)", widget: string }
+          - { name: description, label: "Meta-omschrijving (SEO)", widget: text }
+          - name: hero
+            label: "Hero-sectie"
+            widget: object
+            fields:
+              - { name: eyebrow, label: "Bovenkop", widget: string }
+              - { name: title, label: "Titel", widget: string }
+              - { name: text, label: "Tekst", widget: text }
+              - { name: ctaLabel, label: "Knoptekst", widget: string }
+              - { name: ctaHref, label: "Knop URL", widget: string }
+              - { name: image, label: "Afbeelding", widget: image }
+              - { name: imageAlt, label: "Afbeelding alt-tekst", widget: string }
+          - name: values
+            label: "Waarden sectie"
+            widget: object
+            fields:
+              - { name: eyebrow, label: "Bovenkop", widget: string }
+              - { name: heading, label: "Kop", widget: string }
+              - name: items
+                label: "Waarden"
+                label_singular: "Waarde"
+                widget: list
+                fields:
+                  - { name: icon, label: "Icoon (Material Symbol naam)", widget: string }
+                  - { name: title, label: "Titel", widget: string }
+                  - { name: text, label: "Tekst", widget: text }
+                  - { name: raised, label: "Uitgelicht (raised)", widget: boolean, required: false }
+          - name: team
+            label: "Team sectie"
+            widget: object
+            fields:
+              - { name: eyebrow, label: "Bovenkop", widget: string }
+              - { name: heading, label: "Kop", widget: string }
+              - { name: paragraph1, label: "Alinea 1", widget: text }
+              - { name: paragraph2, label: "Alinea 2", widget: text }
+              - { name: ctaLabel, label: "Knoptekst", widget: string }
+              - { name: ctaHref, label: "Knop URL", widget: string }
+              - { name: quote, label: "Citaat", widget: text }
+              - { name: image1, label: "Afbeelding 1", widget: image }
+              - { name: image1Alt, label: "Afbeelding 1 alt-tekst", widget: string }
+              - { name: image2, label: "Afbeelding 2", widget: image }
+              - { name: image2Alt, label: "Afbeelding 2 alt-tekst", widget: string }
+
+      - label: "Contact"
+        name: contact
+        file: "src/_data/contact.json"
+        fields:
+          - { name: title, label: "Paginatitel (SEO)", widget: string }
+          - { name: description, label: "Meta-omschrijving (SEO)", widget: text }
+          - name: hero
+            label: "Hero-sectie"
+            widget: object
+            fields:
+              - { name: eyebrow, label: "Bovenkop", widget: string }
+              - { name: heading, label: "Kop", widget: string }
+              - { name: intro, label: "Introductietekst", widget: text }
+          - name: infoCard
+            label: "Contactgegevens kaart (labels)"
+            widget: object
+            fields:
+              - { name: heading, label: "Kop", widget: string }
+              - { name: addressLabel, label: "Label adres", widget: string }
+              - { name: phoneLabel, label: "Label telefoon", widget: string }
+              - { name: emailLabel, label: "Label e-mail", widget: string }
+          - name: businessCard
+            label: "Bedrijfsgegevens kaart (labels)"
+            widget: object
+            fields:
+              - { name: heading, label: "Kop", widget: string }
+              - { name: kvkLabel, label: "Label KvK", widget: string }
+              - { name: bankLabel, label: "Label bank", widget: string }
+              - { name: accountLabel, label: "Label rekeningnummer", widget: string }
+          - name: form
+            label: "Formulier teksten"
+            widget: object
+            fields:
+              - { name: heading, label: "Kop", widget: string }
+              - { name: intro, label: "Introductietekst", widget: text }
+              - { name: labelName, label: "Label naam", widget: string }
+              - { name: labelPhone, label: "Label telefoonnummer", widget: string }
+              - { name: labelMobile, label: "Label mobiel", widget: string }
+              - { name: labelEmail, label: "Label e-mailadres", widget: string }
+              - { name: labelCopy, label: "Label kopie aanvraag", widget: string }
+              - { name: labelCity, label: "Label woonplaats", widget: string }
+              - { name: labelUitvoeringMonth, label: "Label gewenste maand", widget: string }
+              - { name: labelWerkzaamheden, label: "Label werkzaamheden", widget: string }
+              - { name: optionChoose, label: "Optie: maak een keuze", widget: string }
+              - { name: optionSchilderen, label: "Optie: schilderen", widget: string }
+              - { name: optionBehangen, label: "Optie: behangen", widget: string }
+              - { name: optionOnderhoud, label: "Optie: onderhoud", widget: string }
+              - { name: optionAfgeschermd, label: "Optie: afgeschermd onderhoud", widget: string }
+              - { name: optionBeglazing, label: "Optie: beglazing", widget: string }
+              - { name: optionRamen, label: "Optie: ramen zetten", widget: string }
+              - { name: labelMessage, label: "Label aanvullende informatie", widget: string }
+              - { name: labelPrivacy, label: "Label privacytekst (voor link)", widget: string }
+              - { name: labelPrivacyLink, label: "Label privacylink", widget: string }
+              - { name: submitButton, label: "Knoptekst versturen", widget: string }
+
+      - label: "Privacyverklaring"
+        name: privacyverklaring
+        file: "src/_data/privacyverklaring.json"
+        fields:
+          - { name: title, label: "Paginatitel (SEO)", widget: string }
+          - { name: description, label: "Meta-omschrijving (SEO)", widget: text }
+          - { name: eyebrow, label: "Bovenkop", widget: string }
+          - { name: heading, label: "Kop", widget: string }
+          - { name: lastUpdated, label: "Datum laatste wijziging", widget: string }
+          - { name: contactEmail, label: "Contact e-mailadres", widget: string }
+          - { name: backLink, label: "Tekst teruglink", widget: string }
+          - name: sections
+            label: "Secties"
+            label_singular: "Sectie"
+            widget: list
+            fields:
+              - { name: heading, label: "Kop", widget: string }
+              - { name: html, label: "Inhoud (HTML)", widget: text }
+
+      - label: "404 pagina"
+        name: page404
+        file: "src/_data/page404.json"
+        fields:
+          - { name: title, label: "Paginatitel (SEO)", widget: string }
+          - { name: description, label: "Meta-omschrijving (SEO)", widget: text }
+          - { name: heading, label: "Kop", widget: string }
+          - { name: body, label: "Bodytekst", widget: text }
+          - { name: linkHome, label: "Tekst link naar home", widget: string }
+          - { name: linkContact, label: "Tekst link naar contact", widget: string }
+
+  # ─── 3. Diensten (detailpagina's) ─────────────────────────────────────────
+  - name: diensten_detail
+    label: "Diensten (detailpagina's)"
+    files:
+
+      - label: "Binnenschilderwerk"
+        name: dienst_binnenschilderwerk
+        file: "src/_data/dienst_binnenschilderwerk.json"
+        fields:
+          - { name: title, label: "Paginatitel (SEO)", widget: string }
+          - { name: description, label: "Meta-omschrijving (SEO)", widget: text }
+          - { name: eyebrow, label: "Bovenkop", widget: string }
+          - { name: heading, label: "Kop", widget: string }
+          - { name: heroImage, label: "Hero afbeelding", widget: image }
+          - { name: heroImageAlt, label: "Hero afbeelding alt-tekst", widget: string }
+          - { name: paragraph, label: "Tekst", widget: text }
+          - { name: inlineImage, label: "Inline afbeelding", widget: image }
+          - { name: inlineImageAlt, label: "Inline afbeelding alt-tekst", widget: string }
+          - { name: ctaPrimary, label: "Primaire knoptekst", widget: string }
+          - { name: ctaSecondary, label: "Secundaire knoptekst", widget: string }
+
+      - label: "Behangen"
+        name: dienst_behangen
+        file: "src/_data/dienst_behangen.json"
+        fields:
+          - { name: title, label: "Paginatitel (SEO)", widget: string }
+          - { name: description, label: "Meta-omschrijving (SEO)", widget: text }
+          - { name: eyebrow, label: "Bovenkop", widget: string }
+          - { name: heading, label: "Kop", widget: string }
+          - { name: heroImage, label: "Hero afbeelding", widget: image }
+          - { name: heroImageAlt, label: "Hero afbeelding alt-tekst", widget: string }
+          - { name: paragraph, label: "Tekst", widget: text }
+          - { name: ctaPrimary, label: "Primaire knoptekst", widget: string }
+          - { name: ctaSecondary, label: "Secundaire knoptekst", widget: string }
+
+      - label: "Buitenschilderwerk"
+        name: dienst_buitenschilderwerk
+        file: "src/_data/dienst_buitenschilderwerk.json"
+        fields:
+          - { name: title, label: "Paginatitel (SEO)", widget: string }
+          - { name: description, label: "Meta-omschrijving (SEO)", widget: text }
+          - { name: eyebrow, label: "Bovenkop", widget: string }
+          - { name: heading, label: "Kop", widget: string }
+          - { name: heroImage, label: "Hero afbeelding", widget: image }
+          - { name: heroImageAlt, label: "Hero afbeelding alt-tekst", widget: string }
+          - { name: paragraph1, label: "Alinea 1", widget: text }
+          - { name: paragraph2, label: "Alinea 2", widget: text }
+          - { name: ctaPrimary, label: "Primaire knoptekst", widget: string }
+          - { name: ctaSecondary, label: "Secundaire knoptekst", widget: string }
+
+      - label: "Afgeschermd onderhoud"
+        name: dienst_afgeschermd_onderhoud
+        file: "src/_data/dienst_afgeschermd_onderhoud.json"
+        fields:
+          - { name: title, label: "Paginatitel (SEO)", widget: string }
+          - { name: description, label: "Meta-omschrijving (SEO)", widget: text }
+          - { name: eyebrow, label: "Bovenkop", widget: string }
+          - { name: heading, label: "Kop", widget: string }
+          - { name: heroImage, label: "Hero afbeelding", widget: image }
+          - { name: heroImageAlt, label: "Hero afbeelding alt-tekst", widget: string }
+          - { name: paragraph1, label: "Alinea 1", widget: text }
+          - { name: paragraph2, label: "Alinea 2", widget: text }
+          - { name: paragraph3, label: "Alinea 3", widget: text }
+          - { name: paragraph4, label: "Alinea 4", widget: text }
+          - { name: ctaPrimary, label: "Primaire knoptekst", widget: string }
+          - { name: ctaSecondary, label: "Secundaire knoptekst", widget: string }
+
+      - label: "Beglazing"
+        name: dienst_beglazing
+        file: "src/_data/dienst_beglazing.json"
+        fields:
+          - { name: title, label: "Paginatitel (SEO)", widget: string }
+          - { name: description, label: "Meta-omschrijving (SEO)", widget: text }
+          - { name: eyebrow, label: "Bovenkop", widget: string }
+          - { name: heading, label: "Kop", widget: string }
+          - { name: heroImage, label: "Hero afbeelding", widget: image }
+          - { name: heroImageAlt, label: "Hero afbeelding alt-tekst", widget: string }
+          - { name: paragraph1, label: "Alinea 1", widget: text }
+          - { name: paragraph2, label: "Alinea 2", widget: text }
+          - { name: paragraph3, label: "Alinea 3", widget: text }
+          - { name: ctaPrimary, label: "Primaire knoptekst", widget: string }
+          - { name: ctaSecondary, label: "Secundaire knoptekst", widget: string }
