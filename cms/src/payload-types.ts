@@ -90,12 +90,24 @@ export interface Config {
   };
   fallbackLocale: ('false' | 'none' | 'null') | false | null | ('nl' | 'en') | ('nl' | 'en')[];
   globals: {
-    'site-settings': SiteSetting;
     home: Home;
+    diensten: Diensten;
+    portfolio: Portfolio;
+    'over-ons': OverOn;
+    contact: Contact;
+    privacyverklaring: Privacyverklaring;
+    'niet-gevonden': NietGevonden;
+    'site-settings': SiteSetting;
   };
   globalsSelect: {
-    'site-settings': SiteSettingsSelect<false> | SiteSettingsSelect<true>;
     home: HomeSelect<false> | HomeSelect<true>;
+    diensten: DienstenSelect<false> | DienstenSelect<true>;
+    portfolio: PortfolioSelect<false> | PortfolioSelect<true>;
+    'over-ons': OverOnsSelect<false> | OverOnsSelect<true>;
+    contact: ContactSelect<false> | ContactSelect<true>;
+    privacyverklaring: PrivacyverklaringSelect<false> | PrivacyverklaringSelect<true>;
+    'niet-gevonden': NietGevondenSelect<false> | NietGevondenSelect<true>;
+    'site-settings': SiteSettingsSelect<false> | SiteSettingsSelect<true>;
   };
   locale: 'nl' | 'en';
   widgets: {
@@ -405,45 +417,6 @@ export interface PayloadMigrationsSelect<T extends boolean = true> {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "site-settings".
- */
-export interface SiteSetting {
-  id: number;
-  company: {
-    name: string;
-    shortName?: string | null;
-    tagline?: string | null;
-    founded?: string | null;
-    yearsExperience?: string | null;
-  };
-  contact?: {
-    addressLine1?: string | null;
-    addressLine2?: string | null;
-    phoneDisplay?: string | null;
-    phoneHref?: string | null;
-    email?: string | null;
-  };
-  business?: {
-    kvk?: string | null;
-    bankName?: string | null;
-    bankAccount?: string | null;
-  };
-  navServices?:
-    | {
-        title: string;
-        url: string;
-        id?: string | null;
-      }[]
-    | null;
-  credit?: {
-    name?: string | null;
-    url?: string | null;
-  };
-  updatedAt?: string | null;
-  createdAt?: string | null;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "home".
  */
 export interface Home {
@@ -528,50 +501,309 @@ export interface Home {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "site-settings_select".
+ * via the `definition` "diensten".
  */
-export interface SiteSettingsSelect<T extends boolean = true> {
-  company?:
-    | T
+export interface Diensten {
+  id: number;
+  hero?: {
+    eyebrow?: string | null;
+    title?: string | null;
+    subtitle?: string | null;
+  };
+  binnenwerk?: {
+    eyebrow?: string | null;
+    heading?: string | null;
+    items?:
+      | {
+          categoryLabel?: string | null;
+          title?: string | null;
+          image?: (number | null) | Media;
+          imageAlt?: string | null;
+          text?: string | null;
+          linkHref?: string | null;
+          linkLabel?: string | null;
+          id?: string | null;
+        }[]
+      | null;
+  };
+  buitenwerk?: {
+    eyebrow?: string | null;
+    heading?: string | null;
+    items?:
+      | {
+          categoryLabel?: string | null;
+          title?: string | null;
+          image?: (number | null) | Media;
+          imageAlt?: string | null;
+          text?: string | null;
+          linkHref?: string | null;
+          linkLabel?: string | null;
+          id?: string | null;
+        }[]
+      | null;
+  };
+  cta?: {
+    title?: string | null;
+    text?: string | null;
+    button?: string | null;
+    href?: string | null;
+  };
+  meta?: {
+    title?: string | null;
+    description?: string | null;
+    /**
+     * Maximum upload file size: 12MB. Recommended file size for images is <500KB.
+     */
+    image?: (number | null) | Media;
+  };
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "portfolio".
+ */
+export interface Portfolio {
+  id: number;
+  hero?: {
+    eyebrow?: string | null;
+    title?: string | null;
+    subtitle?: string | null;
+  };
+  filters?:
     | {
-        name?: T;
-        shortName?: T;
-        tagline?: T;
-        founded?: T;
-        yearsExperience?: T;
-      };
-  contact?:
-    | T
+        value?: string | null;
+        label?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  projects?:
     | {
-        addressLine1?: T;
-        addressLine2?: T;
-        phoneDisplay?: T;
-        phoneHref?: T;
-        email?: T;
-      };
-  business?:
-    | T
+        cat?: string | null;
+        colSpan?: string | null;
+        image?: (number | null) | Media;
+        imageAlt?: string | null;
+        categoryLabel?: string | null;
+        title?: string | null;
+        description?: string | null;
+        size?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  cta?: {
+    title?: string | null;
+    text?: string | null;
+    button?: string | null;
+    href?: string | null;
+  };
+  meta?: {
+    title?: string | null;
+    description?: string | null;
+    /**
+     * Maximum upload file size: 12MB. Recommended file size for images is <500KB.
+     */
+    image?: (number | null) | Media;
+  };
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "over-ons".
+ */
+export interface OverOn {
+  id: number;
+  hero?: {
+    eyebrow?: string | null;
+    title?: string | null;
+    text?: string | null;
+    ctaLabel?: string | null;
+    ctaHref?: string | null;
+    image?: (number | null) | Media;
+    imageAlt?: string | null;
+  };
+  values?: {
+    eyebrow?: string | null;
+    heading?: string | null;
+    items?:
+      | {
+          icon?: string | null;
+          title?: string | null;
+          text?: string | null;
+          raised?: boolean | null;
+          id?: string | null;
+        }[]
+      | null;
+  };
+  team?: {
+    eyebrow?: string | null;
+    heading?: string | null;
+    paragraph1?: string | null;
+    paragraph2?: string | null;
+    ctaLabel?: string | null;
+    ctaHref?: string | null;
+    quote?: string | null;
+    image1?: (number | null) | Media;
+    image1Alt?: string | null;
+    image2?: (number | null) | Media;
+    image2Alt?: string | null;
+  };
+  meta?: {
+    title?: string | null;
+    description?: string | null;
+    /**
+     * Maximum upload file size: 12MB. Recommended file size for images is <500KB.
+     */
+    image?: (number | null) | Media;
+  };
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "contact".
+ */
+export interface Contact {
+  id: number;
+  hero?: {
+    eyebrow?: string | null;
+    heading?: string | null;
+    intro?: string | null;
+  };
+  infoCard?: {
+    heading?: string | null;
+    addressLabel?: string | null;
+    phoneLabel?: string | null;
+    emailLabel?: string | null;
+  };
+  businessCard?: {
+    heading?: string | null;
+    kvkLabel?: string | null;
+    bankLabel?: string | null;
+    accountLabel?: string | null;
+  };
+  form?: {
+    heading?: string | null;
+    intro?: string | null;
+    labelName?: string | null;
+    labelPhone?: string | null;
+    labelMobile?: string | null;
+    labelEmail?: string | null;
+    labelCopy?: string | null;
+    labelCity?: string | null;
+    labelUitvoeringMonth?: string | null;
+    labelWerkzaamheden?: string | null;
+    optionChoose?: string | null;
+    optionSchilderen?: string | null;
+    optionBehangen?: string | null;
+    optionOnderhoud?: string | null;
+    optionAfgeschermd?: string | null;
+    optionBeglazing?: string | null;
+    optionRamen?: string | null;
+    labelMessage?: string | null;
+    labelPrivacy?: string | null;
+    labelPrivacyLink?: string | null;
+    submitButton?: string | null;
+  };
+  meta?: {
+    title?: string | null;
+    description?: string | null;
+    /**
+     * Maximum upload file size: 12MB. Recommended file size for images is <500KB.
+     */
+    image?: (number | null) | Media;
+  };
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "privacyverklaring".
+ */
+export interface Privacyverklaring {
+  id: number;
+  eyebrow?: string | null;
+  heading?: string | null;
+  lastUpdated?: string | null;
+  contactEmail?: string | null;
+  backLink?: string | null;
+  sections?:
     | {
-        kvk?: T;
-        bankName?: T;
-        bankAccount?: T;
-      };
+        heading?: string | null;
+        html?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  meta?: {
+    title?: string | null;
+    description?: string | null;
+    /**
+     * Maximum upload file size: 12MB. Recommended file size for images is <500KB.
+     */
+    image?: (number | null) | Media;
+  };
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "niet-gevonden".
+ */
+export interface NietGevonden {
+  id: number;
+  heading?: string | null;
+  body?: string | null;
+  linkHome?: string | null;
+  linkContact?: string | null;
+  meta?: {
+    title?: string | null;
+    description?: string | null;
+    /**
+     * Maximum upload file size: 12MB. Recommended file size for images is <500KB.
+     */
+    image?: (number | null) | Media;
+  };
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "site-settings".
+ */
+export interface SiteSetting {
+  id: number;
+  company: {
+    name: string;
+    shortName?: string | null;
+    tagline?: string | null;
+    founded?: string | null;
+    yearsExperience?: string | null;
+  };
+  contact?: {
+    addressLine1?: string | null;
+    addressLine2?: string | null;
+    phoneDisplay?: string | null;
+    phoneHref?: string | null;
+    email?: string | null;
+  };
+  business?: {
+    kvk?: string | null;
+    bankName?: string | null;
+    bankAccount?: string | null;
+  };
   navServices?:
-    | T
     | {
-        title?: T;
-        url?: T;
-        id?: T;
-      };
-  credit?:
-    | T
-    | {
-        name?: T;
-        url?: T;
-      };
-  updatedAt?: T;
-  createdAt?: T;
-  globalType?: T;
+        title: string;
+        url: string;
+        id?: string | null;
+      }[]
+    | null;
+  credit?: {
+    name?: string | null;
+    url?: string | null;
+  };
+  updatedAt?: string | null;
+  createdAt?: string | null;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -663,6 +895,340 @@ export interface HomeSelect<T extends boolean = true> {
         title?: T;
         description?: T;
         image?: T;
+      };
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "diensten_select".
+ */
+export interface DienstenSelect<T extends boolean = true> {
+  hero?:
+    | T
+    | {
+        eyebrow?: T;
+        title?: T;
+        subtitle?: T;
+      };
+  binnenwerk?:
+    | T
+    | {
+        eyebrow?: T;
+        heading?: T;
+        items?:
+          | T
+          | {
+              categoryLabel?: T;
+              title?: T;
+              image?: T;
+              imageAlt?: T;
+              text?: T;
+              linkHref?: T;
+              linkLabel?: T;
+              id?: T;
+            };
+      };
+  buitenwerk?:
+    | T
+    | {
+        eyebrow?: T;
+        heading?: T;
+        items?:
+          | T
+          | {
+              categoryLabel?: T;
+              title?: T;
+              image?: T;
+              imageAlt?: T;
+              text?: T;
+              linkHref?: T;
+              linkLabel?: T;
+              id?: T;
+            };
+      };
+  cta?:
+    | T
+    | {
+        title?: T;
+        text?: T;
+        button?: T;
+        href?: T;
+      };
+  meta?:
+    | T
+    | {
+        title?: T;
+        description?: T;
+        image?: T;
+      };
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "portfolio_select".
+ */
+export interface PortfolioSelect<T extends boolean = true> {
+  hero?:
+    | T
+    | {
+        eyebrow?: T;
+        title?: T;
+        subtitle?: T;
+      };
+  filters?:
+    | T
+    | {
+        value?: T;
+        label?: T;
+        id?: T;
+      };
+  projects?:
+    | T
+    | {
+        cat?: T;
+        colSpan?: T;
+        image?: T;
+        imageAlt?: T;
+        categoryLabel?: T;
+        title?: T;
+        description?: T;
+        size?: T;
+        id?: T;
+      };
+  cta?:
+    | T
+    | {
+        title?: T;
+        text?: T;
+        button?: T;
+        href?: T;
+      };
+  meta?:
+    | T
+    | {
+        title?: T;
+        description?: T;
+        image?: T;
+      };
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "over-ons_select".
+ */
+export interface OverOnsSelect<T extends boolean = true> {
+  hero?:
+    | T
+    | {
+        eyebrow?: T;
+        title?: T;
+        text?: T;
+        ctaLabel?: T;
+        ctaHref?: T;
+        image?: T;
+        imageAlt?: T;
+      };
+  values?:
+    | T
+    | {
+        eyebrow?: T;
+        heading?: T;
+        items?:
+          | T
+          | {
+              icon?: T;
+              title?: T;
+              text?: T;
+              raised?: T;
+              id?: T;
+            };
+      };
+  team?:
+    | T
+    | {
+        eyebrow?: T;
+        heading?: T;
+        paragraph1?: T;
+        paragraph2?: T;
+        ctaLabel?: T;
+        ctaHref?: T;
+        quote?: T;
+        image1?: T;
+        image1Alt?: T;
+        image2?: T;
+        image2Alt?: T;
+      };
+  meta?:
+    | T
+    | {
+        title?: T;
+        description?: T;
+        image?: T;
+      };
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "contact_select".
+ */
+export interface ContactSelect<T extends boolean = true> {
+  hero?:
+    | T
+    | {
+        eyebrow?: T;
+        heading?: T;
+        intro?: T;
+      };
+  infoCard?:
+    | T
+    | {
+        heading?: T;
+        addressLabel?: T;
+        phoneLabel?: T;
+        emailLabel?: T;
+      };
+  businessCard?:
+    | T
+    | {
+        heading?: T;
+        kvkLabel?: T;
+        bankLabel?: T;
+        accountLabel?: T;
+      };
+  form?:
+    | T
+    | {
+        heading?: T;
+        intro?: T;
+        labelName?: T;
+        labelPhone?: T;
+        labelMobile?: T;
+        labelEmail?: T;
+        labelCopy?: T;
+        labelCity?: T;
+        labelUitvoeringMonth?: T;
+        labelWerkzaamheden?: T;
+        optionChoose?: T;
+        optionSchilderen?: T;
+        optionBehangen?: T;
+        optionOnderhoud?: T;
+        optionAfgeschermd?: T;
+        optionBeglazing?: T;
+        optionRamen?: T;
+        labelMessage?: T;
+        labelPrivacy?: T;
+        labelPrivacyLink?: T;
+        submitButton?: T;
+      };
+  meta?:
+    | T
+    | {
+        title?: T;
+        description?: T;
+        image?: T;
+      };
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "privacyverklaring_select".
+ */
+export interface PrivacyverklaringSelect<T extends boolean = true> {
+  eyebrow?: T;
+  heading?: T;
+  lastUpdated?: T;
+  contactEmail?: T;
+  backLink?: T;
+  sections?:
+    | T
+    | {
+        heading?: T;
+        html?: T;
+        id?: T;
+      };
+  meta?:
+    | T
+    | {
+        title?: T;
+        description?: T;
+        image?: T;
+      };
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "niet-gevonden_select".
+ */
+export interface NietGevondenSelect<T extends boolean = true> {
+  heading?: T;
+  body?: T;
+  linkHome?: T;
+  linkContact?: T;
+  meta?:
+    | T
+    | {
+        title?: T;
+        description?: T;
+        image?: T;
+      };
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "site-settings_select".
+ */
+export interface SiteSettingsSelect<T extends boolean = true> {
+  company?:
+    | T
+    | {
+        name?: T;
+        shortName?: T;
+        tagline?: T;
+        founded?: T;
+        yearsExperience?: T;
+      };
+  contact?:
+    | T
+    | {
+        addressLine1?: T;
+        addressLine2?: T;
+        phoneDisplay?: T;
+        phoneHref?: T;
+        email?: T;
+      };
+  business?:
+    | T
+    | {
+        kvk?: T;
+        bankName?: T;
+        bankAccount?: T;
+      };
+  navServices?:
+    | T
+    | {
+        title?: T;
+        url?: T;
+        id?: T;
+      };
+  credit?:
+    | T
+    | {
+        name?: T;
+        url?: T;
       };
   updatedAt?: T;
   createdAt?: T;

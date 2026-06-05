@@ -13,6 +13,12 @@ import { Media } from './collections/Media'
 import { Services } from './collections/Services'
 import { SiteSettings } from './globals/SiteSettings'
 import { Home } from './globals/Home'
+import { DienstenPage } from './globals/DienstenPage'
+import { PortfolioPage } from './globals/PortfolioPage'
+import { AboutPage } from './globals/AboutPage'
+import { ContactPage } from './globals/ContactPage'
+import { PrivacyPage } from './globals/PrivacyPage'
+import { NotFoundPage } from './globals/NotFoundPage'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -28,7 +34,16 @@ export default buildConfig({
     },
   },
   collections: [Users, Media, Services],
-  globals: [SiteSettings, Home],
+  globals: [
+    Home,
+    DienstenPage,
+    PortfolioPage,
+    AboutPage,
+    ContactPage,
+    PrivacyPage,
+    NotFoundPage,
+    SiteSettings,
+  ],
   editor: lexicalEditor(),
   // Admin interface language: Dutch (separate from the NL/EN content above).
   i18n: {
@@ -62,7 +77,7 @@ export default buildConfig({
   plugins: [
     seoPlugin({
       collections: ['services'],
-      globals: ['home'],
+      globals: ['home', 'diensten', 'portfolio', 'over-ons', 'contact', 'privacyverklaring', 'niet-gevonden'],
       uploadsCollection: 'media',
       tabbedUI: true,
       generateTitle: ({ doc }: { doc?: { title?: string } }) =>
