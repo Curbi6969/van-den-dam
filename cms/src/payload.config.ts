@@ -1,4 +1,5 @@
 import { sqliteAdapter } from '@payloadcms/db-sqlite'
+import { postgresAdapter } from '@payloadcms/db-postgres'
 import { lexicalEditor } from '@payloadcms/richtext-lexical'
 import { seoPlugin } from '@payloadcms/plugin-seo'
 import path from 'path'
@@ -32,11 +33,15 @@ export default buildConfig({
   typescript: {
     outputFile: path.resolve(dirname, 'payload-types.ts'),
   },
-  db: sqliteAdapter({
-    client: {
-      url: process.env.DATABASE_URI || 'file:./vandendam.db',
-    },
-  }),
+  // Postgres in production (Vercel), SQLite for quick local dev. Chosen by the
+  // shape of DATABASE_URI so the same config works in both places.
+  db: (process.env.DATABASE_URI || '').startsWith('postgres')
+    ? postgresAdapter({
+        pool: { connectionString: process.env.DATABASE_URI as string },
+      })
+    : sqliteAdapter({
+        client: { url: process.env.DATABASE_URI || 'file:./vandendam.db' },
+      }),
   sharp,
   plugins: [
     seoPlugin({
