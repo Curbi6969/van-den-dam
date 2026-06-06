@@ -19,9 +19,25 @@ import { AboutPage } from './globals/AboutPage'
 import { ContactPage } from './globals/ContactPage'
 import { PrivacyPage } from './globals/PrivacyPage'
 import { NotFoundPage } from './globals/NotFoundPage'
+import { triggerRebuild } from './hooks/triggerRebuild'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
+
+// Attach the "rebuild the live site" hook to a global or collection's afterChange.
+const withRebuild = <T extends { hooks?: { afterChange?: unknown[] } }>(entity: T): T => ({
+  ...entity,
+  hooks: {
+    ...entity.hooks,
+    afterChange: [...(entity.hooks?.afterChange ?? []), triggerRebuild],
+  },
+})
+
+// Pages get a draft/publish workflow on top of the rebuild hook: editing saves a
+// draft (not live), and only "Publiceren" pushes it to the static site.
+const withPublishFlow = <T extends { hooks?: { afterChange?: unknown[] }; versions?: unknown }>(
+  entity: T,
+): T => withRebuild({ ...entity, versions: { drafts: true } })
 
 export default buildConfig({
   admin: {
@@ -33,7 +49,7 @@ export default buildConfig({
       titleSuffix: '· Van den Dam CMS',
     },
   },
-  collections: [Users, Media, Services],
+  collections: [Users, Media, withRebuild(Services)],
   globals: [
     Home,
     DienstenPage,
@@ -43,7 +59,7 @@ export default buildConfig({
     PrivacyPage,
     NotFoundPage,
     SiteSettings,
-  ],
+  ].map(withPublishFlow),
   editor: lexicalEditor(),
   // Admin interface language: Dutch (separate from the NL/EN content above).
   i18n: {
