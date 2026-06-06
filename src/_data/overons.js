@@ -1,7 +1,7 @@
 // Over Ons content, fetched from the Payload CMS at build time.
 // Text comes from the CMS; images and SEO meta are not managed in the CMS yet,
 // so they fall back to the originals to keep the page visually identical.
-const CMS = process.env.CMS_URL || 'https://van-den-dam-cms.vercel.app'
+const { fetchGlobal } = require('../_lib/cms')
 
 const fallbackImages = {
   hero: 'resources/team.jpg',
@@ -15,9 +15,7 @@ const fallbackSeo = {
 }
 
 module.exports = async function () {
-  const res = await fetch(`${CMS}/api/globals/over-ons?locale=nl&depth=0`)
-  if (!res.ok) throw new Error(`CMS over-ons fetch failed: HTTP ${res.status}`)
-  const c = await res.json()
+  const c = await fetchGlobal('over-ons')
 
   return {
     title: c.meta?.title || fallbackSeo.title,

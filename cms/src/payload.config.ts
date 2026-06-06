@@ -20,6 +20,7 @@ import { ContactPage } from './globals/ContactPage'
 import { PrivacyPage } from './globals/PrivacyPage'
 import { NotFoundPage } from './globals/NotFoundPage'
 import { triggerRebuild } from './hooks/triggerRebuild'
+import { triggerPreviewRebuild } from './hooks/triggerPreviewRebuild'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -33,11 +34,43 @@ const withRebuild = <T extends { hooks?: { afterChange?: unknown[] } }>(entity: 
   },
 })
 
-// Pages get a draft/publish workflow on top of the rebuild hook: editing saves a
-// draft (not live), and only "Publiceren" pushes it to the static site.
-const withPublishFlow = <T extends { hooks?: { afterChange?: unknown[] }; versions?: unknown }>(
+// Maps each page global to its URL on the preview/live sites for the "Voorbeeld" button.
+const PREVIEW_BASE = process.env.PREVIEW_SITE_URL || 'https://van-den-dam-preview.vercel.app'
+const previewPath: Record<string, string> = {
+  home: '/',
+  diensten: '/diensten.html',
+  portfolio: '/portfolio.html',
+  'over-ons': '/over-ons.html',
+  contact: '/contact.html',
+  privacyverklaring: '/privacyverklaring.html',
+  'niet-gevonden': '/404.html',
+  'site-settings': '/',
+}
+
+// Pages get a draft/publish workflow + a Voorbeeld (preview) button. Editing saves
+// a draft (not live); only "Publiceren" pushes to the live site. Any save rebuilds
+// the preview site so editors can see drafts before publishing.
+const withPublishFlow = <
+  T extends {
+    slug: string
+    admin?: Record<string, unknown>
+    hooks?: { afterChange?: unknown[] }
+    versions?: unknown
+  },
+>(
   entity: T,
-): T => withRebuild({ ...entity, versions: { drafts: true } })
+): T => ({
+  ...entity,
+  versions: { drafts: true },
+  admin: {
+    ...entity.admin,
+    preview: () => `${PREVIEW_BASE}${previewPath[entity.slug] ?? '/'}`,
+  },
+  hooks: {
+    ...entity.hooks,
+    afterChange: [...(entity.hooks?.afterChange ?? []), triggerRebuild, triggerPreviewRebuild],
+  },
+})
 
 export default buildConfig({
   admin: {

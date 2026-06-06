@@ -1,7 +1,7 @@
 // Contact page content, fetched from the Payload CMS at build time.
 // Text comes from the CMS; SEO meta is not managed in the CMS yet,
 // so it falls back to the original to keep the page visually identical.
-const CMS = process.env.CMS_URL || 'https://van-den-dam-cms.vercel.app'
+const { fetchGlobal } = require('../_lib/cms')
 
 const fallbackSeo = {
   title: 'Contact Van den Dam Schilderwerken',
@@ -10,9 +10,7 @@ const fallbackSeo = {
 }
 
 module.exports = async function () {
-  const res = await fetch(`${CMS}/api/globals/contact?locale=nl&depth=0`)
-  if (!res.ok) throw new Error(`CMS contact fetch failed: HTTP ${res.status}`)
-  const c = await res.json()
+  const c = await fetchGlobal('contact')
 
   return {
     title: c.meta?.title || fallbackSeo.title,

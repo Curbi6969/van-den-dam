@@ -1,7 +1,7 @@
 // Diensten overview content, fetched from the Payload CMS at build time.
 // Text comes from the CMS; images and SEO meta are not managed in the CMS yet,
 // so they fall back to the originals to keep the page visually identical.
-const CMS = process.env.CMS_URL || 'https://van-den-dam-cms.vercel.app'
+const { fetchGlobal } = require('../_lib/cms')
 
 const fallbackImages = {
   binnenwerk: [
@@ -39,9 +39,7 @@ const mapItems = (items, section) =>
   }))
 
 module.exports = async function () {
-  const res = await fetch(`${CMS}/api/globals/diensten?locale=nl&depth=0`)
-  if (!res.ok) throw new Error(`CMS diensten fetch failed: HTTP ${res.status}`)
-  const c = await res.json()
+  const c = await fetchGlobal('diensten')
 
   return {
     title: c.meta?.title || fallbackSeo.title,

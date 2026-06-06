@@ -12,7 +12,11 @@ export const Users: CollectionConfig = {
     useAsTitle: 'name',
     defaultColumns: ['name', 'email', 'role'],
   },
-  auth: true,
+  // Email/password login for editors, plus API keys so the preview build can
+  // read draft content.
+  auth: {
+    useAPIKey: true,
+  },
   access: {
     create: isAdmin,
     delete: isAdmin,
