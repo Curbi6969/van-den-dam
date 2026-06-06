@@ -21,6 +21,7 @@ import { PrivacyPage } from './globals/PrivacyPage'
 import { NotFoundPage } from './globals/NotFoundPage'
 import { triggerRebuild } from './hooks/triggerRebuild'
 import { triggerPreviewRebuild } from './hooks/triggerPreviewRebuild'
+import { autoTranslate } from './hooks/autoTranslate'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -61,14 +62,19 @@ const withPublishFlow = <
   entity: T,
 ): T => ({
   ...entity,
-  versions: { drafts: true },
+  versions: { drafts: true, max: 20 },
   admin: {
     ...entity.admin,
     preview: () => `${PREVIEW_BASE}${previewPath[entity.slug] ?? '/'}`,
   },
   hooks: {
     ...entity.hooks,
-    afterChange: [...(entity.hooks?.afterChange ?? []), triggerRebuild, triggerPreviewRebuild],
+    afterChange: [
+      ...(entity.hooks?.afterChange ?? []),
+      autoTranslate,
+      triggerRebuild,
+      triggerPreviewRebuild,
+    ],
   },
 })
 
