@@ -1,50 +1,9 @@
-import { Icon } from '@/components/Icon'
-import { getPrivacy } from '@/frontend/queries'
+import { getPayload } from 'payload'
+import configPromise from '@/payload.config'
+import { PrivacyView } from '@/components/views/PrivacyView'
 
 export default async function PrivacyverklaringPage() {
-  const pv = await getPrivacy('nl')
-
-  return (
-    <>
-      <style>{`
-        .prose h2 { font-family: 'Manrope', sans-serif; font-size: 1.375rem; font-weight: 700; color: #232227; margin-top: 2.5rem; margin-bottom: 0.75rem; }
-        .prose p, .prose li { font-family: 'Work Sans', sans-serif; color: #45474d; line-height: 1.8; margin-bottom: 1rem; font-size: 0.9375rem; }
-        .prose ul { list-style: disc; padding-left: 1.5rem; }
-        .prose a { color: #ff0000; text-decoration: underline; }
-        .prose a:hover { color: #232227; }
-      `}</style>
-
-      {/* Content */}
-      <main className="max-w-3xl mx-auto px-6 pt-36 pb-24">
-        <span className="font-label text-xs font-semibold tracking-widest text-secondary uppercase mb-4 block">
-          {pv.eyebrow}
-        </span>
-        <h1
-          className="font-headline text-4xl md:text-5xl font-extrabold text-primary tracking-tight mb-4"
-          style={{ letterSpacing: '-0.02em' }}
-        >
-          {pv.heading}
-        </h1>
-        <p className="font-body text-on-surface-variant mb-12">{pv.lastUpdated}</p>
-
-        <div className="bg-surface-container-lowest rounded-xl p-8 md:p-12 ambient-shadow prose">
-          {pv.sections.map((section, i) => (
-            <div key={i}>
-              <h2>{section.heading}</h2>
-              <div dangerouslySetInnerHTML={{ __html: section.html }} />
-            </div>
-          ))}
-        </div>
-
-        <div className="mt-10">
-          <a
-            href="/"
-            className="inline-flex items-center gap-2 font-label text-sm text-secondary font-semibold hover:text-primary transition-colors"
-          >
-            <Icon name="arrow_back" className="text-base" /> {pv.backLink}
-          </a>
-        </div>
-      </main>
-    </>
-  )
+  const payload = await getPayload({ config: await configPromise })
+  const initial = await payload.findGlobal({ slug: 'privacyverklaring', locale: 'nl', depth: 0 })
+  return <PrivacyView initial={initial} />
 }

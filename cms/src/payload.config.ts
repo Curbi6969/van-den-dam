@@ -58,7 +58,7 @@ const livePreviewPath: Record<string, string> = {
   'over-ons': '/over-ons',
   contact: '/contact',
   privacyverklaring: '/privacyverklaring',
-  'niet-gevonden': '/',
+  'niet-gevonden': '/niet-gevonden',
   'site-settings': '/',
 }
 
