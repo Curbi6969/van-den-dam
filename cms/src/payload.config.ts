@@ -48,6 +48,20 @@ const previewPath: Record<string, string> = {
   'site-settings': '/',
 }
 
+// Live preview renders the in-app Next.js frontend inside the admin edit view and
+// streams field changes to it (no save needed). Points at this same app's routes.
+const SERVER_URL = process.env.NEXT_PUBLIC_SERVER_URL || 'http://localhost:3000'
+const livePreviewPath: Record<string, string> = {
+  home: '/',
+  diensten: '/diensten',
+  portfolio: '/portfolio',
+  'over-ons': '/over-ons',
+  contact: '/contact',
+  privacyverklaring: '/privacyverklaring',
+  'niet-gevonden': '/',
+  'site-settings': '/',
+}
+
 // Pages get a draft/publish workflow + a Voorbeeld (preview) button. Editing saves
 // a draft (not live); only "Publiceren" pushes to the live site. Any save rebuilds
 // the preview site so editors can see drafts before publishing.
@@ -86,6 +100,24 @@ export default buildConfig({
     },
     meta: {
       titleSuffix: '· Van den Dam CMS',
+    },
+    livePreview: {
+      url: ({ globalConfig }) => `${SERVER_URL}${livePreviewPath[globalConfig?.slug ?? ''] ?? '/'}`,
+      globals: [
+        'home',
+        'diensten',
+        'portfolio',
+        'over-ons',
+        'contact',
+        'privacyverklaring',
+        'niet-gevonden',
+        'site-settings',
+      ],
+      breakpoints: [
+        { label: 'Mobiel', name: 'mobile', width: 390, height: 844 },
+        { label: 'Tablet', name: 'tablet', width: 768, height: 1024 },
+        { label: 'Desktop', name: 'desktop', width: 1440, height: 900 },
+      ],
     },
   },
   collections: [Users, Media, withRebuild(Services)],
