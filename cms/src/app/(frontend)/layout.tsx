@@ -30,7 +30,7 @@ export default async function FrontendLayout({ children }: { children: React.Rea
         />
       </head>
       <body>
-        <Nav site={site} active="home" />
+        <Nav site={site} />
         {children}
         <Footer site={site} />
       </body>

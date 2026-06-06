@@ -1,5 +1,6 @@
 'use client'
 import { useState } from 'react'
+import { usePathname } from 'next/navigation'
 
 type NavService = { title: string; url: string }
 type SiteNav = { services: NavService[] }
@@ -12,8 +13,11 @@ const links = [
   { href: '/contact', label: 'Contact', key: 'contact' },
 ]
 
-export function Nav({ site, active }: { site: SiteNav; active?: string }) {
+export function Nav({ site }: { site: SiteNav }) {
   const [open, setOpen] = useState(false)
+  const pathname = usePathname()
+  const active =
+    pathname === '/' ? 'home' : links.find((l) => l.href !== '/' && pathname.startsWith(l.href))?.key
   const linkClass = (key: string) =>
     active === key
       ? 'text-primary border-b-2 border-primary pb-0.5'
