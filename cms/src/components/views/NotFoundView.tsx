@@ -2,6 +2,7 @@
 import { useLivePreview } from '@payloadcms/live-preview-react'
 import { mapNotFound } from '@/frontend/map'
 import { Icon } from '@/components/Icon'
+import { Editable } from '@/components/edit/Editable'
 
 const serverURL = process.env.NEXT_PUBLIC_SERVER_URL || ''
 
@@ -40,21 +41,26 @@ export function NotFoundView({ initial }: { initial: any }) {
             <span className="drip-404">404</span>
           </div>
 
-          <h1 className="font-headline text-2xl md:text-3xl font-extrabold text-primary mt-10 mb-4">{nf.heading}</h1>
-          <p className="font-body text-on-surface-variant text-lg leading-relaxed mb-10">{nf.body}</p>
+          <h1 className="font-headline text-2xl md:text-3xl font-extrabold text-primary mt-10 mb-4">
+            <Editable global="niet-gevonden" path="heading" value={nf.heading} />
+          </h1>
+          <p className="font-body text-on-surface-variant text-lg leading-relaxed mb-10">
+            <Editable global="niet-gevonden" path="body" value={nf.body} />
+          </p>
 
           <div className="flex flex-wrap justify-center gap-4">
             <a
               href="/"
               className="inline-flex items-center gap-2 bg-secondary text-on-secondary font-label font-semibold px-7 py-3.5 rounded-md hover:opacity-90 transition-opacity"
             >
-              <Icon name="home" className="text-base" /> {nf.linkHome}
+              <Icon name="home" className="text-base" />
+              <Editable global="niet-gevonden" path="linkHome" value={nf.linkHome} />
             </a>
             <a
               href="/contact"
               className="inline-flex items-center gap-2 bg-secondary text-on-secondary font-label font-semibold px-7 py-3.5 rounded-md hover:opacity-90 transition-opacity"
             >
-              {nf.linkContact}
+              <Editable global="niet-gevonden" path="linkContact" value={nf.linkContact} />
             </a>
           </div>
         </div>

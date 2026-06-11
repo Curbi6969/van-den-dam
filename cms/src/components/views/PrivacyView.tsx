@@ -2,6 +2,7 @@
 import { useLivePreview } from '@payloadcms/live-preview-react'
 import { mapPrivacy } from '@/frontend/map'
 import { Icon } from '@/components/Icon'
+import { Editable } from '@/components/edit/Editable'
 
 const serverURL = process.env.NEXT_PUBLIC_SERVER_URL || ''
 
@@ -21,16 +22,22 @@ export function PrivacyView({ initial }: { initial: any }) {
 
       {/* Content */}
       <main className="max-w-3xl mx-auto px-6 pt-36 pb-24">
-        <span className="font-label text-xs font-semibold tracking-widest text-secondary uppercase mb-4 block">
-          {pv.eyebrow}
-        </span>
+        <Editable
+          global="privacyverklaring"
+          path="eyebrow"
+          value={pv.eyebrow}
+          as="span"
+          className="font-label text-xs font-semibold tracking-widest text-secondary uppercase mb-4 block"
+        />
         <h1
           className="font-headline text-4xl md:text-5xl font-extrabold text-primary tracking-tight mb-4"
           style={{ letterSpacing: '-0.02em' }}
         >
-          {pv.heading}
+          <Editable global="privacyverklaring" path="heading" value={pv.heading} />
         </h1>
-        <p className="font-body text-on-surface-variant mb-12">{pv.lastUpdated}</p>
+        <p className="font-body text-on-surface-variant mb-12">
+          <Editable global="privacyverklaring" path="lastUpdated" value={pv.lastUpdated} />
+        </p>
 
         <div className="bg-surface-container-lowest rounded-xl p-8 md:p-12 ambient-shadow prose">
           {pv.sections.map((section, i) => (
@@ -46,7 +53,8 @@ export function PrivacyView({ initial }: { initial: any }) {
             href="/"
             className="inline-flex items-center gap-2 font-label text-sm text-secondary font-semibold hover:text-primary transition-colors"
           >
-            <Icon name="arrow_back" className="text-base" /> {pv.backLink}
+            <Icon name="arrow_back" className="text-base" />
+            <Editable global="privacyverklaring" path="backLink" value={pv.backLink} />
           </a>
         </div>
       </main>

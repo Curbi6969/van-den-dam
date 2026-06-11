@@ -48,7 +48,10 @@ export function mapDiensten(c: any) {
   c = c ?? {}
   const withImgs = (group: any, imgs: string[]) => ({
     ...(group ?? {}),
-    items: ((group?.items ?? []) as any[]).map((it, i) => ({ ...it, image: imgs[i] ?? imgs[0] })),
+    items: ((group?.items ?? []) as any[]).map((it, i) => ({
+      ...it,
+      image: mediaUrl(it?.image, imgs[i] ?? imgs[0]),
+    })),
   })
   return {
     hero: c.hero ?? {},
@@ -63,7 +66,10 @@ export function mapPortfolio(c: any) {
   return {
     hero: c.hero ?? {},
     filters: (c.filters ?? []) as any[],
-    projects: ((c.projects ?? []) as any[]).map((p) => ({ ...p, image: '/resources/vakman.jpg' })),
+    projects: ((c.projects ?? []) as any[]).map((p) => ({
+      ...p,
+      image: mediaUrl(p?.image, '/resources/vakman.jpg'),
+    })),
     cta: c.cta ?? {},
   }
 }
@@ -71,9 +77,13 @@ export function mapPortfolio(c: any) {
 export function mapOverOns(c: any) {
   c = c ?? {}
   return {
-    hero: { ...(c.hero ?? {}), image: '/resources/team.jpg' },
+    hero: { ...(c.hero ?? {}), image: mediaUrl(c.hero?.image, '/resources/team.jpg') },
     values: { ...(c.values ?? {}), items: (c.values?.items ?? []) as any[] },
-    team: { ...(c.team ?? {}), image1: '/resources/vakman.jpg', image2: '/resources/team.jpg' },
+    team: {
+      ...(c.team ?? {}),
+      image1: mediaUrl(c.team?.image1, '/resources/vakman.jpg'),
+      image2: mediaUrl(c.team?.image2, '/resources/team.jpg'),
+    },
   }
 }
 

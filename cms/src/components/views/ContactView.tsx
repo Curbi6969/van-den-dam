@@ -2,6 +2,7 @@
 import { useLivePreview } from '@payloadcms/live-preview-react'
 import { mapContact } from '@/frontend/map'
 import { Icon } from '@/components/Icon'
+import { Editable } from '@/components/edit/Editable'
 
 const serverURL = process.env.NEXT_PUBLIC_SERVER_URL || ''
 
@@ -15,17 +16,21 @@ export function ContactView({ initial, site }: { initial: any; site: any }) {
       <section className="bg-surface-container-low pt-36 pb-32 px-6 relative overflow-hidden">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 relative z-10">
           <div className="flex flex-col justify-center">
-            <span className="font-label text-xs font-semibold tracking-widest text-secondary uppercase mb-4 block">
-              {c.hero.eyebrow}
-            </span>
+            <Editable
+              global="contact"
+              path="hero.eyebrow"
+              value={c.hero.eyebrow}
+              as="span"
+              className="font-label text-xs font-semibold tracking-widest text-secondary uppercase mb-4 block"
+            />
             <h1
               className="font-headline text-5xl md:text-6xl lg:text-7xl font-extrabold text-primary tracking-tight mb-6 leading-tight"
               style={{ letterSpacing: '-0.02em' }}
             >
-              {c.hero.heading}
+              <Editable global="contact" path="hero.heading" value={c.hero.heading} />
             </h1>
             <p className="font-body text-xl text-on-surface-variant max-w-xl leading-relaxed">
-              {c.hero.intro}
+              <Editable global="contact" path="hero.intro" value={c.hero.intro} />
             </p>
           </div>
         </div>
@@ -47,13 +52,15 @@ export function ContactView({ initial, site }: { initial: any; site: any }) {
               <img src="/resources/team.jpg" alt="Ons team" className="w-full h-48 object-cover" />
             </div>
             <div className="bg-surface-container-lowest rounded-xl ambient-shadow ghost-border p-8">
-              <h2 className="font-headline text-xl font-bold text-primary mb-6">{c.infoCard.heading}</h2>
+              <h2 className="font-headline text-xl font-bold text-primary mb-6">
+                <Editable global="contact" path="infoCard.heading" value={c.infoCard.heading} />
+              </h2>
               <div className="space-y-5">
                 <div className="flex items-start gap-4">
                   <Icon name="location_on" className="text-secondary text-2xl mt-0.5" />
                   <div>
                     <p className="font-label text-xs font-semibold text-primary uppercase tracking-wider mb-1">
-                      {c.infoCard.addressLabel}
+                      <Editable global="contact" path="infoCard.addressLabel" value={c.infoCard.addressLabel} />
                     </p>
                     <p className="font-body text-on-surface-variant">
                       {site.contact.addressLine1}
@@ -66,7 +73,7 @@ export function ContactView({ initial, site }: { initial: any; site: any }) {
                   <Icon name="call" className="text-secondary text-2xl mt-0.5" />
                   <div>
                     <p className="font-label text-xs font-semibold text-primary uppercase tracking-wider mb-1">
-                      {c.infoCard.phoneLabel}
+                      <Editable global="contact" path="infoCard.phoneLabel" value={c.infoCard.phoneLabel} />
                     </p>
                     <a
                       href={`tel:${site.contact.phoneHref}`}
@@ -80,7 +87,7 @@ export function ContactView({ initial, site }: { initial: any; site: any }) {
                   <Icon name="mail" className="text-secondary text-2xl mt-0.5" />
                   <div>
                     <p className="font-label text-xs font-semibold text-primary uppercase tracking-wider mb-1">
-                      {c.infoCard.emailLabel}
+                      <Editable global="contact" path="infoCard.emailLabel" value={c.infoCard.emailLabel} />
                     </p>
                     <a
                       href={`mailto:${site.contact.email}`}
@@ -94,23 +101,25 @@ export function ContactView({ initial, site }: { initial: any; site: any }) {
             </div>
 
             <div className="bg-surface-container-lowest rounded-xl ambient-shadow ghost-border p-8">
-              <h2 className="font-headline text-xl font-bold text-primary mb-6">{c.businessCard.heading}</h2>
+              <h2 className="font-headline text-xl font-bold text-primary mb-6">
+                <Editable global="contact" path="businessCard.heading" value={c.businessCard.heading} />
+              </h2>
               <div className="grid grid-cols-2 gap-x-6 gap-y-5">
                 <div>
                   <p className="font-label text-xs font-semibold text-primary uppercase tracking-wider mb-1">
-                    {c.businessCard.kvkLabel}
+                    <Editable global="contact" path="businessCard.kvkLabel" value={c.businessCard.kvkLabel} />
                   </p>
                   <p className="font-body text-on-surface-variant text-sm">{site.business.kvk}</p>
                 </div>
                 <div>
                   <p className="font-label text-xs font-semibold text-primary uppercase tracking-wider mb-1">
-                    {c.businessCard.bankLabel}
+                    <Editable global="contact" path="businessCard.bankLabel" value={c.businessCard.bankLabel} />
                   </p>
                   <p className="font-body text-on-surface-variant text-sm">{site.business.bankName}</p>
                 </div>
                 <div className="col-span-2">
                   <p className="font-label text-xs font-semibold text-primary uppercase tracking-wider mb-1">
-                    {c.businessCard.accountLabel}
+                    <Editable global="contact" path="businessCard.accountLabel" value={c.businessCard.accountLabel} />
                   </p>
                   <p className="font-body text-on-surface-variant text-sm">{site.business.bankAccount}</p>
                 </div>
@@ -125,8 +134,12 @@ export function ContactView({ initial, site }: { initial: any; site: any }) {
                 className="absolute -top-24 -right-24 w-64 h-64 rounded-full blur-3xl opacity-20 pointer-events-none"
                 style={{ background: '#c5c5c7' }}
               />
-              <h3 className="font-headline text-2xl font-bold text-primary mb-2">{c.form.heading}</h3>
-              <p className="font-body text-on-surface-variant text-sm mb-8">{c.form.intro}</p>
+              <h3 className="font-headline text-2xl font-bold text-primary mb-2">
+                <Editable global="contact" path="form.heading" value={c.form.heading} />
+              </h3>
+              <p className="font-body text-on-surface-variant text-sm mb-8">
+                <Editable global="contact" path="form.intro" value={c.form.intro} />
+              </p>
               <form className="space-y-6" id="contact-form">
                 {/* Naam */}
                 <div className="relative group">
@@ -142,7 +155,7 @@ export function ContactView({ initial, site }: { initial: any; site: any }) {
                     className="absolute left-4 top-2 text-on-surface-variant font-label text-xs transition-all peer-placeholder-shown:text-sm peer-placeholder-shown:top-4 peer-focus:text-xs peer-focus:top-2 peer-focus:text-secondary"
                     htmlFor="name"
                   >
-                    {c.form.labelName}
+                    <Editable global="contact" path="form.labelName" value={c.form.labelName} />
                   </label>
                 </div>
                 {/* Telefoon + Mobiel */}
@@ -160,7 +173,7 @@ export function ContactView({ initial, site }: { initial: any; site: any }) {
                       className="absolute left-4 top-2 text-on-surface-variant font-label text-xs transition-all peer-placeholder-shown:text-sm peer-placeholder-shown:top-4 peer-focus:text-xs peer-focus:top-2 peer-focus:text-secondary"
                       htmlFor="phone"
                     >
-                      {c.form.labelPhone}
+                      <Editable global="contact" path="form.labelPhone" value={c.form.labelPhone} />
                     </label>
                   </div>
                   <div className="relative group">
@@ -175,7 +188,7 @@ export function ContactView({ initial, site }: { initial: any; site: any }) {
                       className="absolute left-4 top-2 text-on-surface-variant font-label text-xs transition-all peer-placeholder-shown:text-sm peer-placeholder-shown:top-4 peer-focus:text-xs peer-focus:top-2 peer-focus:text-secondary"
                       htmlFor="mobile"
                     >
-                      {c.form.labelMobile}
+                      <Editable global="contact" path="form.labelMobile" value={c.form.labelMobile} />
                     </label>
                   </div>
                 </div>
@@ -193,7 +206,7 @@ export function ContactView({ initial, site }: { initial: any; site: any }) {
                     className="absolute left-4 top-2 text-on-surface-variant font-label text-xs transition-all peer-placeholder-shown:text-sm peer-placeholder-shown:top-4 peer-focus:text-xs peer-focus:top-2 peer-focus:text-secondary"
                     htmlFor="email"
                   >
-                    {c.form.labelEmail}
+                    <Editable global="contact" path="form.labelEmail" value={c.form.labelEmail} />
                   </label>
                 </div>
                 {/* Kopie checkbox */}
@@ -205,7 +218,7 @@ export function ContactView({ initial, site }: { initial: any; site: any }) {
                     className="rounded border-outline text-secondary focus:ring-secondary"
                   />
                   <label htmlFor="copy" className="font-body text-sm text-on-surface-variant">
-                    {c.form.labelCopy}
+                    <Editable global="contact" path="form.labelCopy" value={c.form.labelCopy} />
                   </label>
                 </div>
                 {/* Woonplaats */}
@@ -221,7 +234,7 @@ export function ContactView({ initial, site }: { initial: any; site: any }) {
                     className="absolute left-4 top-2 text-on-surface-variant font-label text-xs transition-all peer-placeholder-shown:text-sm peer-placeholder-shown:top-4 peer-focus:text-xs peer-focus:top-2 peer-focus:text-secondary"
                     htmlFor="city"
                   >
-                    {c.form.labelCity}
+                    <Editable global="contact" path="form.labelCity" value={c.form.labelCity} />
                   </label>
                 </div>
                 {/* Gewenste uitvoermaand + Werkzaamheden */}
@@ -231,7 +244,7 @@ export function ContactView({ initial, site }: { initial: any; site: any }) {
                       className="font-label text-xs font-semibold text-on-surface-variant uppercase tracking-wider block mb-2"
                       htmlFor="uitvoer"
                     >
-                      {c.form.labelUitvoeringMonth}
+                      <Editable global="contact" path="form.labelUitvoeringMonth" value={c.form.labelUitvoeringMonth} />
                     </label>
                     <input
                       type="month"
@@ -245,7 +258,7 @@ export function ContactView({ initial, site }: { initial: any; site: any }) {
                       className="font-label text-xs font-semibold text-on-surface-variant uppercase tracking-wider block mb-2"
                       htmlFor="werkzaamheden"
                     >
-                      {c.form.labelWerkzaamheden}
+                      <Editable global="contact" path="form.labelWerkzaamheden" value={c.form.labelWerkzaamheden} />
                     </label>
                     <select
                       id="werkzaamheden"
@@ -275,7 +288,7 @@ export function ContactView({ initial, site }: { initial: any; site: any }) {
                     className="absolute left-4 top-2 text-on-surface-variant font-label text-xs transition-all peer-placeholder-shown:text-sm peer-placeholder-shown:top-4 peer-focus:text-xs peer-focus:top-2 peer-focus:text-secondary"
                     htmlFor="message"
                   >
-                    {c.form.labelMessage}
+                    <Editable global="contact" path="form.labelMessage" value={c.form.labelMessage} />
                   </label>
                 </div>
                 <div className="flex items-start gap-3">
@@ -287,12 +300,12 @@ export function ContactView({ initial, site }: { initial: any; site: any }) {
                     className="mt-1 rounded border-outline text-secondary focus:ring-secondary"
                   />
                   <label htmlFor="privacy" className="font-body text-sm text-on-surface-variant">
-                    {c.form.labelPrivacy}{' '}
+                    <Editable global="contact" path="form.labelPrivacy" value={c.form.labelPrivacy} />{' '}
                     <a
                       href="/privacyverklaring"
                       className="text-secondary hover:text-primary transition-colors underline"
                     >
-                      {c.form.labelPrivacyLink}
+                      <Editable global="contact" path="form.labelPrivacyLink" value={c.form.labelPrivacyLink} />
                     </a>
                     .
                   </label>
@@ -301,7 +314,7 @@ export function ContactView({ initial, site }: { initial: any; site: any }) {
                   type="submit"
                   className="bg-secondary text-on-secondary font-label font-semibold px-8 py-4 rounded-md w-full md:w-auto hover:opacity-90 transition-opacity flex items-center justify-center gap-2"
                 >
-                  {c.form.submitButton}
+                  <Editable global="contact" path="form.submitButton" value={c.form.submitButton} />
                   <Icon name="arrow_forward" className="text-sm" />
                 </button>
               </form>
