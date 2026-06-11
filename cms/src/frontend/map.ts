@@ -1,7 +1,7 @@
 // Pure, client-safe transforms from raw Payload global data to the shape the
 // view components render. Used both on the server (initial render) and in the
-// client (live preview updates). Image/SEO fallbacks live here until media is
-// managed in the CMS.
+// client (live preview updates). Image/SEO fallbacks live here for pages whose
+// media is not yet managed in the CMS; Home prefers the uploaded CMS image.
 const img = {
   hero: '/resources/vakman.jpg',
   servicesCards: ['/resources/team.jpg', '/resources/vakman.jpg', '/resources/vakman.jpg'],
@@ -9,21 +9,25 @@ const img = {
   portfolio: ['/resources/vakman.jpg', '/resources/vakman.jpg', '/resources/vakman.jpg'],
 }
 
+// Gepopuleerd upload-veld (object met url, bij depth >= 1) of de fallback.
+const mediaUrl = (m: any, fallback: string): string =>
+  m && typeof m === 'object' && typeof m.url === 'string' ? m.url : fallback
+
 export function mapHome(c: any) {
   c = c ?? {}
   return {
-    hero: { ...(c.hero ?? {}), image: img.hero },
+    hero: { ...(c.hero ?? {}), image: mediaUrl(c.hero?.image, img.hero) },
     trust: (c.trust ?? []) as any[],
     servicesIntro: c.servicesIntro ?? {},
     servicesCards: ((c.servicesCards ?? []) as any[]).map((card, i) => ({
       ...card,
-      image: img.servicesCards[i] ?? img.servicesCards[0],
+      image: mediaUrl(card?.image, img.servicesCards[i] ?? img.servicesCards[0]),
     })),
-    about: { ...(c.about ?? {}), image: img.about },
+    about: { ...(c.about ?? {}), image: mediaUrl(c.about?.image, img.about) },
     portfolioIntro: c.portfolioIntro ?? {},
     portfolio: ((c.portfolio ?? []) as any[]).map((p, i) => ({
       ...p,
-      image: img.portfolio[i] ?? img.portfolio[0],
+      image: mediaUrl(p?.image, img.portfolio[i] ?? img.portfolio[0]),
     })),
     reviewsIntro: c.reviewsIntro ?? {},
     reviews: (c.reviews ?? []) as any[],

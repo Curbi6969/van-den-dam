@@ -3,6 +3,8 @@ import './styles.css'
 import { getSite } from '@/frontend/queries'
 import { Nav } from '@/components/Nav'
 import { Footer } from '@/components/Footer'
+import { EditProvider } from '@/components/edit/EditContext'
+import { AdminBar } from '@/components/edit/AdminBar'
 
 export const metadata = {
   title: 'Van den Dam Schilderwerken',
@@ -30,9 +32,12 @@ export default async function FrontendLayout({ children }: { children: React.Rea
         />
       </head>
       <body>
-        <Nav site={site} />
-        {children}
-        <Footer site={site} />
+        <EditProvider>
+          <Nav site={site} />
+          {children}
+          <Footer site={site} />
+          <AdminBar />
+        </EditProvider>
       </body>
     </html>
   )
