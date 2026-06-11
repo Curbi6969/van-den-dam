@@ -38,10 +38,10 @@
 
 | # | Stap | Status | Notities |
 |---|------|--------|----------|
-| 10 | Admin visueel geverifieerd (screenshots via headless Chrome + puppeteer-core in `.claude/screenshots/`) | ✅ | Login toont huisstijl. Bug gevonden: logo was wit-op-licht; tekstkleur naar antraciet gezet. |
+| 10 | Admin visueel geverifieerd (screenshots via puppeteer-core in `.claude/screenshots/`, Edge als browser is stabieler dan Chrome) | ✅ | Login toont huisstijl. Bug gevonden en gefixt: logo was wit-op-licht, nu antraciet; fix live geverifieerd met nieuwe screenshot. |
 | 11 | Icon-font subset dynamisch | ✅ code | `(frontend)/layout.tsx` verzamelt nu `icon`-velden uit alle globals + vaste UI-iconen en bouwt de Google Fonts `icon_names`-URL. Nieuw icoon via CMS werkt vanzelf na publiceren (pagina-regeneratie). |
 | 12 | Logboek (audit log) | ✅ code | Collectie `audit-log` (alleen-lezen, NL labels) + `hooks/logChange.ts` in withPublishFlow: wie/wat/wanneer bij elke opslag en publicatie. Versiehistorie per pagina van 20 naar 50. |
-| 13 | Dagelijkse DB-backup | 🔄 | `.github/workflows/db-backup.yml` (pg_dump om 03:00, artifact 30 dagen). **Gebruiker moet nog 1 secret zetten** (classifier blokkeerde het): `SUPABASE_DB_URL` = DATABASE_URI uit `cms/.env` met poort 6543 vervangen door 5432. Commando staat in de chat. |
+| 13 | Dagelijkse DB-backup | ✅ 2026-06-11 | `.github/workflows/db-backup.yml`: pg_dump (v17-binary, sessie-pooler poort 5432) om 03:00, artifact 30 dagen bewaard, handmatig te draaien via Actions. Secret `SUPABASE_DB_URL` staat op de repo (via `gh secret set --body`, NIET via pipe: PowerShell 5.1 pipe-encoding verminkt de waarde). Testrun geslaagd (run 27365860835). |
 | 14 | Schema push audit_log | ✅ | Via lokale dev-run tegen productie-DB. |
 
 ## Sessielog
