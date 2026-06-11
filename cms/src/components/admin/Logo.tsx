@@ -30,7 +30,7 @@ export const Logo: React.FC = () => (
         fontWeight: 800,
         fontSize: '15px',
         lineHeight: 1.1,
-        color: '#ffffff',
+        color: '#232227',
         letterSpacing: '-0.01em',
       }}
     >
@@ -41,7 +41,7 @@ export const Logo: React.FC = () => (
           fontFamily: "'Work Sans', sans-serif",
           fontWeight: 400,
           fontSize: '11px',
-          color: 'rgba(255,255,255,0.55)',
+          color: 'rgba(35,34,39,0.6)',
           letterSpacing: '0.04em',
           textTransform: 'uppercase',
           marginTop: '1px',

@@ -11,6 +11,7 @@ import sharp from 'sharp'
 import { Users } from './collections/Users'
 import { Media } from './collections/Media'
 import { Services } from './collections/Services'
+import { AuditLog } from './collections/AuditLog'
 import { SiteSettings } from './globals/SiteSettings'
 import { Home } from './globals/Home'
 import { DienstenPage } from './globals/DienstenPage'
@@ -23,6 +24,7 @@ import { triggerRebuild } from './hooks/triggerRebuild'
 import { triggerPreviewRebuild } from './hooks/triggerPreviewRebuild'
 import { revalidateSite } from './hooks/revalidateSite'
 import { autoTranslate } from './hooks/autoTranslate'
+import { logChange } from './hooks/logChange'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -77,7 +79,7 @@ const withPublishFlow = <
   entity: T,
 ): T => ({
   ...entity,
-  versions: { drafts: true, max: 20 },
+  versions: { drafts: true, max: 50 },
   admin: {
     ...entity.admin,
     preview: () => `${PREVIEW_BASE}${previewPath[entity.slug] ?? '/'}`,
@@ -88,6 +90,7 @@ const withPublishFlow = <
       ...(entity.hooks?.afterChange ?? []),
       autoTranslate,
       revalidateSite,
+      logChange,
       triggerRebuild,
       triggerPreviewRebuild,
     ],
@@ -130,7 +133,7 @@ export default buildConfig({
       ],
     },
   },
-  collections: [Users, Media, withRebuild(Services)],
+  collections: [Users, Media, withRebuild(Services), AuditLog],
   globals: [
     Home,
     DienstenPage,
