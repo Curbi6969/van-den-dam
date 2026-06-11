@@ -65,3 +65,24 @@ That's it! The Docker instance will help you get up and running quickly while al
 ## Questions
 
 If you have any issues or questions, reach out to us on [Discord](https://discord.com/invite/payload) or start a [GitHub discussion](https://github.com/payloadcms/payload/discussions).
+
+## Inline bewerken op de site
+
+Wie is ingelogd in het CMS (`/admin`) en daarna de gewone site bezoekt, ziet rechtsonder
+een potlood-knop. Die opent de bewerkmodus:
+
+- Klik op tekst om die direct op de pagina aan te passen.
+- Klik op een afbeelding om een nieuwe te uploaden (komt in de mediabibliotheek).
+- Onderin verschijnt een balk met **Concept opslaan** (bewaren zonder publiceren) en
+  **Publiceren** (zet live en triggert de rebuild van de statische site).
+
+Bezoekers zonder CMS-sessie zien hier niets van; de detectie loopt via `/api/users/me`
+met de Payload sessie-cookie (zelfde domein).
+
+Technisch: `src/components/edit/` bevat de `EditProvider` (sessie, wijzigingen, opslaan
+via `POST /api/globals/<slug>?locale=nl`), `Editable` (tekst, contenteditable) en
+`EditableImage` (upload naar `/api/media`). Views markeren velden met het ruwe
+Payload-veldpad, bijv. `<Editable path="hero.title" ...>`. Er wordt altijd op de
+NL-bron bewerkt; de DeepL-hook vertaalt automatisch naar EN, en publiceren activeert
+dezelfde rebuild-hooks als publiceren vanuit het admin-paneel. Uitgerold op de
+homepage; overige pagina's volgen hetzelfde patroon.

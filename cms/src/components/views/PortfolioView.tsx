@@ -1,11 +1,13 @@
 'use client'
 import { useLivePreview } from '@payloadcms/live-preview-react'
 import { mapPortfolio } from '@/frontend/map'
+import { Editable } from '@/components/edit/Editable'
+import { EditableImage } from '@/components/edit/EditableImage'
 
 const serverURL = process.env.NEXT_PUBLIC_SERVER_URL || ''
 
 export function PortfolioView({ initial }: { initial: any }) {
-  const { data } = useLivePreview<any>({ initialData: initial, serverURL, depth: 0 })
+  const { data } = useLivePreview<any>({ initialData: initial, serverURL, depth: 1 })
   const p = mapPortfolio(data)
 
   return (
@@ -13,16 +15,22 @@ export function PortfolioView({ initial }: { initial: any }) {
       {/* Hero */}
       <section className="max-w-7xl mx-auto px-6 pt-40 pb-16">
         <div className="max-w-3xl">
-          <span className="font-label text-xs font-semibold tracking-widest text-secondary uppercase mb-4 block">
-            {p.hero.eyebrow}
-          </span>
+          <Editable
+            global="portfolio"
+            path="hero.eyebrow"
+            value={p.hero.eyebrow}
+            as="span"
+            className="font-label text-xs font-semibold tracking-widest text-secondary uppercase mb-4 block"
+          />
           <h1
             className="font-headline text-5xl md:text-6xl font-extrabold text-primary tracking-tight mb-6"
             style={{ letterSpacing: '-0.02em' }}
           >
-            {p.hero.title}
+            <Editable global="portfolio" path="hero.title" value={p.hero.title} />
           </h1>
-          <p className="font-body text-xl text-on-surface-variant leading-relaxed">{p.hero.subtitle}</p>
+          <p className="font-body text-xl text-on-surface-variant leading-relaxed">
+            <Editable global="portfolio" path="hero.subtitle" value={p.hero.subtitle} />
+          </p>
         </div>
       </section>
 
@@ -38,7 +46,7 @@ export function PortfolioView({ initial }: { initial: any }) {
                   : 'filter-btn bg-surface-container text-on-surface px-6 py-2 rounded-full font-label text-sm font-semibold tracking-wide ghost-border hover:bg-surface-container-high transition-all'
               }
             >
-              {filter.label}
+              <Editable global="portfolio" path={`filters.${i}.label`} value={filter.label} />
             </button>
           ))}
         </div>
@@ -53,7 +61,9 @@ export function PortfolioView({ initial }: { initial: any }) {
               data-cat={project.cat}
               className={`portfolio-item ${project.colSpan} relative group overflow-hidden rounded-xl ambient-shadow ghost-border cursor-pointer`}
             >
-              <img
+              <EditableImage
+                global="portfolio"
+                path={`projects.${i}.image`}
                 src={project.image}
                 alt={project.imageAlt}
                 className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
@@ -65,7 +75,7 @@ export function PortfolioView({ initial }: { initial: any }) {
                     project.size === 'large' ? 'mb-4' : 'mb-3'
                   }`}
                 >
-                  {project.categoryLabel}
+                  <Editable global="portfolio" path={`projects.${i}.categoryLabel`} value={project.categoryLabel} />
                 </span>
                 <h2
                   className={
@@ -74,7 +84,7 @@ export function PortfolioView({ initial }: { initial: any }) {
                       : 'font-headline text-lg font-bold text-white mb-1'
                   }
                 >
-                  {project.title}
+                  <Editable global="portfolio" path={`projects.${i}.title`} value={project.title} />
                 </h2>
                 <p
                   className={
@@ -83,7 +93,7 @@ export function PortfolioView({ initial }: { initial: any }) {
                       : 'font-body text-sm text-slate-200 line-clamp-1'
                   }
                 >
-                  {project.description}
+                  <Editable global="portfolio" path={`projects.${i}.description`} value={project.description} />
                 </p>
               </div>
             </article>
@@ -97,16 +107,16 @@ export function PortfolioView({ initial }: { initial: any }) {
           <div className="absolute -top-24 -right-24 w-64 h-64 bg-primary-container rounded-full opacity-10 blur-3xl pointer-events-none" />
           <div className="absolute -bottom-24 -left-24 w-64 h-64 bg-secondary-container rounded-full opacity-10 blur-3xl pointer-events-none" />
           <h2 className="font-headline text-3xl md:text-4xl font-extrabold text-primary mb-6 relative z-10">
-            {p.cta.title}
+            <Editable global="portfolio" path="cta.title" value={p.cta.title} />
           </h2>
           <p className="font-body text-lg text-on-surface-variant mb-10 max-w-2xl mx-auto relative z-10">
-            {p.cta.text}
+            <Editable global="portfolio" path="cta.text" value={p.cta.text} />
           </p>
           <a
             href="/contact"
             className="relative z-10 inline-block bg-secondary text-on-secondary font-label font-semibold px-10 py-4 rounded-md hover:opacity-90 transition-opacity text-lg"
           >
-            {p.cta.button}
+            <Editable global="portfolio" path="cta.button" value={p.cta.button} />
           </a>
         </div>
       </section>
