@@ -3,7 +3,10 @@ import type { GlobalConfig } from 'payload'
 export const Home: GlobalConfig = {
   slug: 'home',
   label: 'Homepage',
-  admin: { group: "Pagina's" },
+  admin: {
+    group: "Pagina's",
+    description: 'Alle teksten en afbeeldingen van de homepage. Tip: via de knop Live voorbeeld zie je wijzigingen direct.',
+  },
   access: {
     read: () => true,
   },
@@ -18,6 +21,8 @@ export const Home: GlobalConfig = {
         { name: 'title', type: 'text', label: 'Titel' },
         { name: 'subtitle', type: 'textarea', label: 'Ondertitel' },
         { name: 'image', type: 'upload', relationTo: 'media', label: 'Afbeelding' },
+        { name: 'ctaPrimary', type: 'text', label: 'Knop: offerte aanvragen' },
+        { name: 'ctaSecondary', type: 'text', label: 'Knop: bekijk portfolio' },
       ],
     },
     {
@@ -41,6 +46,7 @@ export const Home: GlobalConfig = {
         { name: 'eyebrow', type: 'text', label: 'Bovenkop' },
         { name: 'title', type: 'text', label: 'Titel' },
         { name: 'text', type: 'textarea', label: 'Tekst' },
+        { name: 'ctaViewAll', type: 'text', label: 'Knop: bekijk al onze diensten' },
       ],
     },
     {
@@ -54,6 +60,7 @@ export const Home: GlobalConfig = {
         { name: 'text', type: 'textarea', label: 'Tekst' },
         { name: 'image', type: 'upload', relationTo: 'media', label: 'Afbeelding' },
         { name: 'raised', type: 'checkbox', label: 'Uitgelicht' },
+        { name: 'linkLabel', type: 'text', label: 'Link tekst (meer lezen)' },
       ],
     },
     {
@@ -69,6 +76,7 @@ export const Home: GlobalConfig = {
         { name: 'badgeLabel', type: 'text', label: 'Badge label' },
         { name: 'paragraph1', type: 'textarea', label: 'Alinea 1' },
         { name: 'paragraph2', type: 'textarea', label: 'Alinea 2' },
+        { name: 'ctaLabel', type: 'text', label: 'Link tekst (leer ons kennen)' },
       ],
     },
     {
@@ -79,6 +87,7 @@ export const Home: GlobalConfig = {
       fields: [
         { name: 'eyebrow', type: 'text', label: 'Bovenkop' },
         { name: 'title', type: 'text', label: 'Titel' },
+        { name: 'ctaViewAll', type: 'text', label: 'Link tekst (volledig portfolio)' },
       ],
     },
     {

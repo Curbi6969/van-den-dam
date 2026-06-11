@@ -16,15 +16,31 @@ const mediaUrl = (m: any, fallback: string): string =>
 export function mapHome(c: any) {
   c = c ?? {}
   return {
-    hero: { ...(c.hero ?? {}), image: mediaUrl(c.hero?.image, img.hero) },
+    hero: {
+      ...(c.hero ?? {}),
+      image: mediaUrl(c.hero?.image, img.hero),
+      ctaPrimary: c.hero?.ctaPrimary ?? 'Offerte Aanvragen',
+      ctaSecondary: c.hero?.ctaSecondary ?? 'Bekijk Portfolio',
+    },
     trust: (c.trust ?? []) as any[],
-    servicesIntro: c.servicesIntro ?? {},
+    servicesIntro: {
+      ...(c.servicesIntro ?? {}),
+      ctaViewAll: c.servicesIntro?.ctaViewAll ?? 'Bekijk al onze diensten',
+    },
     servicesCards: ((c.servicesCards ?? []) as any[]).map((card, i) => ({
       ...card,
       image: mediaUrl(card?.image, img.servicesCards[i] ?? img.servicesCards[0]),
+      linkLabel: card?.linkLabel ?? 'Meer lezen',
     })),
-    about: { ...(c.about ?? {}), image: mediaUrl(c.about?.image, img.about) },
-    portfolioIntro: c.portfolioIntro ?? {},
+    about: {
+      ...(c.about ?? {}),
+      image: mediaUrl(c.about?.image, img.about),
+      ctaLabel: c.about?.ctaLabel ?? 'Leer ons kennen',
+    },
+    portfolioIntro: {
+      ...(c.portfolioIntro ?? {}),
+      ctaViewAll: c.portfolioIntro?.ctaViewAll ?? 'Volledig portfolio',
+    },
     portfolio: ((c.portfolio ?? []) as any[]).map((p, i) => ({
       ...p,
       image: mediaUrl(p?.image, img.portfolio[i] ?? img.portfolio[0]),

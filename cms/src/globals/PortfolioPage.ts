@@ -3,7 +3,10 @@ import type { GlobalConfig } from 'payload'
 export const PortfolioPage: GlobalConfig = {
   slug: 'portfolio',
   label: 'Portfolio',
-  admin: { group: "Pagina's" },
+  admin: {
+    group: "Pagina's",
+    description: 'Teksten, filters en projecten op de portfoliopagina, inclusief de call-to-action onderaan.',
+  },
   access: { read: () => true },
   fields: [
     {

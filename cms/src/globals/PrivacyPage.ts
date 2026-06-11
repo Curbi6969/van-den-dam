@@ -3,7 +3,10 @@ import type { GlobalConfig } from 'payload'
 export const PrivacyPage: GlobalConfig = {
   slug: 'privacyverklaring',
   label: 'Privacyverklaring',
-  admin: { group: "Pagina's" },
+  admin: {
+    group: "Pagina's",
+    description: 'Inhoud van de privacyverklaring, inclusief secties en de terugknop naar de homepage.',
+  },
   access: { read: () => true },
   fields: [
     { name: 'eyebrow', type: 'text', label: 'Bovenkop', localized: true },

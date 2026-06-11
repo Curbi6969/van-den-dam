@@ -422,6 +422,8 @@ export interface PayloadMigrationsSelect<T extends boolean = true> {
   createdAt?: T;
 }
 /**
+ * Alle teksten en afbeeldingen van de homepage. Tip: via de knop Live voorbeeld zie je wijzigingen direct.
+ *
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "home".
  */
@@ -432,6 +434,8 @@ export interface Home {
     title?: string | null;
     subtitle?: string | null;
     image?: (number | null) | Media;
+    ctaPrimary?: string | null;
+    ctaSecondary?: string | null;
   };
   trust?:
     | {
@@ -445,6 +449,7 @@ export interface Home {
     eyebrow?: string | null;
     title?: string | null;
     text?: string | null;
+    ctaViewAll?: string | null;
   };
   servicesCards?:
     | {
@@ -452,6 +457,7 @@ export interface Home {
         text?: string | null;
         image?: (number | null) | Media;
         raised?: boolean | null;
+        linkLabel?: string | null;
         id?: string | null;
       }[]
     | null;
@@ -463,10 +469,12 @@ export interface Home {
     badgeLabel?: string | null;
     paragraph1?: string | null;
     paragraph2?: string | null;
+    ctaLabel?: string | null;
   };
   portfolioIntro?: {
     eyebrow?: string | null;
     title?: string | null;
+    ctaViewAll?: string | null;
   };
   portfolio?:
     | {
@@ -507,6 +515,8 @@ export interface Home {
   createdAt?: string | null;
 }
 /**
+ * Teksten en afbeeldingen op de dienstenpagina: hero, binnenwerk, buitenwerk en de call-to-action.
+ *
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "diensten".
  */
@@ -568,6 +578,8 @@ export interface Diensten {
   createdAt?: string | null;
 }
 /**
+ * Teksten, filters en projecten op de portfoliopagina, inclusief de call-to-action onderaan.
+ *
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "portfolio".
  */
@@ -617,6 +629,8 @@ export interface Portfolio {
   createdAt?: string | null;
 }
 /**
+ * Teksten en afbeeldingen op de Over ons-pagina: hero, waarden en de teamsectie.
+ *
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "over-ons".
  */
@@ -670,6 +684,8 @@ export interface OverOn {
   createdAt?: string | null;
 }
 /**
+ * Alle teksten op de contactpagina: hero, contactgegevens, bedrijfskaart en het aanvraagformulier.
+ *
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "contact".
  */
@@ -728,6 +744,8 @@ export interface Contact {
   createdAt?: string | null;
 }
 /**
+ * Inhoud van de privacyverklaring, inclusief secties en de terugknop naar de homepage.
+ *
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "privacyverklaring".
  */
@@ -758,6 +776,8 @@ export interface Privacyverklaring {
   createdAt?: string | null;
 }
 /**
+ * Teksten op de pagina die verschijnt als een bezoeker een onbekende URL opent.
+ *
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "niet-gevonden".
  */
@@ -780,6 +800,8 @@ export interface NietGevonden {
   createdAt?: string | null;
 }
 /**
+ * Bedrijfsgegevens, contactinformatie en algemene site-instellingen die op meerdere paginas worden gebruikt.
+ *
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "site-settings".
  */
@@ -831,6 +853,8 @@ export interface HomeSelect<T extends boolean = true> {
         title?: T;
         subtitle?: T;
         image?: T;
+        ctaPrimary?: T;
+        ctaSecondary?: T;
       };
   trust?:
     | T
@@ -846,6 +870,7 @@ export interface HomeSelect<T extends boolean = true> {
         eyebrow?: T;
         title?: T;
         text?: T;
+        ctaViewAll?: T;
       };
   servicesCards?:
     | T
@@ -854,6 +879,7 @@ export interface HomeSelect<T extends boolean = true> {
         text?: T;
         image?: T;
         raised?: T;
+        linkLabel?: T;
         id?: T;
       };
   about?:
@@ -866,12 +892,14 @@ export interface HomeSelect<T extends boolean = true> {
         badgeLabel?: T;
         paragraph1?: T;
         paragraph2?: T;
+        ctaLabel?: T;
       };
   portfolioIntro?:
     | T
     | {
         eyebrow?: T;
         title?: T;
+        ctaViewAll?: T;
       };
   portfolio?:
     | T

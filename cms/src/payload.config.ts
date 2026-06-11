@@ -101,7 +101,15 @@ export default buildConfig({
       baseDir: path.resolve(dirname),
     },
     meta: {
-      titleSuffix: '· Van den Dam CMS',
+      titleSuffix: '· Van den Dam',
+      title: 'Van den Dam Schilderwerken - Beheer',
+      description: 'Beheerpaneel voor de website van Van den Dam Schilderwerken.',
+    },
+    components: {
+      graphics: {
+        Logo: '@/components/admin/Logo#Logo',
+        Icon: '@/components/admin/Icon#Icon',
+      },
     },
     livePreview: {
       url: ({ globalConfig }) => `${SERVER_URL}${livePreviewPath[globalConfig?.slug ?? ''] ?? '/'}`,

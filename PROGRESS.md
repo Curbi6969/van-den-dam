@@ -18,12 +18,13 @@
 |---|------|--------|----------|
 | 1 | Cloud-branch `claude/implement-todo-item-SvCln` gemergd in main | ✅ 2026-06-11 | Inline editing van cloud-agent binnen. Conflict in HomeView opgelost (WetPaintButton + Editable imports samen). |
 | 2 | PROGRESS.md aangemaakt | ✅ 2026-06-11 | Dit bestand. |
-| 3 | Publish-bug fixen | ⬜ | Vermoeden: pagina's statisch gerenderd zonder revalidatie + geen deploy hook. Onderzoek loopt. |
-| 4 | Inline editing reviewen + lokaal builden | ⬜ | Cloud-code nog niet geverifieerd. |
-| 5 | Knopteksten bewerkbaar in CMS | ⬜ | Velden toevoegen aan globals + Editable wrappen. |
-| 6 | Add-image weg, alleen replace | ⬜ | Upload-veld behouden, array-add van images blokkeren. |
-| 7 | Admin-UI rebranding + versimpeling | ⬜ | Payload custom CSS + admin components. Site-tokens: zie `cms/src/app/(frontend)/` styles. |
-| 8 | Deploy + live verificatie | ⬜ | `vercel deploy --prod` vanuit `cms/`. |
+| 3 | Publish-bug fixen | ✅ code 2026-06-11 | Oorzaak: pagina's statisch bevroren bij build, DEPLOY_HOOK_URL wees nergens heen. Fix: `cms/src/hooks/revalidateSite.ts` (revalidatePath bij publiceren) gekoppeld in payload.config.ts. Nog live verifieren na deploy. |
+| 4 | Inline editing reviewen + lokaal builden | 🔄 | Code gereviewd: AdminBar/Editable/EditableImage/EditContext zien er goed uit. Lokale build nog doen na agent-werk. |
+| 5 | Knopteksten bewerkbaar in CMS | 🔄 | Achtergrond-agent bezig (globals + map.ts + views). |
+| 6 | Add-image weg, alleen replace | ✅ 2026-06-11 | Media-collectie verborgen in admin-nav (`collections/Media.ts` admin.hidden). Upload-velden per sectie blijven werken (= vervangen kan, los toevoegen niet). |
+| 7 | Admin-UI rebranding + versimpeling | 🔄 | Achtergrond-agent bezig (custom.scss + admin-blok payload.config.ts + Logo/Icon componenten). |
+| 8 | Deploy + live verificatie | ⬜ | `npx vercel deploy --prod` vanuit `cms/`. |
+| 9 | Git-push clobber definitief gefixt | ✅ 2026-06-11 | Root `vercel.json` heeft nu `"ignoreCommand": "exit 0"`: alle git-getriggerde Vercel-builds worden overgeslagen. Pushen is veilig; deployen blijft via CLI. |
 
 ## Vaste valkuilen (niet vergeten)
 

@@ -3,7 +3,10 @@ import type { GlobalConfig } from 'payload'
 export const NotFoundPage: GlobalConfig = {
   slug: 'niet-gevonden',
   label: '404 pagina',
-  admin: { group: "Pagina's" },
+  admin: {
+    group: "Pagina's",
+    description: 'Teksten op de pagina die verschijnt als een bezoeker een onbekende URL opent.',
+  },
   access: { read: () => true },
   fields: [
     { name: 'heading', type: 'text', label: 'Kop', localized: true },

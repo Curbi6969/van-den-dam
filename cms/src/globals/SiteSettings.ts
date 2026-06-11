@@ -3,6 +3,9 @@ import type { GlobalConfig } from 'payload'
 export const SiteSettings: GlobalConfig = {
   slug: 'site-settings',
   label: 'Algemene instellingen',
+  admin: {
+    description: 'Bedrijfsgegevens, contactinformatie en algemene site-instellingen die op meerdere paginas worden gebruikt.',
+  },
   access: {
     read: () => true,
   },

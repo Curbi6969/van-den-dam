@@ -41,12 +41,14 @@ export function HomeView({ initial }: { initial: any }) {
               className="font-body text-xl text-white/80 leading-relaxed mb-10 max-w-xl"
             />
             <div className="flex flex-wrap gap-4">
-              <WetPaintButton href="/contact">Offerte Aanvragen</WetPaintButton>
+              <WetPaintButton href="/contact">
+                <Editable path="hero.ctaPrimary" value={home.hero.ctaPrimary} />
+              </WetPaintButton>
               <a
                 href="/portfolio"
                 className="bg-white/10 backdrop-blur-md border border-white/20 text-white font-label font-semibold px-8 py-4 rounded-md hover:bg-white/20 transition-colors"
               >
-                Bekijk Portfolio
+                <Editable path="hero.ctaSecondary" value={home.hero.ctaSecondary} />
               </a>
             </div>
           </div>
@@ -126,7 +128,8 @@ export function HomeView({ initial }: { initial: any }) {
                     href="/diensten"
                     className="font-label text-sm text-secondary font-semibold inline-flex items-center gap-1 hover:text-primary transition-colors"
                   >
-                    Meer lezen <Icon name="arrow_forward" className="text-base" />
+                    <Editable path={`servicesCards.${i}.linkLabel`} value={card.linkLabel} />
+                    <Icon name="arrow_forward" className="text-base" />
                   </a>
                 </div>
               </div>
@@ -137,7 +140,8 @@ export function HomeView({ initial }: { initial: any }) {
               href="/diensten"
               className="inline-flex items-center gap-2 bg-secondary text-on-secondary font-label font-semibold px-8 py-4 rounded-md hover:opacity-90 transition-opacity"
             >
-              Bekijk al onze diensten <Icon name="arrow_forward" className="text-sm" />
+              <Editable path="servicesIntro.ctaViewAll" value={home.servicesIntro.ctaViewAll} />
+              <Icon name="arrow_forward" className="text-sm" />
             </a>
           </div>
         </div>
@@ -194,7 +198,8 @@ export function HomeView({ initial }: { initial: any }) {
                 href="/over-ons"
                 className="inline-flex items-center gap-2 text-primary font-label font-bold border-b-2 border-primary pb-1 hover:text-secondary hover:border-secondary transition-colors"
               >
-                Leer ons kennen <Icon name="arrow_forward" className="text-sm" />
+                <Editable path="about.ctaLabel" value={home.about.ctaLabel} />
+                <Icon name="arrow_forward" className="text-sm" />
               </a>
             </div>
           </div>
@@ -222,7 +227,8 @@ export function HomeView({ initial }: { initial: any }) {
               href="/portfolio"
               className="hidden md:inline-flex items-center gap-2 font-label text-sm text-secondary font-semibold hover:text-primary transition-colors"
             >
-              Volledig portfolio <Icon name="arrow_forward" className="text-base" />
+              <Editable path="portfolioIntro.ctaViewAll" value={home.portfolioIntro.ctaViewAll} />
+              <Icon name="arrow_forward" className="text-base" />
             </a>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-12 gap-6 h-auto md:h-[480px]">

@@ -3,7 +3,10 @@ import type { GlobalConfig } from 'payload'
 export const AboutPage: GlobalConfig = {
   slug: 'over-ons',
   label: 'Over Ons',
-  admin: { group: "Pagina's" },
+  admin: {
+    group: "Pagina's",
+    description: 'Teksten en afbeeldingen op de Over ons-pagina: hero, waarden en de teamsectie.',
+  },
   access: { read: () => true },
   fields: [
     {

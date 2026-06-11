@@ -20,7 +20,10 @@ const serviceItems = (singular: string) => ({
 export const DienstenPage: GlobalConfig = {
   slug: 'diensten',
   label: 'Diensten (overzicht)',
-  admin: { group: "Pagina's" },
+  admin: {
+    group: "Pagina's",
+    description: 'Teksten en afbeeldingen op de dienstenpagina: hero, binnenwerk, buitenwerk en de call-to-action.',
+  },
   access: { read: () => true },
   fields: [
     {

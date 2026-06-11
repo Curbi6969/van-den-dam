@@ -3,7 +3,10 @@ import type { GlobalConfig } from 'payload'
 export const ContactPage: GlobalConfig = {
   slug: 'contact',
   label: 'Contact',
-  admin: { group: "Pagina's" },
+  admin: {
+    group: "Pagina's",
+    description: 'Alle teksten op de contactpagina: hero, contactgegevens, bedrijfskaart en het aanvraagformulier.',
+  },
   access: { read: () => true },
   fields: [
     {
