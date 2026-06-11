@@ -2,6 +2,7 @@
 import { useLivePreview } from '@payloadcms/live-preview-react'
 import { mapHome } from '@/frontend/map'
 import { Icon } from '@/components/Icon'
+import WetPaintButton from '@/components/ui/wet-paint-button'
 
 const serverURL = process.env.NEXT_PUBLIC_SERVER_URL || ''
 
@@ -30,12 +31,7 @@ export function HomeView({ initial }: { initial: any }) {
             </h1>
             <p className="font-body text-xl text-white/80 leading-relaxed mb-10 max-w-xl">{home.hero.subtitle}</p>
             <div className="flex flex-wrap gap-4">
-              <a
-                href="/contact"
-                className="bg-secondary text-on-secondary font-label font-semibold px-8 py-4 rounded-md hover:opacity-90 transition-opacity ambient-shadow"
-              >
-                Offerte Aanvragen
-              </a>
+              <WetPaintButton href="/contact">Offerte Aanvragen</WetPaintButton>
               <a
                 href="/portfolio"
                 className="bg-white/10 backdrop-blur-md border border-white/20 text-white font-label font-semibold px-8 py-4 rounded-md hover:bg-white/20 transition-colors"

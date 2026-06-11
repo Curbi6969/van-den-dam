@@ -1,13 +1,92 @@
 'use client'
+import { useEffect } from 'react'
 import { useLivePreview } from '@payloadcms/live-preview-react'
 import { mapNotFound } from '@/frontend/map'
 import { Icon } from '@/components/Icon'
 
 const serverURL = process.env.NEXT_PUBLIC_SERVER_URL || ''
 
+// Full-page paint-drip background: red noise lines that drip down the screen.
+function usePaintDripBackground() {
+  useEffect(() => {
+    let instance: any
+    let cancelled = false
+
+    const sketch = (p: any) => {
+      let points: number[][] = []
+      const stepsPerFrame = 5
+
+      const resetPoints = () => {
+        points = []
+        for (let i = 0; i < p.windowWidth; i++) points.push([i, 0])
+      }
+      const reset = () => {
+        p.background(251, 248, 255)
+        resetPoints()
+      }
+      const drawLine = () => {
+        p.beginShape()
+        let onScreen = false
+        points.forEach((pt) => {
+          p.vertex(pt[0], pt[1])
+          pt[1] += p.noise(p.frameCount / 100 + pt[0] / 25)
+          if (pt[1] < p.windowHeight * 1.1) onScreen = true
+        })
+        p.endShape()
+        if (!onScreen) reset()
+      }
+
+      p.setup = () => {
+        const canvas = p.createCanvas(p.windowWidth, p.windowHeight)
+        canvas.elt.style.position = 'fixed'
+        canvas.elt.style.top = '0'
+        canvas.elt.style.left = '0'
+        canvas.elt.style.zIndex = '0'
+        canvas.elt.style.pointerEvents = 'none'
+        p.noFill()
+        p.strokeWeight(2)
+        reset()
+      }
+      p.draw = () => {
+        for (let i = 0; i < stepsPerFrame; i++) {
+          p.stroke(255, 0, 0, 160 - (i * 160) / stepsPerFrame)
+          drawLine()
+        }
+      }
+      p.windowResized = () => p.resizeCanvas(p.windowWidth, p.windowHeight)
+    }
+
+    const start = (P5: any) => {
+      if (!cancelled) instance = new P5(sketch, document.body)
+    }
+
+    if ((window as any).p5) {
+      start((window as any).p5)
+    } else {
+      const existing = document.getElementById('p5-cdn') as HTMLScriptElement | null
+      const onLoad = () => start((window as any).p5)
+      if (existing) {
+        existing.addEventListener('load', onLoad)
+      } else {
+        const script = document.createElement('script')
+        script.id = 'p5-cdn'
+        script.src = 'https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.4/p5.min.js'
+        script.onload = onLoad
+        document.body.appendChild(script)
+      }
+    }
+
+    return () => {
+      cancelled = true
+      if (instance) instance.remove()
+    }
+  }, [])
+}
+
 export function NotFoundView({ initial }: { initial: any }) {
   const { data } = useLivePreview<any>({ initialData: initial, serverURL, depth: 0 })
   const nf = mapNotFound(data)
+  usePaintDripBackground()
 
   return (
     <>
@@ -33,7 +112,7 @@ export function NotFoundView({ initial }: { initial: any }) {
         }
       `}</style>
 
-      <main className="flex-grow flex items-center justify-center px-6 pt-32 pb-20">
+      <main className="relative z-10 flex-grow flex items-center justify-center px-6 pt-32 pb-20">
         <div className="max-w-2xl mx-auto text-center bg-white/80 backdrop-blur-sm rounded-2xl px-10 py-12 shadow-xl">
           {/* 404 */}
           <div className="relative inline-block mb-2">
