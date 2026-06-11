@@ -1,0 +1,37 @@
+# PROGRESS.md — sessie-brain voor Van den Dam CMS
+
+> **Voor Claude:** lees dit bestand aan het begin van elke sessie over Van den Dam.
+> Werk het bij na elke afgeronde stap (status omzetten, datum erbij). Commit het mee.
+> Actieve stack = Payload v3 + Next.js in `cms/`. Root Eleventy-site is legacy, niet aankomen.
+
+## Doel (opdracht 2026-06-11)
+
+1. **Inline editing op de live site** — ingelogde CMS-gebruiker ziet een widget/balk op de site en kan tekst en afbeeldingen direct aanklikken en bewerken. (Cloud-agent heeft dit gebouwd: `cms/src/components/edit/` — AdminBar, EditContext, Editable, EditableImage.)
+2. **Publish-bug fixen** — gepubliceerde wijziging verscheen na 30+ min nog niet op de live site.
+3. **Knoppen bewerkbaar** — knopteksten (CTA's) moeten in het CMS aanpasbaar zijn.
+4. **Afbeeldingen: alleen vervangen** — bestaande afbeelding in een sectie mag vervangen worden, maar geen "afbeelding toevoegen" die de layout sloopt.
+5. **Admin-UI rebranding + versimpeling** — zelfde kleuren/fonts/look als de site, begrijpelijk voor niet-technische mensen.
+
+## Status
+
+| # | Stap | Status | Notities |
+|---|------|--------|----------|
+| 1 | Cloud-branch `claude/implement-todo-item-SvCln` gemergd in main | ✅ 2026-06-11 | Inline editing van cloud-agent binnen. Conflict in HomeView opgelost (WetPaintButton + Editable imports samen). |
+| 2 | PROGRESS.md aangemaakt | ✅ 2026-06-11 | Dit bestand. |
+| 3 | Publish-bug fixen | ⬜ | Vermoeden: pagina's statisch gerenderd zonder revalidatie + geen deploy hook. Onderzoek loopt. |
+| 4 | Inline editing reviewen + lokaal builden | ⬜ | Cloud-code nog niet geverifieerd. |
+| 5 | Knopteksten bewerkbaar in CMS | ⬜ | Velden toevoegen aan globals + Editable wrappen. |
+| 6 | Add-image weg, alleen replace | ⬜ | Upload-veld behouden, array-add van images blokkeren. |
+| 7 | Admin-UI rebranding + versimpeling | ⬜ | Payload custom CSS + admin components. Site-tokens: zie `cms/src/app/(frontend)/` styles. |
+| 8 | Deploy + live verificatie | ⬜ | `vercel deploy --prod` vanuit `cms/`. |
+
+## Vaste valkuilen (niet vergeten)
+
+- **Git-push clobber:** Vercel-project `van-den-dam` is git-connected met Root Directory = repo-root. Een `git push` triggert een kapotte root-build die de goede deploy overschrijft. Na elke push: meteen `vercel deploy --prod` vanuit `cms/`. Definitieve fix = Root Directory op `cms` zetten (dashboard of Vercel API).
+- **`NEXT_PUBLIC_SERVER_URL`** is build-time: lokaal `http://localhost:3000`, prod `https://van-den-dam.vercel.app`.
+- **Geen em-dash** in website-content. Geen Claude-attributie in commits.
+- Lokaal draaien: `npm run dev` in `cms/` (heeft `.env` nodig met DATABASE_URI etc.).
+
+## Sessielog
+
+- **2026-06-11:** Cloud-werk gemerged (inline edit-laag: AdminBar + Editable/EditableImage op alle pagina's + catch-all `[slug]`). Lokale experimenten (wet paint button, paint drip 404) gecommit. PROGRESS.md aangemaakt. Volgende: publish-bug.

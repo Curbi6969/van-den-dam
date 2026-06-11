@@ -21,6 +21,7 @@ import { PrivacyPage } from './globals/PrivacyPage'
 import { NotFoundPage } from './globals/NotFoundPage'
 import { triggerRebuild } from './hooks/triggerRebuild'
 import { triggerPreviewRebuild } from './hooks/triggerPreviewRebuild'
+import { revalidateSite } from './hooks/revalidateSite'
 import { autoTranslate } from './hooks/autoTranslate'
 
 const filename = fileURLToPath(import.meta.url)
@@ -31,7 +32,7 @@ const withRebuild = <T extends { hooks?: { afterChange?: unknown[] } }>(entity: 
   ...entity,
   hooks: {
     ...entity.hooks,
-    afterChange: [...(entity.hooks?.afterChange ?? []), triggerRebuild],
+    afterChange: [...(entity.hooks?.afterChange ?? []), revalidateSite, triggerRebuild],
   },
 })
 
@@ -86,6 +87,7 @@ const withPublishFlow = <
     afterChange: [
       ...(entity.hooks?.afterChange ?? []),
       autoTranslate,
+      revalidateSite,
       triggerRebuild,
       triggerPreviewRebuild,
     ],

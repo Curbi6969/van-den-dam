@@ -52,7 +52,7 @@ export function AdminBar() {
       setEditMode(false)
       notify(
         publish
-          ? 'Gepubliceerd! De live site wordt opnieuw gebouwd, binnen ongeveer een minuut zichtbaar.'
+          ? 'Gepubliceerd! De wijziging staat direct op de live site.'
           : 'Concept opgeslagen. Publiceer het later hier of via het CMS.',
       )
     }
