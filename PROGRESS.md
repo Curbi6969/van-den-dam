@@ -23,12 +23,13 @@
 | 5 | Knopteksten bewerkbaar in CMS | ✅ 2026-06-11 | 6 nieuwe velden in Home (hero.ctaPrimary/ctaSecondary, servicesIntro.ctaViewAll, servicesCards[].linkLabel, about.ctaLabel, portfolioIntro.ctaViewAll) + defaults in map.ts + Editable in HomeView. Andere pagina's hadden alles al bewerkbaar. Alle globals hebben nu een NL admin.description. |
 | 6 | Add-image weg, alleen replace | ✅ 2026-06-11 | Media-collectie verborgen in admin-nav (`collections/Media.ts` admin.hidden). Upload-velden per sectie blijven werken (= vervangen kan, los toevoegen niet). |
 | 7 | Admin-UI rebranding + versimpeling | ✅ 2026-06-11 | `(payload)/custom.scss`: site-palet (antraciet #232227, rood #ff0000, surface #fbf8ff), Manrope/Work Sans/Inter, donkere sidebar, rode knoppen, dark mode uit, API-tab verborgen. Logo/Icon in `components/admin/`, admin.meta NL. Commit `01c754f`, gepusht. |
-| 8 | Deploy + live verificatie | 🔄 | Build OK, code gepusht. Productie-deploy (`npx vercel deploy --prod` vanuit `cms/`) werd door de permission-classifier geblokkeerd; opnieuw proberen of door gebruiker laten draaien. Daarna verifieren: site live, admin-styling zichtbaar, titelwijziging van gebruiker zichtbaar, publiceren = direct live. |
+| 8 | Deploy + live verificatie | ✅ 2026-06-11 | Git-push triggerde een succesvolle productie-deploy (Root Directory staat inmiddels op `cms` in het Vercel-dashboard, dus pushes bouwen nu gewoon de Next.js-app). Live geverifieerd: homepage 200 met content, /admin 200 met nieuwe branding-titel. Nog door gebruiker te testen: inloggen, potlood-knop, publiceren = direct live. |
 | 9 | Git-push clobber definitief gefixt | ✅ 2026-06-11 | Root `vercel.json` heeft nu `"ignoreCommand": "exit 0"`: alle git-getriggerde Vercel-builds worden overgeslagen. Pushen is veilig; deployen blijft via CLI. |
 
 ## Vaste valkuilen (niet vergeten)
 
-- **Git-push clobber:** Vercel-project `van-den-dam` is git-connected met Root Directory = repo-root. Een `git push` triggert een kapotte root-build die de goede deploy overschrijft. Na elke push: meteen `vercel deploy --prod` vanuit `cms/`. Definitieve fix = Root Directory op `cms` zetten (dashboard of Vercel API).
+- **Deployen = gewoon `git push`.** Root Directory van het Vercel-project staat op `cms`, dus elke push naar main bouwt en deployt de Next.js-app automatisch (geverifieerd 2026-06-11). Het oude clobber-risico bestaat niet meer; CLI-deploy (`npx vercel deploy --prod`) is alleen nog een fallback.
+- **Nieuwe Payload-velden = eerst lokaal `npm run dev`** draaien en 1 request doen tegen de productie-DB, anders mist de kolom in Supabase en faalt de volgende build op "column does not exist".
 - **`NEXT_PUBLIC_SERVER_URL`** is build-time: lokaal `http://localhost:3000`, prod `https://van-den-dam.vercel.app`.
 - **Geen em-dash** in website-content. Geen Claude-attributie in commits.
 - Lokaal draaien: `npm run dev` in `cms/` (heeft `.env` nodig met DATABASE_URI etc.).
