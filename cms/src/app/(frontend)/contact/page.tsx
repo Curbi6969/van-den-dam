@@ -1,7 +1,9 @@
 import { getPayload } from 'payload'
 import configPromise from '@/payload.config'
-import { getSite } from '@/frontend/queries'
+import { getSite, pageMetadata } from '@/frontend/queries'
 import { ContactView } from '@/components/views/ContactView'
+
+export const generateMetadata = () => pageMetadata('contact')
 
 export default async function ContactPage() {
   const payload = await getPayload({ config: await configPromise })

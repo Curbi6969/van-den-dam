@@ -4,6 +4,7 @@ import { useLivePreview } from '@payloadcms/live-preview-react'
 import { mapNotFound } from '@/frontend/map'
 import { Icon } from '@/components/Icon'
 import { Editable } from '@/components/edit/Editable'
+import { EditableLink } from '@/components/edit/EditableLink'
 
 const serverURL = process.env.NEXT_PUBLIC_SERVER_URL || ''
 
@@ -128,19 +129,23 @@ export function NotFoundView({ initial }: { initial: any }) {
           </p>
 
           <div className="flex flex-wrap justify-center gap-4">
-            <a
-              href="/"
+            <EditableLink
+              global="niet-gevonden"
+              path="linkHomeHref"
+              href={nf.linkHomeHref}
               className="inline-flex items-center gap-2 bg-secondary text-on-secondary font-label font-semibold px-7 py-3.5 rounded-md hover:opacity-90 transition-opacity"
             >
               <Icon name="home" className="text-base" />
               <Editable global="niet-gevonden" path="linkHome" value={nf.linkHome} />
-            </a>
-            <a
-              href="/contact"
+            </EditableLink>
+            <EditableLink
+              global="niet-gevonden"
+              path="linkContactHref"
+              href={nf.linkContactHref}
               className="inline-flex items-center gap-2 bg-secondary text-on-secondary font-label font-semibold px-7 py-3.5 rounded-md hover:opacity-90 transition-opacity"
             >
               <Editable global="niet-gevonden" path="linkContact" value={nf.linkContact} />
-            </a>
+            </EditableLink>
           </div>
         </div>
       </main>

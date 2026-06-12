@@ -4,6 +4,7 @@ import { mapOverOns } from '@/frontend/map'
 import { Icon } from '@/components/Icon'
 import { Editable } from '@/components/edit/Editable'
 import { EditableImage } from '@/components/edit/EditableImage'
+import { EditableLink } from '@/components/edit/EditableLink'
 
 const serverURL = process.env.NEXT_PUBLIC_SERVER_URL || ''
 
@@ -40,13 +41,15 @@ export function OverOnsView({ initial }: { initial: any }) {
             <p className="font-body text-lg text-on-surface-variant leading-relaxed mb-10 max-w-lg">
               <Editable global="over-ons" path="hero.text" value={o.hero.text} />
             </p>
-            <a
+            <EditableLink
+              global="over-ons"
+              path="hero.ctaHref"
               href={href(o.hero.ctaHref)}
               className="inline-flex items-center gap-2 bg-secondary text-on-secondary font-label font-semibold px-7 py-3.5 rounded-md hover:opacity-90 transition-opacity"
             >
               <Editable global="over-ons" path="hero.ctaLabel" value={o.hero.ctaLabel} />
               <Icon name="arrow_forward" className="text-sm" />
-            </a>
+            </EditableLink>
           </div>
           <div className="lg:col-span-7 relative">
             <div className="aspect-[4/3] rounded-xl overflow-hidden ambient-shadow">
@@ -149,13 +152,15 @@ export function OverOnsView({ initial }: { initial: any }) {
             <p className="font-body text-lg text-on-surface-variant leading-relaxed mb-10">
               <Editable global="over-ons" path="team.paragraph2" value={o.team.paragraph2} />
             </p>
-            <a
+            <EditableLink
+              global="over-ons"
+              path="team.ctaHref"
               href={href(o.team.ctaHref)}
               className="inline-flex items-center gap-2 text-primary font-label font-bold border-b-2 border-primary pb-1 hover:text-secondary hover:border-secondary transition-colors"
             >
               <Editable global="over-ons" path="team.ctaLabel" value={o.team.ctaLabel} />
               <Icon name="arrow_forward" className="text-sm" />
-            </a>
+            </EditableLink>
           </div>
         </div>
       </section>

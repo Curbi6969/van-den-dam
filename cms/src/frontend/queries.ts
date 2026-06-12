@@ -1,4 +1,5 @@
 import { getPayload } from 'payload'
+import type { Metadata } from 'next'
 import configPromise from '@/payload.config'
 
 export type Locale = 'nl' | 'en'
@@ -20,5 +21,22 @@ export async function getSite(locale: Locale = 'nl', draft = false) {
     business: c.business ?? {},
     credit: c.credit ?? {},
     services: (c.navServices ?? []) as { title: string; url: string }[],
+  }
+}
+
+// Paginatitel en omschrijving uit de SEO-velden (plugin-seo) van een
+// pagina-global, voor generateMetadata in de page-routes. Lege velden vallen
+// terug op de standaard metadata uit de layout.
+export async function pageMetadata(slug: string): Promise<Metadata> {
+  try {
+    const payload = await payloadClient()
+    const doc = (await payload.findGlobal({ slug: slug as never, locale: 'nl', depth: 0 })) as any
+    const meta = doc?.meta ?? {}
+    return {
+      ...(meta.title ? { title: meta.title as string } : {}),
+      ...(meta.description ? { description: meta.description as string } : {}),
+    }
+  } catch {
+    return {}
   }
 }

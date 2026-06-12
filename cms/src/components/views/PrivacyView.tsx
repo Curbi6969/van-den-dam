@@ -3,6 +3,7 @@ import { useLivePreview } from '@payloadcms/live-preview-react'
 import { mapPrivacy } from '@/frontend/map'
 import { Icon } from '@/components/Icon'
 import { Editable } from '@/components/edit/Editable'
+import { EditableLink } from '@/components/edit/EditableLink'
 
 const serverURL = process.env.NEXT_PUBLIC_SERVER_URL || ''
 
@@ -49,13 +50,15 @@ export function PrivacyView({ initial }: { initial: any }) {
         </div>
 
         <div className="mt-10">
-          <a
-            href="/"
+          <EditableLink
+            global="privacyverklaring"
+            path="backLinkHref"
+            href={pv.backLinkHref}
             className="inline-flex items-center gap-2 font-label text-sm text-secondary font-semibold hover:text-primary transition-colors"
           >
             <Icon name="arrow_back" className="text-base" />
             <Editable global="privacyverklaring" path="backLink" value={pv.backLink} />
-          </a>
+          </EditableLink>
         </div>
       </main>
     </>

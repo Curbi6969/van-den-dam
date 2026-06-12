@@ -1,7 +1,12 @@
 import { getPayload } from 'payload'
 import configPromise from '@/payload.config'
 import { AutoEditablePage } from '@/components/views/AutoEditablePage'
+import { pageMetadata } from '@/frontend/queries'
 import { notFound } from 'next/navigation'
+
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
+  return pageMetadata((await params).slug)
+}
 
 // Catch-all for any Payload global that doesn't have a hand-crafted view.
 // Specific routes (diensten, portfolio, …) take priority in Next.js routing;

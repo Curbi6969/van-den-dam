@@ -20,26 +20,32 @@ export function mapHome(c: any) {
       ...(c.hero ?? {}),
       image: mediaUrl(c.hero?.image, img.hero),
       ctaPrimary: c.hero?.ctaPrimary ?? 'Offerte Aanvragen',
+      ctaPrimaryHref: c.hero?.ctaPrimaryHref ?? '/contact',
       ctaSecondary: c.hero?.ctaSecondary ?? 'Bekijk Portfolio',
+      ctaSecondaryHref: c.hero?.ctaSecondaryHref ?? '/portfolio',
     },
     trust: (c.trust ?? []) as any[],
     servicesIntro: {
       ...(c.servicesIntro ?? {}),
       ctaViewAll: c.servicesIntro?.ctaViewAll ?? 'Bekijk al onze diensten',
+      ctaViewAllHref: c.servicesIntro?.ctaViewAllHref ?? '/diensten',
     },
     servicesCards: ((c.servicesCards ?? []) as any[]).map((card, i) => ({
       ...card,
       image: mediaUrl(card?.image, img.servicesCards[i] ?? img.servicesCards[0]),
       linkLabel: card?.linkLabel ?? 'Meer lezen',
+      linkHref: card?.linkHref ?? '/diensten',
     })),
     about: {
       ...(c.about ?? {}),
       image: mediaUrl(c.about?.image, img.about),
       ctaLabel: c.about?.ctaLabel ?? 'Leer ons kennen',
+      ctaHref: c.about?.ctaHref ?? '/over-ons',
     },
     portfolioIntro: {
       ...(c.portfolioIntro ?? {}),
       ctaViewAll: c.portfolioIntro?.ctaViewAll ?? 'Volledig portfolio',
+      ctaViewAllHref: c.portfolioIntro?.ctaViewAllHref ?? '/portfolio',
     },
     portfolio: ((c.portfolio ?? []) as any[]).map((p, i) => ({
       ...p,
@@ -47,7 +53,7 @@ export function mapHome(c: any) {
     })),
     reviewsIntro: c.reviewsIntro ?? {},
     reviews: (c.reviews ?? []) as any[],
-    cta: c.cta ?? {},
+    cta: { ...(c.cta ?? {}), href: c.cta?.href ?? '/contact' },
   }
 }
 
@@ -86,7 +92,7 @@ export function mapPortfolio(c: any) {
       ...p,
       image: mediaUrl(p?.image, '/resources/vakman.jpg'),
     })),
-    cta: c.cta ?? {},
+    cta: { ...(c.cta ?? {}), href: c.cta?.href ?? '/contact' },
   }
 }
 
@@ -120,6 +126,7 @@ export function mapPrivacy(c: any) {
     heading: c.heading as string,
     lastUpdated: c.lastUpdated as string,
     backLink: c.backLink as string,
+    backLinkHref: (c.backLinkHref as string) ?? '/',
     sections: (c.sections ?? []) as { heading: string; html: string }[],
   }
 }
@@ -130,6 +137,8 @@ export function mapNotFound(c: any) {
     heading: c.heading as string,
     body: c.body as string,
     linkHome: c.linkHome as string,
+    linkHomeHref: (c.linkHomeHref as string) ?? '/',
     linkContact: c.linkContact as string,
+    linkContactHref: (c.linkContactHref as string) ?? '/contact',
   }
 }

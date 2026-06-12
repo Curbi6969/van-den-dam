@@ -2,6 +2,7 @@
 import { useLivePreview } from '@payloadcms/live-preview-react'
 import { mapPortfolio } from '@/frontend/map'
 import { Editable } from '@/components/edit/Editable'
+import { EditableLink } from '@/components/edit/EditableLink'
 import { EditableImage } from '@/components/edit/EditableImage'
 
 const serverURL = process.env.NEXT_PUBLIC_SERVER_URL || ''
@@ -112,12 +113,14 @@ export function PortfolioView({ initial }: { initial: any }) {
           <p className="font-body text-lg text-on-surface-variant mb-10 max-w-2xl mx-auto relative z-10">
             <Editable global="portfolio" path="cta.text" value={p.cta.text} />
           </p>
-          <a
-            href="/contact"
+          <EditableLink
+            global="portfolio"
+            path="cta.href"
+            href={p.cta.href}
             className="relative z-10 inline-block bg-secondary text-on-secondary font-label font-semibold px-10 py-4 rounded-md hover:opacity-90 transition-opacity text-lg"
           >
             <Editable global="portfolio" path="cta.button" value={p.cta.button} />
-          </a>
+          </EditableLink>
         </div>
       </section>
     </>

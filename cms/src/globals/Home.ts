@@ -22,7 +22,9 @@ export const Home: GlobalConfig = {
         { name: 'subtitle', type: 'textarea', label: 'Ondertitel' },
         { name: 'image', type: 'upload', relationTo: 'media', label: 'Afbeelding' },
         { name: 'ctaPrimary', type: 'text', label: 'Knop: offerte aanvragen' },
+        { name: 'ctaPrimaryHref', type: 'text', label: 'Knop offerte: link (URL)' },
         { name: 'ctaSecondary', type: 'text', label: 'Knop: bekijk portfolio' },
+        { name: 'ctaSecondaryHref', type: 'text', label: 'Knop portfolio: link (URL)' },
       ],
     },
     {
@@ -47,6 +49,7 @@ export const Home: GlobalConfig = {
         { name: 'title', type: 'text', label: 'Titel' },
         { name: 'text', type: 'textarea', label: 'Tekst' },
         { name: 'ctaViewAll', type: 'text', label: 'Knop: bekijk al onze diensten' },
+        { name: 'ctaViewAllHref', type: 'text', label: 'Knop: link (URL)' },
       ],
     },
     {
@@ -61,6 +64,7 @@ export const Home: GlobalConfig = {
         { name: 'image', type: 'upload', relationTo: 'media', label: 'Afbeelding' },
         { name: 'raised', type: 'checkbox', label: 'Uitgelicht' },
         { name: 'linkLabel', type: 'text', label: 'Link tekst (meer lezen)' },
+        { name: 'linkHref', type: 'text', label: 'Link URL' },
       ],
     },
     {
@@ -77,6 +81,7 @@ export const Home: GlobalConfig = {
         { name: 'paragraph1', type: 'textarea', label: 'Alinea 1' },
         { name: 'paragraph2', type: 'textarea', label: 'Alinea 2' },
         { name: 'ctaLabel', type: 'text', label: 'Link tekst (leer ons kennen)' },
+        { name: 'ctaHref', type: 'text', label: 'Link URL' },
       ],
     },
     {
@@ -88,6 +93,7 @@ export const Home: GlobalConfig = {
         { name: 'eyebrow', type: 'text', label: 'Bovenkop' },
         { name: 'title', type: 'text', label: 'Titel' },
         { name: 'ctaViewAll', type: 'text', label: 'Link tekst (volledig portfolio)' },
+        { name: 'ctaViewAllHref', type: 'text', label: 'Link URL' },
       ],
     },
     {
@@ -134,6 +140,7 @@ export const Home: GlobalConfig = {
         { name: 'title', type: 'text', label: 'Titel' },
         { name: 'text', type: 'textarea', label: 'Tekst' },
         { name: 'button', type: 'text', label: 'Knoptekst' },
+        { name: 'href', type: 'text', label: 'Knop link (URL)' },
       ],
     },
   ],

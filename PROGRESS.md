@@ -44,6 +44,15 @@
 | 13 | Dagelijkse DB-backup | ✅ 2026-06-11 | `.github/workflows/db-backup.yml`: pg_dump (v17-binary, sessie-pooler poort 5432) om 03:00, artifact 30 dagen bewaard, handmatig te draaien via Actions. Secret `SUPABASE_DB_URL` staat op de repo (via `gh secret set --body`, NIET via pipe: PowerShell 5.1 pipe-encoding verminkt de waarde). Testrun geslaagd (run 27365860835). |
 | 14 | Schema push audit_log | ✅ | Via lokale dev-run tegen productie-DB. |
 
+## Ronde 3 (2026-06-12): live bewerken uitgebreid
+
+| # | Stap | Status | Notities |
+|---|------|--------|----------|
+| 15 | Knop-links bewerkbaar | ✅ 2026-06-12 | Alle knoppen/links hebben nu een href-veld in het CMS (Home 7x nieuw, 404 2x, privacy-teruglink; diensten/over-ons/portfolio hadden ze al). Nieuw `components/edit/EditableLink.tsx`: kettingknopje op elke knop in bewerkmodus, popover met paginakeuze + vrij URL-veld. |
+| 16 | Opmaak bij live bewerken | ✅ 2026-06-12 | `FormatToolbar.tsx`: zwevende werkbalk bij tekstselectie (vet, cursief, onderstrepen, link, opmaak wissen, HTML-venster). `Editable` slaat gesaneerde HTML op (alleen strong/em/u/s/a/br; zonder opmaak blijft het platte tekst) en rendert HTML-waarden via dangerouslySetInnerHTML. autoTranslate stuurt velden met opmaak als HTML naar DeepL (tag_handling). |
+| 17 | SEO bewerkbaar op de pagina zelf | ✅ 2026-06-12 | SEO-knop in de bewerkbalk opent `SeoPanel.tsx`: paginatitel + omschrijving met tekenteller en Google-voorbeeld, loopt mee in concept/publiceer-flow (staged als `meta.title`/`meta.description`). Belangrijk: de plugin-seo meta-velden werden nergens gerenderd; nu hebben alle pagina-routes `generateMetadata` via `pageMetadata()` in `frontend/queries.ts`. |
+| 18 | Schema push + build + smoke test | ✅ 2026-06-12 | Nieuwe kolommen via lokale dev-run naar Supabase gepusht, `npm run build` slaagt, alle 7 routes 200, knop-hrefs gecontroleerd in de HTML. |
+
 ## Sessielog
 
 - **2026-06-11:** Cloud-werk gemerged (inline edit-laag: AdminBar + Editable/EditableImage op alle pagina's + catch-all `[slug]`). Lokale experimenten (wet paint button, paint drip 404) gecommit. PROGRESS.md aangemaakt. Volgende: publish-bug.

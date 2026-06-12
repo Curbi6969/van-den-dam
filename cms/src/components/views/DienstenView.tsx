@@ -4,6 +4,7 @@ import { mapDiensten } from '@/frontend/map'
 import { Icon } from '@/components/Icon'
 import { Editable } from '@/components/edit/Editable'
 import { EditableImage } from '@/components/edit/EditableImage'
+import { EditableLink } from '@/components/edit/EditableLink'
 
 const serverURL = process.env.NEXT_PUBLIC_SERVER_URL || ''
 
@@ -87,13 +88,15 @@ export function DienstenView({ initial }: { initial: any }) {
                   <p className="font-body text-on-surface-variant leading-relaxed flex-grow">
                     <Editable global="diensten" path={`binnenwerk.items.${i}.text`} value={item.text} />
                   </p>
-                  <a
+                  <EditableLink
+                    global="diensten"
+                    path={`binnenwerk.items.${i}.linkHref`}
                     href={href(item.linkHref)}
                     className="mt-6 inline-flex items-center gap-2 font-label text-sm font-semibold text-secondary hover:text-primary transition-colors"
                   >
                     <Editable global="diensten" path={`binnenwerk.items.${i}.linkLabel`} value={item.linkLabel} />
                     <Icon name="arrow_forward" className="text-base" />
-                  </a>
+                  </EditableLink>
                 </div>
               </div>
             ))}
@@ -142,13 +145,15 @@ export function DienstenView({ initial }: { initial: any }) {
                   <p className="font-body text-sm text-on-surface-variant leading-relaxed flex-grow">
                     <Editable global="diensten" path={`buitenwerk.items.${i}.text`} value={item.text} />
                   </p>
-                  <a
+                  <EditableLink
+                    global="diensten"
+                    path={`buitenwerk.items.${i}.linkHref`}
                     href={href(item.linkHref)}
                     className="mt-5 inline-flex items-center gap-2 font-label text-sm font-semibold text-secondary hover:text-primary transition-colors"
                   >
                     <Editable global="diensten" path={`buitenwerk.items.${i}.linkLabel`} value={item.linkLabel} />
                     <Icon name="arrow_forward" className="text-base" />
-                  </a>
+                  </EditableLink>
                 </div>
               </div>
             ))}
@@ -168,13 +173,15 @@ export function DienstenView({ initial }: { initial: any }) {
           <p className="font-body text-xl text-on-surface-variant mb-10">
             <Editable global="diensten" path="cta.text" value={d.cta.text} />
           </p>
-          <a
+          <EditableLink
+            global="diensten"
+            path="cta.href"
             href={href(d.cta.href)}
             className="inline-flex items-center gap-2 bg-secondary text-on-secondary font-label font-semibold px-8 py-4 rounded-md hover:opacity-90 transition-opacity"
           >
             <Editable global="diensten" path="cta.button" value={d.cta.button} />
             <Icon name="arrow_forward" className="text-sm" />
-          </a>
+          </EditableLink>
         </div>
       </section>
     </>

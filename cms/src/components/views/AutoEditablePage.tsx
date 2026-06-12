@@ -9,7 +9,7 @@ const serverURL = process.env.NEXT_PUBLIC_SERVER_URL || ''
 const SKIP = new Set(['id', 'updatedAt', 'createdAt', 'globalType', '_status'])
 
 // Keys whose string values are used as HTML attributes, not display text.
-const ATTR_RE = /^(href|url|src|alt|icon|cat|type|colSpan|size|slug|value|raised|linkHref|imageAlt)$/i
+const ATTR_RE = /href$|^(url|src|alt|icon|cat|type|colSpan|size|slug|value|raised|imageAlt)$/i
 
 function Field({ g, path, value }: { g: string; path: string; value: unknown }) {
   if (value == null || value === '') return null

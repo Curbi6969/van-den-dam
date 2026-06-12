@@ -466,7 +466,9 @@ export interface Home {
     subtitle?: string | null;
     image?: (number | null) | Media;
     ctaPrimary?: string | null;
+    ctaPrimaryHref?: string | null;
     ctaSecondary?: string | null;
+    ctaSecondaryHref?: string | null;
   };
   trust?:
     | {
@@ -481,6 +483,7 @@ export interface Home {
     title?: string | null;
     text?: string | null;
     ctaViewAll?: string | null;
+    ctaViewAllHref?: string | null;
   };
   servicesCards?:
     | {
@@ -489,6 +492,7 @@ export interface Home {
         image?: (number | null) | Media;
         raised?: boolean | null;
         linkLabel?: string | null;
+        linkHref?: string | null;
         id?: string | null;
       }[]
     | null;
@@ -501,11 +505,13 @@ export interface Home {
     paragraph1?: string | null;
     paragraph2?: string | null;
     ctaLabel?: string | null;
+    ctaHref?: string | null;
   };
   portfolioIntro?: {
     eyebrow?: string | null;
     title?: string | null;
     ctaViewAll?: string | null;
+    ctaViewAllHref?: string | null;
   };
   portfolio?:
     | {
@@ -532,6 +538,7 @@ export interface Home {
     title?: string | null;
     text?: string | null;
     button?: string | null;
+    href?: string | null;
   };
   meta?: {
     title?: string | null;
@@ -787,6 +794,7 @@ export interface Privacyverklaring {
   lastUpdated?: string | null;
   contactEmail?: string | null;
   backLink?: string | null;
+  backLinkHref?: string | null;
   sections?:
     | {
         heading?: string | null;
@@ -817,7 +825,9 @@ export interface NietGevonden {
   heading?: string | null;
   body?: string | null;
   linkHome?: string | null;
+  linkHomeHref?: string | null;
   linkContact?: string | null;
+  linkContactHref?: string | null;
   meta?: {
     title?: string | null;
     description?: string | null;
@@ -885,7 +895,9 @@ export interface HomeSelect<T extends boolean = true> {
         subtitle?: T;
         image?: T;
         ctaPrimary?: T;
+        ctaPrimaryHref?: T;
         ctaSecondary?: T;
+        ctaSecondaryHref?: T;
       };
   trust?:
     | T
@@ -902,6 +914,7 @@ export interface HomeSelect<T extends boolean = true> {
         title?: T;
         text?: T;
         ctaViewAll?: T;
+        ctaViewAllHref?: T;
       };
   servicesCards?:
     | T
@@ -911,6 +924,7 @@ export interface HomeSelect<T extends boolean = true> {
         image?: T;
         raised?: T;
         linkLabel?: T;
+        linkHref?: T;
         id?: T;
       };
   about?:
@@ -924,6 +938,7 @@ export interface HomeSelect<T extends boolean = true> {
         paragraph1?: T;
         paragraph2?: T;
         ctaLabel?: T;
+        ctaHref?: T;
       };
   portfolioIntro?:
     | T
@@ -931,6 +946,7 @@ export interface HomeSelect<T extends boolean = true> {
         eyebrow?: T;
         title?: T;
         ctaViewAll?: T;
+        ctaViewAllHref?: T;
       };
   portfolio?:
     | T
@@ -961,6 +977,7 @@ export interface HomeSelect<T extends boolean = true> {
         title?: T;
         text?: T;
         button?: T;
+        href?: T;
       };
   meta?:
     | T
@@ -1227,6 +1244,7 @@ export interface PrivacyverklaringSelect<T extends boolean = true> {
   lastUpdated?: T;
   contactEmail?: T;
   backLink?: T;
+  backLinkHref?: T;
   sections?:
     | T
     | {
@@ -1254,7 +1272,9 @@ export interface NietGevondenSelect<T extends boolean = true> {
   heading?: T;
   body?: T;
   linkHome?: T;
+  linkHomeHref?: T;
   linkContact?: T;
+  linkContactHref?: T;
   meta?:
     | T
     | {

@@ -48,7 +48,9 @@ function collect(node: unknown, key: string, plain: Set<string>, html: Set<strin
   } else if (node && typeof node === 'object') {
     for (const [k, v] of Object.entries(node)) collect(v, k, plain, html)
   } else if (typeof node === 'string' && node.trim() && TRANSLATE_KEYS.has(key)) {
-    ;(HTML_KEYS.has(key) ? html : plain).add(node)
+    // Velden met inline opmaak (vet/cursief via live bewerken) gaan als HTML
+    // naar DeepL zodat de tags intact blijven.
+    ;(HTML_KEYS.has(key) || /<[a-z][^>]*>/i.test(node) ? html : plain).add(node)
   }
 }
 

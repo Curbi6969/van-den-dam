@@ -1,6 +1,9 @@
 import { getPayload } from 'payload'
 import configPromise from '@/payload.config'
 import { PrivacyView } from '@/components/views/PrivacyView'
+import { pageMetadata } from '@/frontend/queries'
+
+export const generateMetadata = () => pageMetadata('privacyverklaring')
 
 export default async function PrivacyverklaringPage() {
   const payload = await getPayload({ config: await configPromise })

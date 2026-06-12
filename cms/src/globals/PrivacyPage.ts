@@ -14,6 +14,7 @@ export const PrivacyPage: GlobalConfig = {
     { name: 'lastUpdated', type: 'text', label: 'Datum laatste wijziging', localized: true },
     { name: 'contactEmail', type: 'text', label: 'Contact e-mailadres' },
     { name: 'backLink', type: 'text', label: 'Tekst teruglink', localized: true },
+    { name: 'backLinkHref', type: 'text', label: 'Teruglink: URL' },
     {
       type: 'array',
       name: 'sections',

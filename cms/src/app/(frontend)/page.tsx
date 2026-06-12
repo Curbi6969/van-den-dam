@@ -2,6 +2,9 @@ import './styles.css'
 import { getPayload } from 'payload'
 import configPromise from '@/payload.config'
 import { HomeView } from '@/components/views/HomeView'
+import { pageMetadata } from '@/frontend/queries'
+
+export const generateMetadata = () => pageMetadata('home')
 
 export default async function HomePage() {
   const payload = await getPayload({ config: await configPromise })

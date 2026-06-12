@@ -5,6 +5,7 @@ import { Icon } from '@/components/Icon'
 import WetPaintButton from '@/components/ui/wet-paint-button'
 import { Editable } from '@/components/edit/Editable'
 import { EditableImage } from '@/components/edit/EditableImage'
+import { EditableLink } from '@/components/edit/EditableLink'
 
 const serverURL = process.env.NEXT_PUBLIC_SERVER_URL || ''
 
@@ -41,15 +42,16 @@ export function HomeView({ initial }: { initial: any }) {
               className="font-body text-xl text-white/80 leading-relaxed mb-10 max-w-xl"
             />
             <div className="flex flex-wrap gap-4">
-              <WetPaintButton href="/contact">
+              <EditableLink as={WetPaintButton} path="hero.ctaPrimaryHref" href={home.hero.ctaPrimaryHref}>
                 <Editable path="hero.ctaPrimary" value={home.hero.ctaPrimary} />
-              </WetPaintButton>
-              <a
-                href="/portfolio"
+              </EditableLink>
+              <EditableLink
+                path="hero.ctaSecondaryHref"
+                href={home.hero.ctaSecondaryHref}
                 className="bg-white/10 backdrop-blur-md border border-white/20 text-white font-label font-semibold px-8 py-4 rounded-md hover:bg-white/20 transition-colors"
               >
                 <Editable path="hero.ctaSecondary" value={home.hero.ctaSecondary} />
-              </a>
+              </EditableLink>
             </div>
           </div>
         </div>
@@ -124,25 +126,27 @@ export function HomeView({ initial }: { initial: any }) {
                     value={card.text}
                     className="font-body text-on-surface-variant mb-6 flex-1 text-sm leading-relaxed"
                   />
-                  <a
-                    href="/diensten"
+                  <EditableLink
+                    path={`servicesCards.${i}.linkHref`}
+                    href={card.linkHref}
                     className="font-label text-sm text-secondary font-semibold inline-flex items-center gap-1 hover:text-primary transition-colors"
                   >
                     <Editable path={`servicesCards.${i}.linkLabel`} value={card.linkLabel} />
                     <Icon name="arrow_forward" className="text-base" />
-                  </a>
+                  </EditableLink>
                 </div>
               </div>
             ))}
           </div>
           <div className="mt-12 text-center">
-            <a
-              href="/diensten"
+            <EditableLink
+              path="servicesIntro.ctaViewAllHref"
+              href={home.servicesIntro.ctaViewAllHref}
               className="inline-flex items-center gap-2 bg-secondary text-on-secondary font-label font-semibold px-8 py-4 rounded-md hover:opacity-90 transition-opacity"
             >
               <Editable path="servicesIntro.ctaViewAll" value={home.servicesIntro.ctaViewAll} />
               <Icon name="arrow_forward" className="text-sm" />
-            </a>
+            </EditableLink>
           </div>
         </div>
       </section>
@@ -194,13 +198,14 @@ export function HomeView({ initial }: { initial: any }) {
                 value={home.about.paragraph2}
                 className="font-body text-lg text-on-surface-variant leading-relaxed mb-10"
               />
-              <a
-                href="/over-ons"
+              <EditableLink
+                path="about.ctaHref"
+                href={home.about.ctaHref}
                 className="inline-flex items-center gap-2 text-primary font-label font-bold border-b-2 border-primary pb-1 hover:text-secondary hover:border-secondary transition-colors"
               >
                 <Editable path="about.ctaLabel" value={home.about.ctaLabel} />
                 <Icon name="arrow_forward" className="text-sm" />
-              </a>
+              </EditableLink>
             </div>
           </div>
         </div>
@@ -223,13 +228,14 @@ export function HomeView({ initial }: { initial: any }) {
                 className="font-headline text-4xl font-extrabold text-primary tracking-tight"
               />
             </div>
-            <a
-              href="/portfolio"
+            <EditableLink
+              path="portfolioIntro.ctaViewAllHref"
+              href={home.portfolioIntro.ctaViewAllHref}
               className="hidden md:inline-flex items-center gap-2 font-label text-sm text-secondary font-semibold hover:text-primary transition-colors"
             >
               <Editable path="portfolioIntro.ctaViewAll" value={home.portfolioIntro.ctaViewAll} />
               <Icon name="arrow_forward" className="text-base" />
-            </a>
+            </EditableLink>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-12 gap-6 h-auto md:h-[480px]">
             {home.portfolio[0] && (
@@ -347,12 +353,13 @@ export function HomeView({ initial }: { initial: any }) {
             className="font-headline text-4xl md:text-5xl font-extrabold text-primary tracking-tight mb-6"
           />
           <Editable as="p" path="cta.text" value={home.cta.text} className="font-body text-xl text-on-surface-variant mb-10" />
-          <a
-            href="/contact"
+          <EditableLink
+            path="cta.href"
+            href={home.cta.href}
             className="inline-block bg-secondary text-on-secondary font-label font-semibold text-lg px-10 py-4 rounded-md hover:opacity-90 transition-opacity ambient-shadow"
           >
             <Editable path="cta.button" value={home.cta.button} />
-          </a>
+          </EditableLink>
         </div>
       </section>
     </>
