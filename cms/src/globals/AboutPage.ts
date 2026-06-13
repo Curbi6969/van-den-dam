@@ -18,8 +18,13 @@ export const AboutPage: GlobalConfig = {
         { name: 'eyebrow', type: 'text', label: 'Bovenkop' },
         { name: 'title', type: 'text', label: 'Titel' },
         { name: 'text', type: 'textarea', label: 'Tekst' },
-        { name: 'ctaLabel', type: 'text', label: 'Knoptekst' },
-        { name: 'ctaHref', type: 'text', label: 'Knop URL' },
+        {
+          type: 'row',
+          fields: [
+            { name: 'ctaLabel', type: 'text', label: 'Knoptekst', admin: { width: '60%' } },
+            { name: 'ctaHref', type: 'text', label: 'Verwijst naar (URL)', admin: { width: '40%' } },
+          ],
+        },
         { name: 'image', type: 'upload', relationTo: 'media', label: 'Afbeelding' },
         { name: 'imageAlt', type: 'text', label: 'Afbeelding alt-tekst' },
       ],
@@ -56,8 +61,13 @@ export const AboutPage: GlobalConfig = {
         { name: 'heading', type: 'text', label: 'Kop' },
         { name: 'paragraph1', type: 'textarea', label: 'Alinea 1' },
         { name: 'paragraph2', type: 'textarea', label: 'Alinea 2' },
-        { name: 'ctaLabel', type: 'text', label: 'Knoptekst' },
-        { name: 'ctaHref', type: 'text', label: 'Knop URL' },
+        {
+          type: 'row',
+          fields: [
+            { name: 'ctaLabel', type: 'text', label: 'Knoptekst', admin: { width: '60%' } },
+            { name: 'ctaHref', type: 'text', label: 'Verwijst naar (URL)', admin: { width: '40%' } },
+          ],
+        },
         { name: 'quote', type: 'textarea', label: 'Citaat' },
         { name: 'image1', type: 'upload', relationTo: 'media', label: 'Afbeelding 1' },
         { name: 'image1Alt', type: 'text', label: 'Afbeelding 1 alt-tekst' },

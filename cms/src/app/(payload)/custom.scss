@@ -318,3 +318,130 @@ select:focus {
 *:focus-visible {
   outline: none !important;
 }
+
+// ===============================================================
+// Responsive- en layout-fixes (2026-06-13)
+// ===============================================================
+
+// --- Zoekveld: tekst stond achter het vergrootglas-icoon ---------
+// Oorzaak: de globale input-padding hierboven overschreef de ruimte
+// die Payload links reserveert voor het zoek-icoon. Geef die ruimte
+// terug zodat tekst en placeholder naast het icoon staan.
+.search-filter,
+.search-filter__wrap {
+  position: relative;
+}
+
+.search-filter__input,
+input.search-filter__input,
+.search-filter input[type='text'] {
+  padding-left: 2.6rem !important;
+}
+
+.search-filter__icon,
+.search-filter svg {
+  position: absolute;
+  left: 0.85rem;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+// --- Logo / merkzone niet afkappen -------------------------------
+// Het icoon bovenin (breadcrumb-home in de app-header) en de merkzone
+// in de sidebar werden afgesneden. Niets laten clippen en ruimte geven.
+.nav__header,
+.nav__header-content,
+.nav__brand,
+.nav-toggler,
+.app-header,
+.app-header__content,
+.app-header__step-nav-wrapper,
+.step-nav,
+.step-nav__home,
+.step-nav__home > span {
+  overflow: visible !important;
+}
+
+// Het VD-icoon in de breadcrumb-home volledig tonen en netjes uitlijnen.
+.step-nav__home {
+  display: inline-flex;
+  align-items: center;
+  width: auto;
+  min-width: 28px;
+}
+
+.step-nav__home > span {
+  display: inline-flex;
+  align-items: center;
+}
+
+.step-nav__home [aria-label='Van den Dam'] {
+  width: 28px !important;
+  height: 28px !important;
+}
+
+.nav__header {
+  min-height: 64px;
+  display: flex;
+  align-items: center;
+  padding: 8px 12px;
+}
+
+.nav__header a,
+.nav__brand a {
+  display: flex;
+  align-items: center;
+  max-width: 100%;
+}
+
+// --- Login-scherm: logo netjes gecentreerd en niet te groot ------
+.login__brand img,
+.login img,
+.create-first-user img {
+  max-width: 300px;
+  width: 100%;
+  height: auto;
+}
+
+// ---------------------------------------------------------------
+// Mobiel: voorkom horizontale overflow en gedrukte velden
+// ---------------------------------------------------------------
+@media (max-width: 768px) {
+  .dashboard {
+    padding: 20px 16px;
+  }
+
+  // Rijen met meerdere velden onder elkaar i.p.v. samengeperst
+  .render-fields .field-type.row,
+  .field-type.row {
+    flex-wrap: wrap;
+  }
+
+  .field-type.row > .field-type {
+    flex: 1 1 100% !important;
+    width: 100% !important;
+  }
+
+  // Document-koptekst en knoppen mogen wrappen
+  .doc-header,
+  .doc-controls,
+  .doc-controls__wrapper {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  // Tabellen scrollen horizontaal i.p.v. de pagina op te rekken
+  .table {
+    overflow-x: auto;
+  }
+
+  // Geen content die breder is dan het scherm
+  .template-default__wrap,
+  .collection-list,
+  .document-fields {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+}

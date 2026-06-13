@@ -12,8 +12,13 @@ const serviceItems = (singular: string) => ({
     { name: 'image', type: 'upload' as const, relationTo: 'media' as const, label: 'Afbeelding' },
     { name: 'imageAlt', type: 'text' as const, label: 'Afbeelding alt-tekst' },
     { name: 'text', type: 'textarea' as const, label: 'Tekst' },
-    { name: 'linkHref', type: 'text' as const, label: 'Link URL' },
-    { name: 'linkLabel', type: 'text' as const, label: 'Link tekst' },
+    {
+      type: 'row' as const,
+      fields: [
+        { name: 'linkLabel', type: 'text' as const, label: 'Link tekst', admin: { width: '60%' } },
+        { name: 'linkHref', type: 'text' as const, label: 'Verwijst naar (URL)', admin: { width: '40%' } },
+      ],
+    },
   ],
 })
 
@@ -67,8 +72,13 @@ export const DienstenPage: GlobalConfig = {
       fields: [
         { name: 'title', type: 'text', label: 'Titel' },
         { name: 'text', type: 'textarea', label: 'Tekst' },
-        { name: 'button', type: 'text', label: 'Knoptekst' },
-        { name: 'href', type: 'text', label: 'Link URL' },
+        {
+          type: 'row',
+          fields: [
+            { name: 'button', type: 'text', label: 'Knoptekst', admin: { width: '60%' } },
+            { name: 'href', type: 'text', label: 'Verwijst naar (URL)', admin: { width: '40%' } },
+          ],
+        },
       ],
     },
   ],

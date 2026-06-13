@@ -29,8 +29,13 @@ export const SiteSettings: GlobalConfig = {
       fields: [
         { name: 'addressLine1', type: 'text', label: 'Adresregel 1' },
         { name: 'addressLine2', type: 'text', label: 'Adresregel 2 (postcode, plaats)' },
-        { name: 'phoneDisplay', type: 'text', label: 'Telefoonnummer (weergave)' },
-        { name: 'phoneHref', type: 'text', label: 'Telefoonnummer (tel: link)' },
+        {
+          type: 'row',
+          fields: [
+            { name: 'phoneDisplay', type: 'text', label: 'Telefoonnummer (weergave)', admin: { width: '50%' } },
+            { name: 'phoneHref', type: 'text', label: 'Telefoonnummer (tel: link)', admin: { width: '50%' } },
+          ],
+        },
         { name: 'email', type: 'email', label: 'E-mailadres' },
       ],
     },
@@ -50,8 +55,13 @@ export const SiteSettings: GlobalConfig = {
       label: 'Navigatie: diensten',
       labels: { singular: 'Dienst', plural: 'Diensten' },
       fields: [
-        { name: 'title', type: 'text', label: 'Titel', required: true, localized: true },
-        { name: 'url', type: 'text', label: 'URL (bijv. dienst-behangen.html)', required: true },
+        {
+          type: 'row',
+          fields: [
+            { name: 'title', type: 'text', label: 'Titel', required: true, localized: true, admin: { width: '50%' } },
+            { name: 'url', type: 'text', label: 'URL (bijv. dienst-behangen.html)', required: true, admin: { width: '50%' } },
+          ],
+        },
       ],
     },
     {
@@ -59,8 +69,13 @@ export const SiteSettings: GlobalConfig = {
       name: 'credit',
       label: 'Website credits',
       fields: [
-        { name: 'name', type: 'text', label: 'Naam' },
-        { name: 'url', type: 'text', label: 'URL' },
+        {
+          type: 'row',
+          fields: [
+            { name: 'name', type: 'text', label: 'Naam', admin: { width: '50%' } },
+            { name: 'url', type: 'text', label: 'URL', admin: { width: '50%' } },
+          ],
+        },
       ],
     },
   ],

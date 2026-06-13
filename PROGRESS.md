@@ -53,6 +53,19 @@
 | 17 | SEO bewerkbaar op de pagina zelf | ✅ 2026-06-12 | SEO-knop in de bewerkbalk opent `SeoPanel.tsx`: paginatitel + omschrijving met tekenteller en Google-voorbeeld, loopt mee in concept/publiceer-flow (staged als `meta.title`/`meta.description`). Belangrijk: de plugin-seo meta-velden werden nergens gerenderd; nu hebben alle pagina-routes `generateMetadata` via `pageMetadata()` in `frontend/queries.ts`. |
 | 18 | Schema push + build + smoke test | ✅ 2026-06-12 | Nieuwe kolommen via lokale dev-run naar Supabase gepusht, `npm run build` slaagt, alle 7 routes 200, knop-hrefs gecontroleerd in de HTML. |
 
+## Ronde 4 (2026-06-13): admin-UI responsive + grouping + live-edit-knop
+
+| # | Stap | Status | Notities |
+|---|------|--------|----------|
+| 19 | Echt logo op inlogscherm | ✅ 2026-06-13 | `components/admin/Logo.tsx` toont nu `/resources/vandenDam-logo.jpg` i.p.v. de tekst-versie. |
+| 20 | Dashboard-icoon werd afgekapt | ✅ 2026-06-13 | Het VD-icoon zit in `.step-nav__home` (breadcrumb-home, smal slot). Icoon naar 28px + `custom.scss` zet `overflow:visible` op de hele app-header/step-nav-keten en forceert 28px. Geverifieerd via screenshot: volledig "VD" zichtbaar. |
+| 21 | Zoektekst stond achter het vergrootglas | ✅ 2026-06-13 | Globale input-padding overschreef Payloads linker-ruimte voor het zoek-icoon. `.search-filter__input` krijgt `padding-left:2.6rem`, icoon absoluut gepositioneerd. |
+| 22 | Velden gegroepeerd (label + link naast elkaar) | ✅ 2026-06-13 | Alle knoptekst+URL-paren in `type:'row'` gezet (Home, Diensten, Portfolio, Over Ons, Privacy, 404, SiteSettings). Puur presentatie: types-diff = alleen volgorde, geen nieuwe kolommen, dus GEEN schema-push nodig. |
+| 23 | Directe "live bewerken"-knop op elke pagina-global | ✅ 2026-06-13 | `components/admin/EditLivePill.tsx` (ui-veld, geïnjecteerd via `withPublishFlow` in payload.config.ts) toont bovenaan elke pagina een rode knop naar de live pagina met `?edit=1`. `EditContext` zet bewerkmodus meteen aan bij `?edit=1`. Import-map opnieuw gegenereerd. |
+| 24 | Lokaal builden + screenshots alle admin-pagina's | ✅ 2026-06-13 | `npm run build` (tegen lokale sqlite) slaagt, 11 routes. Screenshots desktop+mobiel van alle 14 admin-views in `.claude/screenshots/cms-audit/`. Edge headless 'new' crasht vaak bij fullPage; script `cms-audit.js` herstart de browser per crash en gebruikt cookie-auth (REST `first-register`). |
+
+> Mobiel-aandachtspunt voor later: de doc-controls-knop "Publiceer wijzigingen" kan op 390px nog licht afgekapt zijn (Payload-eigen gedrag); `flex-wrap` toegevoegd maar niet perfect.
+
 ## Sessielog
 
 - **2026-06-11:** Cloud-werk gemerged (inline edit-laag: AdminBar + Editable/EditableImage op alle pagina's + catch-all `[slug]`). Lokale experimenten (wet paint button, paint drip 404) gecommit. PROGRESS.md aangemaakt. Volgende: publish-bug.

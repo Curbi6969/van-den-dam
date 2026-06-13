@@ -21,10 +21,20 @@ export const Home: GlobalConfig = {
         { name: 'title', type: 'text', label: 'Titel' },
         { name: 'subtitle', type: 'textarea', label: 'Ondertitel' },
         { name: 'image', type: 'upload', relationTo: 'media', label: 'Afbeelding' },
-        { name: 'ctaPrimary', type: 'text', label: 'Knop: offerte aanvragen' },
-        { name: 'ctaPrimaryHref', type: 'text', label: 'Knop offerte: link (URL)' },
-        { name: 'ctaSecondary', type: 'text', label: 'Knop: bekijk portfolio' },
-        { name: 'ctaSecondaryHref', type: 'text', label: 'Knop portfolio: link (URL)' },
+        {
+          type: 'row',
+          fields: [
+            { name: 'ctaPrimary', type: 'text', label: 'Knop: offerte aanvragen', admin: { width: '60%' } },
+            { name: 'ctaPrimaryHref', type: 'text', label: 'Verwijst naar (URL)', admin: { width: '40%' } },
+          ],
+        },
+        {
+          type: 'row',
+          fields: [
+            { name: 'ctaSecondary', type: 'text', label: 'Knop: bekijk portfolio', admin: { width: '60%' } },
+            { name: 'ctaSecondaryHref', type: 'text', label: 'Verwijst naar (URL)', admin: { width: '40%' } },
+          ],
+        },
       ],
     },
     {
@@ -48,8 +58,13 @@ export const Home: GlobalConfig = {
         { name: 'eyebrow', type: 'text', label: 'Bovenkop' },
         { name: 'title', type: 'text', label: 'Titel' },
         { name: 'text', type: 'textarea', label: 'Tekst' },
-        { name: 'ctaViewAll', type: 'text', label: 'Knop: bekijk al onze diensten' },
-        { name: 'ctaViewAllHref', type: 'text', label: 'Knop: link (URL)' },
+        {
+          type: 'row',
+          fields: [
+            { name: 'ctaViewAll', type: 'text', label: 'Knop: bekijk al onze diensten', admin: { width: '60%' } },
+            { name: 'ctaViewAllHref', type: 'text', label: 'Verwijst naar (URL)', admin: { width: '40%' } },
+          ],
+        },
       ],
     },
     {
@@ -63,8 +78,13 @@ export const Home: GlobalConfig = {
         { name: 'text', type: 'textarea', label: 'Tekst' },
         { name: 'image', type: 'upload', relationTo: 'media', label: 'Afbeelding' },
         { name: 'raised', type: 'checkbox', label: 'Uitgelicht' },
-        { name: 'linkLabel', type: 'text', label: 'Link tekst (meer lezen)' },
-        { name: 'linkHref', type: 'text', label: 'Link URL' },
+        {
+          type: 'row',
+          fields: [
+            { name: 'linkLabel', type: 'text', label: 'Link tekst (meer lezen)', admin: { width: '60%' } },
+            { name: 'linkHref', type: 'text', label: 'Verwijst naar (URL)', admin: { width: '40%' } },
+          ],
+        },
       ],
     },
     {
@@ -80,8 +100,13 @@ export const Home: GlobalConfig = {
         { name: 'badgeLabel', type: 'text', label: 'Badge label' },
         { name: 'paragraph1', type: 'textarea', label: 'Alinea 1' },
         { name: 'paragraph2', type: 'textarea', label: 'Alinea 2' },
-        { name: 'ctaLabel', type: 'text', label: 'Link tekst (leer ons kennen)' },
-        { name: 'ctaHref', type: 'text', label: 'Link URL' },
+        {
+          type: 'row',
+          fields: [
+            { name: 'ctaLabel', type: 'text', label: 'Link tekst (leer ons kennen)', admin: { width: '60%' } },
+            { name: 'ctaHref', type: 'text', label: 'Verwijst naar (URL)', admin: { width: '40%' } },
+          ],
+        },
       ],
     },
     {
@@ -92,8 +117,13 @@ export const Home: GlobalConfig = {
       fields: [
         { name: 'eyebrow', type: 'text', label: 'Bovenkop' },
         { name: 'title', type: 'text', label: 'Titel' },
-        { name: 'ctaViewAll', type: 'text', label: 'Link tekst (volledig portfolio)' },
-        { name: 'ctaViewAllHref', type: 'text', label: 'Link URL' },
+        {
+          type: 'row',
+          fields: [
+            { name: 'ctaViewAll', type: 'text', label: 'Link tekst (volledig portfolio)', admin: { width: '60%' } },
+            { name: 'ctaViewAllHref', type: 'text', label: 'Verwijst naar (URL)', admin: { width: '40%' } },
+          ],
+        },
       ],
     },
     {
@@ -139,8 +169,13 @@ export const Home: GlobalConfig = {
       fields: [
         { name: 'title', type: 'text', label: 'Titel' },
         { name: 'text', type: 'textarea', label: 'Tekst' },
-        { name: 'button', type: 'text', label: 'Knoptekst' },
-        { name: 'href', type: 'text', label: 'Knop link (URL)' },
+        {
+          type: 'row',
+          fields: [
+            { name: 'button', type: 'text', label: 'Knoptekst', admin: { width: '60%' } },
+            { name: 'href', type: 'text', label: 'Verwijst naar (URL)', admin: { width: '40%' } },
+          ],
+        },
       ],
     },
   ],

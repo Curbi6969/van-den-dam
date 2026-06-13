@@ -13,8 +13,13 @@ export const PrivacyPage: GlobalConfig = {
     { name: 'heading', type: 'text', label: 'Kop', localized: true },
     { name: 'lastUpdated', type: 'text', label: 'Datum laatste wijziging', localized: true },
     { name: 'contactEmail', type: 'text', label: 'Contact e-mailadres' },
-    { name: 'backLink', type: 'text', label: 'Tekst teruglink', localized: true },
-    { name: 'backLinkHref', type: 'text', label: 'Teruglink: URL' },
+    {
+      type: 'row',
+      fields: [
+        { name: 'backLink', type: 'text', label: 'Tekst teruglink', localized: true, admin: { width: '60%' } },
+        { name: 'backLinkHref', type: 'text', label: 'Verwijst naar (URL)', admin: { width: '40%' } },
+      ],
+    },
     {
       type: 'array',
       name: 'sections',

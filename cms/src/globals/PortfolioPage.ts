@@ -27,8 +27,13 @@ export const PortfolioPage: GlobalConfig = {
       localized: true,
       labels: { singular: 'Filter', plural: 'Filters' },
       fields: [
-        { name: 'value', type: 'text', label: 'Waarde (intern, geen spaties)' },
-        { name: 'label', type: 'text', label: 'Label (weergave)' },
+        {
+          type: 'row',
+          fields: [
+            { name: 'label', type: 'text', label: 'Label (weergave)', admin: { width: '50%' } },
+            { name: 'value', type: 'text', label: 'Waarde (intern, geen spaties)', admin: { width: '50%' } },
+          ],
+        },
       ],
     },
     {
@@ -56,8 +61,13 @@ export const PortfolioPage: GlobalConfig = {
       fields: [
         { name: 'title', type: 'text', label: 'Titel' },
         { name: 'text', type: 'textarea', label: 'Tekst' },
-        { name: 'button', type: 'text', label: 'Knoptekst' },
-        { name: 'href', type: 'text', label: 'Link URL' },
+        {
+          type: 'row',
+          fields: [
+            { name: 'button', type: 'text', label: 'Knoptekst', admin: { width: '60%' } },
+            { name: 'href', type: 'text', label: 'Verwijst naar (URL)', admin: { width: '40%' } },
+          ],
+        },
       ],
     },
   ],

@@ -2,53 +2,29 @@
 
 import React from 'react'
 
+// Volledig huisstijl-logo op het inlogscherm en accountscherm van de admin.
+// Hergebruikt het echte Van den Dam-logo van de website (in /public/resources).
 export const Logo: React.FC = () => (
   <div
     style={{
       display: 'flex',
       alignItems: 'center',
-      gap: '10px',
-      padding: '12px 16px',
+      justifyContent: 'center',
+      width: '100%',
+      padding: '8px 0',
       userSelect: 'none',
     }}
   >
-    {/* Rode verfstreep */}
-    <span
-      aria-hidden="true"
+    {/* eslint-disable-next-line @next/next/no-img-element */}
+    <img
+      src="/resources/vandenDam-logo.jpg"
+      alt="Van den Dam Schilderwerken"
       style={{
-        display: 'inline-block',
-        width: '4px',
-        height: '28px',
-        borderRadius: '2px',
-        background: '#ff0000',
-        flexShrink: 0,
+        width: '100%',
+        maxWidth: '300px',
+        height: 'auto',
+        display: 'block',
       }}
     />
-    <span
-      style={{
-        fontFamily: "'Manrope', sans-serif",
-        fontWeight: 800,
-        fontSize: '15px',
-        lineHeight: 1.1,
-        color: '#232227',
-        letterSpacing: '-0.01em',
-      }}
-    >
-      Van den Dam
-      <span
-        style={{
-          display: 'block',
-          fontFamily: "'Work Sans', sans-serif",
-          fontWeight: 400,
-          fontSize: '11px',
-          color: 'rgba(35,34,39,0.6)',
-          letterSpacing: '0.04em',
-          textTransform: 'uppercase',
-          marginTop: '1px',
-        }}
-      >
-        Schilderwerken
-      </span>
-    </span>
   </div>
 )

@@ -575,8 +575,8 @@ export interface Diensten {
           image?: (number | null) | Media;
           imageAlt?: string | null;
           text?: string | null;
-          linkHref?: string | null;
           linkLabel?: string | null;
+          linkHref?: string | null;
           id?: string | null;
         }[]
       | null;
@@ -591,8 +591,8 @@ export interface Diensten {
           image?: (number | null) | Media;
           imageAlt?: string | null;
           text?: string | null;
-          linkHref?: string | null;
           linkLabel?: string | null;
+          linkHref?: string | null;
           id?: string | null;
         }[]
       | null;
@@ -630,8 +630,8 @@ export interface Portfolio {
   };
   filters?:
     | {
-        value?: string | null;
         label?: string | null;
+        value?: string | null;
         id?: string | null;
       }[]
     | null;
@@ -1016,8 +1016,8 @@ export interface DienstenSelect<T extends boolean = true> {
               image?: T;
               imageAlt?: T;
               text?: T;
-              linkHref?: T;
               linkLabel?: T;
+              linkHref?: T;
               id?: T;
             };
       };
@@ -1034,8 +1034,8 @@ export interface DienstenSelect<T extends boolean = true> {
               image?: T;
               imageAlt?: T;
               text?: T;
-              linkHref?: T;
               linkLabel?: T;
+              linkHref?: T;
               id?: T;
             };
       };
@@ -1074,8 +1074,8 @@ export interface PortfolioSelect<T extends boolean = true> {
   filters?:
     | T
     | {
-        value?: T;
         label?: T;
+        value?: T;
         id?: T;
       };
   projects?:

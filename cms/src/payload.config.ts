@@ -74,11 +74,21 @@ const withPublishFlow = <
     admin?: Record<string, unknown>
     hooks?: { afterChange?: unknown[] }
     versions?: unknown
+    fields: unknown[]
   },
 >(
   entity: T,
 ): T => ({
   ...entity,
+  // Directe "live bewerken op de website"-knop bovenaan elke pagina-global.
+  fields: [
+    {
+      name: 'editLiveLink',
+      type: 'ui',
+      admin: { components: { Field: '@/components/admin/EditLivePill#EditLivePill' } },
+    },
+    ...entity.fields,
+  ],
   versions: { drafts: true, max: 50 },
   admin: {
     ...entity.admin,

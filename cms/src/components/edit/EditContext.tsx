@@ -55,7 +55,15 @@ export function EditProvider({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     fetch('/api/users/me', { credentials: 'same-origin' })
       .then((res) => (res.ok ? res.json() : null))
-      .then((data) => setUser(data?.user ?? null))
+      .then((data) => {
+        const u = data?.user ?? null
+        setUser(u)
+        // Vanuit de admin geopend met ?edit=1: meteen in bewerkmodus voor
+        // ingelogde gebruikers (de directe "live bewerken"-knop).
+        if (u && new URLSearchParams(window.location.search).get('edit') === '1') {
+          setEditMode(true)
+        }
+      })
       .catch(() => setUser(null))
   }, [])
 

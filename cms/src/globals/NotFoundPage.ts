@@ -11,9 +11,19 @@ export const NotFoundPage: GlobalConfig = {
   fields: [
     { name: 'heading', type: 'text', label: 'Kop', localized: true },
     { name: 'body', type: 'textarea', label: 'Bodytekst', localized: true },
-    { name: 'linkHome', type: 'text', label: 'Tekst link naar home', localized: true },
-    { name: 'linkHomeHref', type: 'text', label: 'Link home: URL' },
-    { name: 'linkContact', type: 'text', label: 'Tekst link naar contact', localized: true },
-    { name: 'linkContactHref', type: 'text', label: 'Link contact: URL' },
+    {
+      type: 'row',
+      fields: [
+        { name: 'linkHome', type: 'text', label: 'Tekst link naar home', localized: true, admin: { width: '60%' } },
+        { name: 'linkHomeHref', type: 'text', label: 'Verwijst naar (URL)', admin: { width: '40%' } },
+      ],
+    },
+    {
+      type: 'row',
+      fields: [
+        { name: 'linkContact', type: 'text', label: 'Tekst link naar contact', localized: true, admin: { width: '60%' } },
+        { name: 'linkContactHref', type: 'text', label: 'Verwijst naar (URL)', admin: { width: '40%' } },
+      ],
+    },
   ],
 }
