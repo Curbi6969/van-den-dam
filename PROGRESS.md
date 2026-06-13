@@ -66,6 +66,15 @@
 
 > Mobiel-aandachtspunt voor later: de doc-controls-knop "Publiceer wijzigingen" kan op 390px nog licht afgekapt zijn (Payload-eigen gedrag); `flex-wrap` toegevoegd maar niet perfect.
 
+## Ronde 5 (2026-06-13): live inline-editor popover + responsive
+
+| # | Stap | Status | Notities |
+|---|------|--------|----------|
+| 25 | Link-popover werd door kaart afgekapt | ✅ 2026-06-13 | Oorzaak: servicekaart-`div` heeft `overflow-hidden` (HomeView.tsx) en de popover stond `position:absolute` binnen de kaart. Fix: `EditableLink.tsx` rendert de popover nu via een React-**portal naar document.body** met `position:fixed`, herpositioneert bij scroll/resize en sluit bij klik-buiten. z-index naar 10002. Popover-breedte schaalt mee op smal scherm. |
+| 26 | Inline-editor responsive | ✅ 2026-06-13 | `AdminBar.tsx`: opslagbalk wrapt en staat op mobiel boven de sluitknop (`bottom-24 md:bottom-6`, `flex-wrap`, compacte tekst); SEO-paneel/opmaakbalk krijgen mobiele breedtes via media-query in `editCss`. |
+
+> **HERVATTEN — nog te doen:** Visueel testen van de live inline-functies kon NIET af: headless Edge op deze machine crasht bij elke klik-interactie (resource-uitputting, `0xc0000142` / "session closed"). Geverifieerd: bewerkmodus homepage desktop+mobiel + responsive opslagbalk (screenshots in `.claude/screenshots/inline-test/`). NIET met screenshot bevestigd (wel via code + bevestigde `overflow-hidden`-oorzaak): de popover open op een kaart, SEO-paneel, opmaakbalk bij tekstselectie, afbeelding-vervangen. Lokaal testen: `npm run build` + `npx next start -p 3030` met `DATABASE_URI=file:./screenshot.db` (seed via `.claude/screenshots/seed-rest.mjs`, user audit@local.test / AuditTest12345!). Productie-build slaagt; geen schema-push nodig (geen nieuwe kolommen).
+
 ## Sessielog
 
 - **2026-06-11:** Cloud-werk gemerged (inline edit-laag: AdminBar + Editable/EditableImage op alle pagina's + catch-all `[slug]`). Lokale experimenten (wet paint button, paint drip 404) gecommit. PROGRESS.md aangemaakt. Volgende: publish-bug.

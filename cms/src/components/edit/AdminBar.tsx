@@ -18,7 +18,7 @@ const editCss = `
   .vdd-linkwrap { position: relative; display: inline-block; }
   .vdd-linkbtn { position: absolute; top: -10px; right: -10px; z-index: 9998; width: 24px; height: 24px; border-radius: 9999px; background: #ff0000; color: #fff; display: flex; align-items: center; justify-content: center; border: 2px solid #fff; cursor: pointer; box-shadow: 0 2px 8px rgba(0,0,0,0.25); }
   .vdd-linkbtn:hover { background: #232227; }
-  .vdd-linkpop { position: absolute; top: calc(100% + 10px); left: 50%; transform: translateX(-50%); z-index: 9999; display: flex; flex-direction: column; gap: 8px; width: 280px; background: #232227; color: #fff; border-radius: 12px; padding: 14px; box-shadow: 0 10px 30px rgba(0,0,0,0.35); font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 400; letter-spacing: normal; text-transform: none; text-align: left; cursor: default; white-space: normal; }
+  .vdd-linkpop { z-index: 10002; display: flex; flex-direction: column; gap: 8px; background: #232227; color: #fff; border-radius: 12px; padding: 14px; box-shadow: 0 10px 30px rgba(0,0,0,0.4); font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 400; letter-spacing: normal; text-transform: none; text-align: left; cursor: default; white-space: normal; }
   .vdd-linkpop-title { font-weight: 600; }
   .vdd-linkpop select, .vdd-linkpop input { width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.25); background: #fff; color: #232227; padding: 7px 10px; font: inherit; }
   .vdd-linkpop-row { display: flex; gap: 8px; justify-content: flex-end; }
@@ -54,6 +54,12 @@ const editCss = `
 
   .vdd-linkpop :focus, .vdd-fmtbar :focus, .vdd-htmlmodal :focus, .vdd-seopanel :focus { outline: none; }
   .vdd-linkpop input:focus, .vdd-linkpop select:focus, .vdd-htmlmodal textarea:focus, .vdd-seopanel input:focus, .vdd-seopanel textarea:focus { border-color: #ff0000; }
+
+  @media (max-width: 640px) {
+    .vdd-seopanel { left: 12px; right: 12px; width: auto; bottom: 84px; max-height: calc(100vh - 180px); }
+    .vdd-fmtbar { max-width: calc(100vw - 16px); flex-wrap: wrap; }
+    .vdd-htmlmodal-overlay { padding: 12px; }
+  }
 `
 
 function PencilIcon() {
@@ -141,8 +147,10 @@ export function AdminBar() {
 
       {/* Opslagbalk in bewerkmodus */}
       {editMode && (
-        <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-[9999] bg-primary text-white rounded-full pl-6 pr-2 py-2 flex items-center gap-4 ambient-shadow font-label text-sm">
-          <span className="whitespace-nowrap">
+        <div className="fixed left-1/2 -translate-x-1/2 z-[9999] bottom-24 md:bottom-6 max-w-[calc(100vw-1rem)] bg-primary text-white rounded-2xl md:rounded-full px-3 md:pl-6 md:pr-2 py-2 flex flex-wrap items-center justify-center gap-2 md:gap-4 ambient-shadow font-label text-xs md:text-sm">
+          <span
+            className={`whitespace-nowrap ${dirtyCount === 0 ? 'hidden sm:inline' : ''}`}
+          >
             {dirtyCount === 0
               ? 'Klik op tekst, een knop of een afbeelding'
               : `${dirtyCount} wijziging${dirtyCount === 1 ? '' : 'en'}`}
@@ -151,7 +159,7 @@ export function AdminBar() {
             <button
               type="button"
               onClick={() => setSeoOpen((v) => !v)}
-              className={`px-4 py-2 rounded-full border border-white/30 transition-colors whitespace-nowrap ${
+              className={`px-3 md:px-4 py-1.5 md:py-2 rounded-full border border-white/30 transition-colors whitespace-nowrap ${
                 seoOpen ? 'bg-white/20' : 'hover:bg-white/10'
               }`}
             >
@@ -162,7 +170,7 @@ export function AdminBar() {
             type="button"
             onClick={() => onSave(false)}
             disabled={saving || dirtyCount === 0}
-            className="px-4 py-2 rounded-full border border-white/30 hover:bg-white/10 transition-colors disabled:opacity-40 whitespace-nowrap"
+            className="px-3 md:px-4 py-1.5 md:py-2 rounded-full border border-white/30 hover:bg-white/10 transition-colors disabled:opacity-40 whitespace-nowrap"
           >
             {saving ? 'Bezig...' : 'Concept opslaan'}
           </button>
@@ -170,13 +178,13 @@ export function AdminBar() {
             type="button"
             onClick={() => onSave(true)}
             disabled={saving || dirtyCount === 0}
-            className="px-4 py-2 rounded-full bg-secondary text-on-secondary font-semibold hover:opacity-90 transition-opacity disabled:opacity-40 whitespace-nowrap"
+            className="px-3 md:px-4 py-1.5 md:py-2 rounded-full bg-secondary text-on-secondary font-semibold hover:opacity-90 transition-opacity disabled:opacity-40 whitespace-nowrap"
           >
             {saving ? 'Bezig...' : 'Publiceren'}
           </button>
           <a
             href="/admin"
-            className="px-3 py-2 rounded-full text-white/70 hover:text-white transition-colors whitespace-nowrap"
+            className="px-3 py-1.5 md:py-2 rounded-full text-white/70 hover:text-white transition-colors whitespace-nowrap"
           >
             CMS
           </a>
